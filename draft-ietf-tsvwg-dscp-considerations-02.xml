@@ -235,7 +235,8 @@ Traffic        Class
             no longer available for experimental or local use <xref
             target="RFC8436"></xref>.</t>
           </list></t>
-<t>
+        <t>The DSCP space is shown in the following Figure.
+   
 
           <figure>
             <preamble></preamble>
@@ -250,18 +251,17 @@ Traffic        Class
 +---------+-------+----------+-----+----------+-----+----------+-----+
 | 32/CS4  | 33    | 34/AF41  | 35  | 36/AF42  | 37  | 38/AF43  | 39  |
 +---------+-------+----------+-----+----------+-----+----------+-----+
-| 24/CS3  | 25    | 26/AF31  | 27  | 28./AF32 | 29  | 30/AF33  | 31  |
+| 24/CS3  | 25    | 26/AF31  | 27  | 28/AF32  | 29  | 30/AF33  | 31  |
 +---------+-------+----------+-----+----------+-----+----------+-----+
 | 16/CS2  | 17    | 18/AF21  | 19  | 20/AF22  | 21  | 22/AF23  | 23  |
 +---------+-------+----------+-----+----------+-----+----------+-----+
 | 8/CS1   | 9     | 10/AF11  | 11  | 12/AF12  | 13  | 14/AF13  | 15  |
-+=========+=======+==========+=====+==========+=====+==========+=====+
++---------+-------+----------+-----+----------+-----+----------+-----+
 | 0/CS0   | 1/LE  | 2        | 3   | 4        | 5   | 6        | 7   |
-+=========+=======+==========+=====+==========+=====+==========+=====+
++---------+-------+----------+-----+----------+-----+----------+-----+
 ]]></artwork>
 
-            <postamble>Figure showing the full list of codepoints and their assigned PHBs.
-            </postamble>
+            <postamble>Figure showing the full list of codepoints and their assigned PHBs.</postamble>
           </figure>
 
 
@@ -302,6 +302,9 @@ Traffic        Class
         <t>DSCP CS7 is reserved for future use by network control traffic.
         "CS7 marked packets SHOULD NOT be sent across peering points" <xref
         target="RFC4594"></xref>.</t>
+
+        <t> At the time of writing, there is evidence to suggest CS6 is actively used by network operators for control traffic. A study of traffic at a large Internet Exchange shows around 40% of ICMP traffic carries this mark. Similarly, another study finds routers that re-mark all traffic except that whose first three bits correspond to CS6/CS7 - see Section 4 of this document.</t>
+
       </section>
     </section>
 
@@ -320,7 +323,13 @@ Traffic        Class
       without changing the DSCP. This seeks to support incremental DiffServ
       deployment in existing networks as well as preserving DSCP markings by
       routers that have not been configured to support DiffServ. (See also
-      <xref target="remark"></xref>).</t>
+      <xref target="remark"></xref>).
+
+     <xref target="rfc3260">RFC3260</xref> clarifies that this behaviour specified by RFC2474
+   is intended for interior nodes within a DiffServ domain. For DiffServ ingress nodes the
+   traffic conditioning required by RFC 2475 applies first, and packets marked with DSCPs not explicitly mapped to
+   a particular PHB should be treated the same way as packets marked BE.
+</t>
 
       <t>Reports measuring existing deployments have categorised DSCP
       remarking <xref target="Custura"></xref> <xref target="Barik"></xref>
@@ -384,7 +393,7 @@ Traffic        Class
           ToS Precedence field), leaving the lower bits unchanged (see section
           4.2.1 of <xref target="RFC2474">RFC2474</xref>). This behaviour is
           distinctive of non-DiffServ aware routers and one of the more common
-          manipulations of the DiffServ field.</t>
+          manipulations of the DiffServ field. The following Figure provides details.</t>
 
           <figure>
             <preamble></preamble>
@@ -401,23 +410,51 @@ Traffic        Class
           </figure>
 
           <t></t>
+          <figure>
+            <preamble></preamble>
+
+            <artwork><![CDATA[
++---------+-------+----------+-----+----------+-----+----------+-----+
+| 56/CS7  | 57    | 58       | 59  | 60       | 61  | 62       | 63  |
++---------+-------+----------+-----+----------+-----+----------+-----+
+| 48/CS6  | 49    | 50       | 51  | 52       | 53  | 54       | 55  |
++---------+-------+----------+-----+----------+-----+----------+-----+
+| 40/CS5  | 41    | 42       | 43  | 44/VA    | 45  | 46/EF    | 47  |
++---------+-------+----------+-----+----------+-----+----------+-----+
+| 32/CS4  | 33    | 34/AF41  | 35  | 36/AF42  | 37  | 38/AF43  | 39  |
++---------+-------+----------+-----+----------+-----+----------+-----+
+| 24/CS3  | 25    | 26/AF31  | 27  | 28/AF32  | 29  | 30/AF33  | 31  |
++---------+-------+----------+-----+----------+-----+----------+-----+
+| 16/CS2  | 17    | 18/AF21  | 19  | 20/AF22  | 21  | 22/AF23  | 23  |
++---------+-------+----------+-----+----------+-----+----------+-----+
+| 8/CS1   | 9     | 10/AF11  | 11  | 12/AF12  | 13  | 14/AF13  | 15  |
++=========+=======+==========+=====+==========+=====+==========+=====+
+| 0/CS0   | 1/LE  | 2        | 3   | 4        | 5   | 6        | 7   |
++=========+=======+==========+=====+==========+=====+==========+=====+
+]]></artwork>
+
+            <postamble>When ToS precedence bleached, all DSCPs in each column are remarked to the smallest DSCP in that column. DSCPs in the bottom row have higher end-to-end survivability in the Internet.
+            </postamble>
+          </figure>
+
+
+<t></t>
 
           <figure>
             <preamble></preamble>
 
             <artwork><![CDATA[
 
-+=========+=======+===============+=====+======+======+===============+====+
-| 0/CS0   | 1/LE  | 2             | 3   | 4    | 5    | 6             | 7  |
-+=========+=======+===============+============+======+===============+====+
-|Assigned         |ToS Prec bleach|Local|Used  |Future|ToS Prec bleach|Exp |
-|                 |of AF11..41    |Use  |by SSH|NQB   |of AF13..EF    |    |
-+=================+===============+=====+======+======+===============+====+
++=========+=======+===============+=====+======+======+===============+=============+
+| 0/CS0   | 1/LE  | 2             | 3   | 4    | 5    | 6             | 7           |
++=========+=======+===============+============+======+===============+=============+
+|Assigned         |ToS Prec bleach|Local|Used  |Future|ToS Prec bleach|Experimental |
+|                 |of AF11..41    |Use  |by SSH|NQB   |of AF13..EF    |Use          |
++=================+===============+=====+======+======+===============+=============+
 ]]></artwork>
 
-            <postamble>Figure showing the ToS Precedence Bleaching
-            (/Bleach-ToS-Precedence/) pathology, based on Section 3 of <xref
-            target="RFC1349">RFC1349</xref>.</postamble>
+            <postamble>Figure showing 000xxx DSCPs, hightlighting any current assignments and whether they are affected by any known pathologies. For example, ToS Precedence Bleaching of popular codepoints AF11,21,31,41 results in a lot of traffic residually carrying DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ.
+            </xref>.</postamble>
           </figure>
 
           <t></t>
