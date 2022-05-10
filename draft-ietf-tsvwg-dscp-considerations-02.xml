@@ -202,7 +202,8 @@ Traffic        Class
       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
       document are to be interpreted as described in <xref
       target="RFC2119">RFC 2119</xref>.</t>
-      <t>DSCPs are specified in the IANA registry <xref target="DSCP-registry"></xref> and are described in a variety of different formats.  They can sometimes referred to by name, such as "CS1", and
+      <t>DSCPs are specified in the IANA registry <xref target="DSCP-registry"></xref> where a variety of different formats are described.  
+A DSCP can sometimes referred to by name, such as "CS1", and
         sometimes by a decimal, hex, or binary value. Hex values will be represented in text using prefix 0x. Binary values will use prefix 0b.
        </t>
     </section>
@@ -216,11 +217,11 @@ Traffic        Class
         values. Within a given administrative boundary, each DSCP value can be
         mapped to a distinct PHB<xref target="RFC2474"></xref>. When a new PHB
         is standardized, a recommended DSCP value among those 64 values is
-        normally reserved for that PHB.</t>
+        normally reserved for that PHB, and is assigned by IANA.</t>
 
         <t>The DSCP space is divided into three pools for the purpose of
-        assignment and management <xref target="DSCP-registry"></xref>. The
-        pools are defined in the following table (where 'x' refers to either a
+        assignment and management <xref target="DSCP-registry"></xref>. This
+        use of the pools can be summnarised in a table (where 'x' refers to either a
         bit position with value '0' or '1').<list style="hanging">
             <t hangText="DSCP Pool 1">A pool of 32 codepoints with a format
             0bxxxxx0, to be assigned by IANA Standards Action <xref
@@ -285,7 +286,7 @@ Traffic        Class
         <t>Network Control Traffic is defined as packet flows that are
         essential for stable operation of the administered network (see <xref
         target="RFC4594"></xref>, Section 3). This traffic is marked using a
-        set of Class Selector (CS) DSCPs. Such network control traffic is
+        set of Class Selector (CS) DSCPs. This traffic is
         often a special case within a provider network, and ingress traffic
         with these DSCP markings can be remarked.</t>
 
@@ -304,7 +305,12 @@ Traffic        Class
         "CS7 marked packets SHOULD NOT be sent across peering points" <xref
         target="RFC4594"></xref>.</t>
 
-        <t> At the time of writing, there is evidence to suggest CS6 is actively used by network operators for control traffic. A study of traffic at a large Internet Exchange shows around 40% of ICMP traffic carries this mark <xref target="ietf113dscp"></xref>. Similarly, another study finds routers that remark all traffic except packets that set the higher order bits to 0b11 (see Section 4 of this document).</t>
+        <t> At the time of writing, there is evidence to suggest CS6 is 
+	actively used by network operators for control traffic. A study of 
+        traffic at a large Internet Exchange showed around 40% of ICMP traffic 
+	carried this mark <xref target="ietf113dscp"></xref>. Similarly, another 
+	study found many routers remark all traffic except those packets with a DSCP
+	that sets the higher order bits to 0b11 (see Section 4 of this document).</t>
 
       </section>
     </section>
@@ -313,8 +319,10 @@ Traffic        Class
       <t>It is a feature of the DiffServ architecture that the Diffserv field
       of packets can be remarked at domain boundaries (see section 2.3.4.2 of
       <xref target="RFC2475">RFC2475</xref>). A DSCP can be remarked at the
-      ingress of a DiffServ domain. This can be with or without restoring the
-      initial DSCP marking at the egress of the same domain. The Diffserv
+      ingress of a DiffServ domain. This remarking
+      can change the DSCP value used on the remainder of an IP path or the
+      network  can restore the
+      initial DSCP marking at the egress of the domain. The Diffserv
       field can also be remarked based upon common semantics and agreements
       between providers at an exchange point. Furthermore, RFC 2475 states
       that remarking must occur when there is a possibility of theft/denial-of-service attack.</t>
@@ -369,7 +377,7 @@ Traffic        Class
         traffic being forwarded using the BE PHB. For example, AF31 (0x1a)
         would be bleached to CS0.</t>
 
-        <t>Resetting all the bits of the DiffServ field to 0 is more prevalent
+        <t>A survey reported that resetting all the bits of the DiffServ field to 0 was seen to be more prevalent
         at the edge of the network, and rather less common in core networks
         <xref target="Custura"></xref>.</t>
       </section>
@@ -384,17 +392,17 @@ Traffic        Class
         Class Selector PHB Requirements" described in Sec. 4.2.2.2 of that
         RFC.</t>
 
-        <t>However, practices based on ToS semantics have not yet been
+        <t>However, a recent survey reports practices based on ToS semantics have not yet been
         eliminated from Internet, and need to still be considered when making
-        new DSCP assignments.</t>
+        new DSCP assignments <xref target="Custura"></xref>.</t>
 
         <section title="Impact of ToS Precedence Bleaching ">
           <t>ToS Precedence Bleaching (/Bleach-ToS-Precedence/) is a practice
           that resets to zero the upper 3 bits of the DSCP field (the former
           ToS Precedence field), leaving the lower bits unchanged (see section
           4.2.1 of <xref target="RFC2474">RFC2474</xref>). This behaviour is
-          distinctive of non-DiffServ aware routers and one of the more common
-          manipulations of the DiffServ field. The following Figure provides details.</t>
+          distinctive of non-DiffServ aware routers and a common
+          manipulation of the DiffServ field. The following Figure provides details.</t>
 
           <figure>
             <preamble></preamble>
