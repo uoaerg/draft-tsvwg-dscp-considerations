@@ -7,6 +7,7 @@
 <!ENTITY RFC2119 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC2474 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2474.xml">
 <!ENTITY RFC2760 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2760.xml">
+<!ENTITY RFC3260 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3260.xml">
 <!ENTITY RFC3270 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3270.xml">
 <!ENTITY RFC3552 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3552.xml">
 <!ENTITY RFC2475 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2475.xml">
@@ -125,7 +126,7 @@
       </address>
     </author>
 
-    <date day="24" month="Jan" year="2022" />
+    <date day="09" month="May" year="2022" />
 
     <area>TSVArea</area>
 
@@ -325,7 +326,7 @@ Traffic        Class
       routers that have not been configured to support DiffServ. (See also
       <xref target="remark"></xref>).
 
-     <xref target="rfc3260">RFC3260</xref> clarifies that this behaviour specified by RFC2474
+     <xref target="RFC3260">RFC3260</xref> clarifies that this behaviour specified by RFC2474
    is intended for interior nodes within a DiffServ domain. For DiffServ ingress nodes the
    traffic conditioning required by RFC 2475 applies first, and packets marked with DSCPs not explicitly mapped to
    a particular PHB should be treated the same way as packets marked BE.
@@ -445,16 +446,16 @@ Traffic        Class
 
             <artwork><![CDATA[
 
-+=========+=======+===============+=====+======+======+===============+=============+
-| 0/CS0   | 1/LE  | 2             | 3   | 4    | 5    | 6             | 7           |
-+=========+=======+===============+============+======+===============+=============+
-|Assigned         |ToS Prec bleach|Local|Used  |Future|ToS Prec bleach|Experimental |
-|                 |of AF11..41    |Use  |by SSH|NQB   |of AF13..EF    |Use          |
-+=================+===============+=====+======+======+===============+=============+
++=========+=======+============+=====+======+======+============+====+
+| 0/CS0   | 1/LE  | 2          | 3   | 4    | 5    | 6          | 7  |
++=========+=======+============+============+======+============+====+
+|Assigned         |ToS Prec bl.|Local|Used  |Future|ToS Prec bl.|Exp.|
+|                 |of AF11..41 |Use  |by SSH|NQB   |of AF13..EF |Use |
++=================+============+=====+======+======+============+====+
 ]]></artwork>
 
             <postamble>Figure showing 000xxx DSCPs, hightlighting any current assignments and whether they are affected by any known pathologies. For example, ToS Precedence Bleaching of popular codepoints AF11,21,31,41 results in a lot of traffic residually carrying DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ.
-            </xref>.</postamble>
+            </postamble>
           </figure>
 
           <t></t>
@@ -531,7 +532,6 @@ Traffic        Class
       Multi-Protocol Label Switching (MPLS).</t>
 
       <section title="Mapping Specified for IEEE 802">
-        <t>&lt;&lt; This section is currently seeking more input. &gt;&gt;</t>
       <section title="Mapping Specified for IEEE 802.1">
         <t>A 3-bit Priority Code Point (PCP) is specified in the IEEE 802.1Q
         tag to mark Ethernet frames to one of eight priority values <xref
@@ -629,7 +629,6 @@ Traffic        Class
       </section>
 
       <section title="Mappings Specified for MPLS">
-        <t>&lt;&lt; This section is currently seeking more input. &gt;&gt;</t>
 
         <t>Multi-Protocol Label Switching (MPLS) specified eight MPLS Traffic
         Classes (TCs), which restricts the number of different treatments
@@ -665,8 +664,6 @@ Traffic        Class
         </section>
 
         <section title="Mappings Specified for MPLS Short Pipe">
-          <t>&lt;&lt; This section is currently seeking more input.
-          &gt;&gt;</t>
 
           <t>The Short Pipe Model is an optional variation of the Pipe Model
           <xref target="RFC3270"></xref>.</t>
@@ -727,7 +724,6 @@ Traffic        Class
       </section>
 
       <section title="Mapping Specified for Mobile Networks">
-        <t>&lt;&lt; This section is currently seeking more input. &gt;&gt;</t>
 
         <t>Mobile LTE and 5G standards have evolved from older UMTS standards,
         and are Diffserv aware. LTE (4G) and 5G standards <xref
@@ -779,14 +775,13 @@ Traffic        Class
 ]]></artwork>
 
             <postamble>Figure showing the PHB mapping from <xref
-            target="GSMA-IR-34">GSMA IR.34</xref>.</postamble>
+            target="GSMA-IR-34">GSMA IR.34</xref>. These mappings are not binding and may have seen variable deployment.</postamble>
           </figure></t>
 
         <t></t>
       </section>
 
       <section title="Mappings Specified for Carrier Ethernet">
-        <t>&lt;&lt; This section is currently seeking more input. &gt;&gt;</t>
 
         <t>Metro Ethernet Forum (MEF) provides mappings of DSCP codepoints at
         the IP layer to quality of service markings in the Ethernet frame
@@ -863,11 +858,18 @@ Traffic        Class
 
       <section title="Impact on deployed infrastructure">
         <t>Behaviour of deployed PHBs and conditioning treatments also needs
-        to be considered when assigning a new DSCP. In some domains, a network
-        operator can provide transparent transport of unknown or unassigned
-        DSCPs across their domain. In other domains, policing can ensure that
-        only traffic that matches a policy is permitted to use a specific DSCP
-        (e.g., as in MPLS TC).</t>
+        to be considered when assigning a new DSCP. Network operators have choices
+        when it comes to using DiffServ within their domains, and the pathologies 
+	described in the previous section can result from different configurations 
+	and approaches:</t><t><list style="hanging">
+            <t hangText="Managed or unmanaged networks not re-marking DiffServ"> A network that does or does not utilize PHBs, and does not remark incoming DSCPs. Operators in this category pass all DSCPs transparently</t>
+            <t hangText="Managed networks using DiffServ"> A network that utilizes PHBs to enforce SLAs with its peers. Operators in this category use policing to ensure that
+        only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100">RFC8100</xref>). This requires operators to choose whether or not to support any new assignments.</t>
+            <t hangText="Unamaged networks"> Networks that re-mark in a way that introduces pathologies through inconsistent re-marking or due to unwanted interaction with lower layers, unintentional ToS precedence bleaching due to old or misconfigured eqipment etc.</t>
+       </list></t>
+      <t>For example, the ToS Precedence Bleaching pathology can arise both through misconfiguration and using old equipment which precedes DiffServ, but can also be a result of traffic conditioning at operator boundaries.
+      </t>
+    
       </section>
 
       <section title="Questions to guide discussion of a proposed new DSCP">
@@ -944,6 +946,8 @@ Traffic        Class
       &RFC2474;
 
       &RFC2475;
+
+      &RFC3260;
 
       &RFC3290;
 
