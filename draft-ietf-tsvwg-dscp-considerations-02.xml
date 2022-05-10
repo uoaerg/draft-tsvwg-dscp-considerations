@@ -151,15 +151,14 @@
     <section title="Introduction">
       <t>The Differentiated Services (DiffServ) architecture has been deployed
       in many networks. It provides differentiated traffic forwarding based on
-      the value of the Diffserv field <xref target="RFC2474"></xref> carried
-      in the IP packet header.</t>
+      the DiffServ Code Point (DSCP) <xref
+      target="RFC2474"></xref> carried in the Diffserv field <xref target="RFC2474"></xref> of the IP packet header.</t>
 
       <t>Internet traffic can be associated with a service class, and
       categorised into Behavior Aggregates [RFC4594]. In IP networks, these
-      are associated with a DiffServ Code Point (DSCP) <xref
-      target="RFC2474"></xref>. Each DSCP is mapped to a Per Hop Behaviour
+      are associated with a DSCP. Each DSCP is mapped to a Per Hop Behaviour
       (PHB). A treatment aggregate is concerned only with the forwarding
-      treatment of the aggregated traffic, which could include multiple
+      treatment of the aggregated traffic, which could be mapped from a set of
       DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
       algorithms that implement access to the physical media.</t>
