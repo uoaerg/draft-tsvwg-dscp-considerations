@@ -530,7 +530,7 @@ Traffic        Class
       Multi-Protocol Label Switching (MPLS).</t>
 
       <section title="Mapping Specified for IEEE 802">
-         This section discusses QoS and DiffServ alignment within IEEE 802 Standards.
+        <t> This section discusses QoS and DiffServ alignment within IEEE 802 Standards.</t>
       <section title="Mapping Specified for IEEE 802.1">
         <t>A 3-bit Priority Code Point (PCP) is specified in the IEEE 802.1Q
         tag to mark Ethernet frames to one of eight priority values <xref
@@ -860,17 +860,19 @@ Traffic        Class
         to be considered when assigning a new DSCP. Network operators have choices
         when it comes to configuring DiffServ support within their domains, and the pathologies 
 	described in the previous section can result from different configurations 
-	and approaches:</t><t><list style="hanging">
-            <t hangText="Networks not remarking DiffServ"> A network that implements one or more PHBs, and does not remark DSCPs. Operators in this category pass all DSCPs transparently</t>
-            <t hangText="Networks that condition the DSCP"> A network that implements more than one PHB and enforces SLAs with its peers. Operators in this category use conditioning to ensure that
+	and approaches:</t>
+        <t><list style="hanging">
+            <t hangText="Networks not remarking DiffServ:"> A network that implements one or more PHBs, and does not remark DSCPs. Operators in this category pass all DSCPs transparently</t>
+            <t hangText="Networks that condition the DSCP:"> A network that implements more than one PHB and enforces SLAs with its peers. Operators in this category use conditioning to ensure that
         only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100">RFC8100</xref>). This requires operators to choose to support or remark a new DSCP assignment.</t>
-            <t hangText="Networks that remark in some other way"> This includes: <list style='numbers'>
+            <t hangText="Networks that remark in some other way:"> This includes: 
+            </t>
+                <t><list style='numbers'>
                 <t>Networks containing misconfigured devices that do not comply with the relevent RFCs.</t>
                 <t>Networks containing devices that implement an obsolete specification or contain software bugs.</t>
                 <t>Networks containing devices that remark the DSCP as a result of lower layer interactions.</t>
-		</list>
-            </t>
-       </list>
+		</list></t>
+       </list></t>
       <t>For example, the ToS-Precedence-Bleach pathology cannot arise in the
 	case of networks not remarking DiffServ, but can arise as a result of traffic
 	conditioning at operator boundaries. It can also arise in the case of
@@ -1006,11 +1008,11 @@ Traffic        Class
 
       <reference anchor="dscp4">
        <front>
-       <title> Bogus DSCP value for SSH </title>
+        <title> Bogus DSCP value for SSH </title>
           <author initials="A." surname="Kolu"></author>
           <date year="2010" />
        </front>
-       <seriesInfo name="online" value="https://lists.freebsd.org/pipermail/freebsd-stable/2010-July/057710.html">
+       <seriesInfo name="online" value="https://lists.freebsd.org/pipermail/freebsd-stable/2010-July/057710.html"/>
       </reference>
 
       <reference anchor="ietf113dscp">
@@ -1020,8 +1022,7 @@ Traffic        Class
           <author initials="G." surname="Fairhurst"></author>
           <date year="2022" />
        </front>
-       <seriesInfo name="IETF 113 Proceedings" value="https://datatracker.ietf.org/meeting/113/materials/slides-113-tsvwg-61-dscp-considerations-07">
-
+       <seriesInfo name="IETF 113 Proceedings" value="https://datatracker.ietf.org/meeting/113/materials/slides-113-tsvwg-61-dscp-considerations-07"/>
       </reference>
 
       <reference anchor="Custura">
