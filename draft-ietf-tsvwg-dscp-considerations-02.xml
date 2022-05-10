@@ -461,7 +461,7 @@ Traffic        Class
           <t></t>
 
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
-          be remarked to 'x' & 0x07and then would be treated according to the corresponding PHB.</t>
+          be remarked to 'x' &amp; 0x07and then would be treated according to the corresponding PHB.</t>
 
           <t>A variation of this behaviour clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
