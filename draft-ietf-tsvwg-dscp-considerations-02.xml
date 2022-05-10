@@ -159,8 +159,8 @@
       are associated with a DiffServ Code Point (DSCP) <xref
       target="RFC2474"></xref>. Each DSCP is mapped to a Per Hop Behaviour
       (PHB). A treatment aggregate is concerned only with the forwarding
-      treatment of the aggregated traffic, which could be marked with multiple
-      DSCPs <xref target="RFC5127"></xref>. Treatment differentiation can be
+      treatment of the aggregated traffic, which could include multiple
+      DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
       algorithms that implement access to the physical media.</t>
 
@@ -196,7 +196,7 @@ Traffic        Class
       <xref target="I-D.learmonth-rfc1226-bis"></xref>).</t>
     </section>
 
-    <section title="Requirements Language">
+    <section title="Terminology">
       <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
       document are to be interpreted as described in <xref
