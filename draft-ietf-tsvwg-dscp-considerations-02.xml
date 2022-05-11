@@ -442,7 +442,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 +=========+=======+==========+=====+==========+=====+==========+=====+
 ]]></artwork>
 
-            <postamble>As a result of ToS precedence bleaching, all DSCPs in each column are remarked to the smallest DSCP in that column. DSCPs in the bottom row have higher survivability across an end-to-end Internet path.
+            <postamble>As a result of ToS Precedence Bleaching, all DSCPs in each column are remarked to the smallest DSCP in that column. DSCPs in the bottom row have higher survivability across an end-to-end Internet path.
             </postamble>
           </figure>
 
@@ -457,7 +457,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 +=========+=======+============+====+======+======+============+====+
 | 0/CS0   | 1/LE  | 2          | 3  | 4    | 5    | 6          | 7  |
 +=========+=======+============+====+======+======+============+====+
-|Assigned         |ToS Prec bl.|EXP/|Used  |Future|ToS Prec bl.|Exp/|
+|Assigned         |ToS Prec Bl.|EXP/|Used  |Future|ToS Prec Bl.|Exp/|
 |                 |of AF11..41 |LU  |by SSH|NQB   |of AF13..EF |LU  |
 +=================+============+====+======+======+============+====+
 ]]></artwork>
@@ -494,12 +494,12 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
 ]]></artwork>
 
-            <postamble>Figure showing an example of ToS Remarking (/Remark/)
+            <postamble>Figure showing an example of ToS Precedence Remarking (/Remark-ToS/)
             pathology, based on Section 3 of <xref
             target="RFC1349">RFC1349</xref>.</postamble>
           </figure>
 
-          <t>A less common behaviour, ToS precedence remarking sets the upper
+          <t>A less common behaviour, ToS Precedence Remarking sets the upper
           three bits of the DSCP field to a non-zero value corresponding to a
           CS PHB. This behaviour is distinctive of non-DiffServ aware
           routers.</t>
@@ -834,7 +834,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         marking semantics in place of methods based on the former ToS field,
         the current recommendation is that any new assignment where the
         codepoint is greater than 0x07 should consider the semantics
-        associated with the resulting DSCP when ToS precedence bleaching is
+        associated with the resulting DSCP when ToS Precedence Bleaching is
         experienced. For example, it can be desirable to avoid choosing a DSCP
         that could be remarked to LE, <xref target="RFC8622">Lower
         Effort</xref>, which could otherwise potentially result in a priority
@@ -842,13 +842,13 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
 
       <section title="Where the proposed DSCP &lt; 0x07 (7)">
-        <t>ToS bleaching can unintentionally result in extra traffic
-        aggregated to the same DSCP. For example, after experiencing ToS
+        <t>ToS Precedence Bleaching can unintentionally result in extra traffic
+        aggregated to the same DSCP. For example, after experiencing ToS Precedence
         Bleaching, all traffic marked AF11, AF21, AF31 and AF41 would be
         aggregated with traffic marked with DSCP 2 (0x02), increasing the
         volume of traffic which receives the treatment associated with DSCP 2.
         New DiffServ codepoint assignments should consider unexpected
-        consequences arising from ToS bleaching.</t>
+        consequences arising from this pathology.</t>
 
         <section title="Where the proposed DSCP&amp;&amp;0x07=0x01">
           <t>As a consequence of assigning the LE PHB <xref
@@ -882,7 +882,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
                 <t>Networks containing devices that remark the DSCP as a result of lower layer interactions.</t>
 		</list></t>
        </list></t>
-      <t>For example, the ToS-Precedence-Bleach pathology cannot arise in the
+      <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) pathology cannot arise in the
 	case of networks not remarking DiffServ, but can arise as a result of traffic
 	conditioning at operator boundaries. It can also arise in the case of
 	misconfiguration or in netwroks using old equipment which precedes DiffServ.
