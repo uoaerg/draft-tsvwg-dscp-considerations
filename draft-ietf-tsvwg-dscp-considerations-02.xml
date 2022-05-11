@@ -572,7 +572,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         then in turn mapped to the four WiFi Multimedia (WMM) Access
         Categories. The WiFi Alliance has also specified a more flexible mapping 
 	that follows RFC8325 and provides functions at an AP to remark packets as 
-	well as a QoS Map that maps each DSCP to an AC.</t>
+		      well as a QoS Map that maps each DSCP to an AC <xref target="wifi-alliance-spec"></xref>.</t>
 
        <figure>
           <preamble></preamble>
@@ -1107,6 +1107,17 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <seriesInfo name="IR" value="34" />
       </reference>
 
+      <reference anchor="wifi-alliance-spec">
+        <front>
+          <title>Wi-Fi QoS Management™ Specification Version 2.0</title>
+          <author>
+            <organization>Wi-Fi Alliance</organization>
+          </author>
+          <date year="2021" />
+        </front>
+        <seriesInfo name="Wi-Fi QoS Management™ Specification Version" value="2.0" />
+      </reference>
+	    
       <reference anchor="ITU-T-Y-1566">
         <front>
           <title>Quality of Service Mapping and Interconnection Between
