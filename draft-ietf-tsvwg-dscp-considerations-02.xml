@@ -565,11 +565,14 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         target="IEEE-802-11">802.11 standards</xref> provide MAC functions to
         support QoS in WLANs using Access Classes (AC). The upstream User
         Priority (UP) in the 802.11 header has a 3-bit QoS value. A DSCP can
-        be mapped to the UP. Most existing WiFi implementations <xref
+		be mapped to the UP.</t>
+	      <t> Most existing WiFi implementations <xref
         target="RFC8325"></xref> use a default mapping that maps the first three
-        bits of the DSCO to the 802.11 UP value. This is
+        bits of the DSCP to the 802.11 UP value. This is
         then in turn mapped to the four WiFi Multimedia (WMM) Access
-        Categories.</t>
+        Categories. The WiFi Alliance has also specified a more flexible mapping 
+	that follows RFC8325 and provides functions at an AP to remark packets as 
+		      well as a QoS Map that maps each DSCP to an AC <xref target="wifi-alliance-spec"></xref>.</t>
 
        <figure>
           <preamble></preamble>
@@ -1104,6 +1107,17 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <seriesInfo name="IR" value="34" />
       </reference>
 
+      <reference anchor="wifi-alliance-spec">
+        <front>
+          <title>Wi-Fi QoS Management™ Specification Version 2.0</title>
+          <author>
+            <organization>Wi-Fi Alliance</organization>
+          </author>
+          <date year="2021" />
+        </front>
+        <seriesInfo name="Wi-Fi QoS Management™ Specification Version" value="2.0" />
+      </reference>
+	    
       <reference anchor="ITU-T-Y-1566">
         <front>
           <title>Quality of Service Mapping and Interconnection Between
