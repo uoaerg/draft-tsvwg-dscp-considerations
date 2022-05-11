@@ -1191,12 +1191,11 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           <t>Individual draft -02; Revisions to improve language
           consistency.</t>
 
-          <t>Working Group -00, replacing
-          draft-custura-tsvwg-dscp-considerations-02</t>
+          <t>Working Group -00; Replacing draft-custura-tsvwg-dscp-considerations-02.</t>
 
           <t>Working Group -01; Revisions to improve language consistency.</t>
 
-          <t>Working Group -02;
+          <t>Working Group -02:
           <list style="hanging">
           <t>Revisions to improve language consistency. </t>
           <t>Add clarification to RFC2474 and RFC2475 addressed in RFC3260 (Comments from Ruediger Geib).</t>
