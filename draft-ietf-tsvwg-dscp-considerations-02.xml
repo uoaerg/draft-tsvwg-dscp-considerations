@@ -142,7 +142,7 @@
     <abstract>
       <t>This document discusses considerations for assigning a new
       recommended DiffServ Code Point (DSCP). It considers the common
-      remarking behaviours that the Diffserv field might be subjected to along
+      remarking behaviours that the DiffServ field might be subjected to along
       an Internet path. It also notes some implications of using a specific
       DSCP.</t>
     </abstract>
@@ -153,7 +153,7 @@
       <t>The Differentiated Services (DiffServ) architecture has been deployed
       in many networks. It provides differentiated traffic forwarding based on
       the DiffServ Code Point (DSCP) <xref
-      target="RFC2474"></xref> carried in the Diffserv field <xref target="RFC2474"></xref> of the IP packet header.</t>
+      target="RFC2474"></xref> carried in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header.</t>
 
       <t>Internet traffic can be associated with a service class, and
       categorised into Behavior Aggregates [RFC4594]. In IP networks, these
@@ -212,7 +212,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <t>This section describes current usage of DSCPs.</t>
 
       <section title="IP-Layer Semantics">
-        <t>The DiffServ architecture specifies use of the Diffserv field in
+        <t>The DiffServ architecture specifies use of the DiffServ field in
         the IPv4 and IPv6 packet headers to carry one of 64 distinct DSCP
         values. Within a given administrative boundary, each DSCP value can be
         mapped to a distinct PHB<xref target="RFC2474"></xref>. When a new PHB
@@ -316,13 +316,13 @@ A DSCP can sometimes referred to by name, such as "CS1", and
     </section>
 
     <section title="Remarking the DSCP">
-      <t>It is a feature of the DiffServ architecture that the Diffserv field
+      <t>It is a feature of the DiffServ architecture that the DiffServ field
       of packets can be remarked at domain boundaries (see section 2.3.4.2 of
       <xref target="RFC2475">RFC2475</xref>). A DSCP can be remarked at the
       ingress of a DiffServ domain. This remarking
       can change the DSCP value used on the remainder of an IP path or the
       network  can restore the
-      initial DSCP marking at the egress of the domain. The Diffserv
+      initial DSCP marking at the egress of the domain. The DiffServ
       field can also be remarked based upon common semantics and agreements
       between providers at an exchange point. Furthermore, RFC 2475 states
       that remarking must occur when there is a possibility of theft/denial-of-service attack.</t>
@@ -511,7 +511,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
 
       <section anchor="remark" title="Remarking to a Particular DSCP">
-        <t>A network device might remark the Diffserv field of an IP packet
+        <t>A network device might remark the DiffServ field of an IP packet
         based on a local policy with a specific (set of) DSCPs, /Remark/. This
         is sometimes performed using a Multi-Field (MF) classifier <xref
         target="RFC2475"></xref> <xref target="RFC3290"></xref> <xref
@@ -531,7 +531,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
     <section title="Interpretation of the IP DSCP at Lower Layers">
       <t>Transmission systems and subnetworks can, and do, utilise the
-      Diffserv field in an IP packet to select a lower layer forwarding
+      DiffServ field in an IP packet to select a lower layer forwarding
       treatment. In many cases, this use is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
       infer mapping to a smaller L2 QoS field, for example, WiFi or
@@ -551,7 +551,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
         <t>The mapping specified in <xref target="IEEE-802-1Q"></xref> revises
         a previous standard <xref target="IEEE-802-1D"></xref>, in an effort
-        to align with Diffserv practice: the traffic types are specified to
+        to align with DiffServ practice: the traffic types are specified to
         match the first three bits of a suitable DSCP (for example, Voice,
         which has PCP value 5, matches the first three bits of EF). However,
         <xref target="IEEE-802-1D"></xref> maps both PCP1 (Background) and
@@ -622,7 +622,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <t>
         An alternative to UP-to-DSCP remapping uses 
         the DSCP value of a downstream IP packet (e.g., the Control And Provisioning of Wireless
-        Access Points (CAPWAP) protocol, RFC5415, maps an IP packet Diffserv field to the Diffserv field of outer IP headier in a CAPWAP
+        Access Points (CAPWAP) protocol, RFC5415, maps an IP packet DiffServ field to the DiffServ field of outer IP headier in a CAPWAP
         tunnel).</t>
 
         <t>Some current constraints of WiFi mapping are discussed in section 2
@@ -734,12 +734,12 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <section title="Mapping Specified for Mobile Networks">
 
         <t>Mobile LTE and 5G standards have evolved from older UMTS standards,
-        and are Diffserv aware. LTE (4G) and 5G standards <xref
+        and are DiffServ aware. LTE (4G) and 5G standards <xref
         target="SA-5G"></xref> identify traffic classes at the interface
         between User Equipment (UE) and the mobile Packet Core network by QCI
         (QoS Class Identifiers) and 5QI (5G QoS Identifier). The 3GPP
         standards do not define or recommend any specific mapping between
-        each QCI or 5QI and Diffserv (and mobile QCIs are based on several
+        each QCI or 5QI and DiffServ (and mobile QCIs are based on several
         criteria service class definitions). The way packets are mapped at the
         Packet Gateway (P-GW) boundary is determined by operators. However, TS
         23.107 (version 16.0.0, applies to LTE and below) mandates that
@@ -912,7 +912,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
             using an existing IETF DSCP? How would the proposed new DSCP be
             used to map traffic to a new or existing PHB?</t>
 
-            <t>Diffserv domains can use the codepoints in Pool 2 for local or
+            <t>DiffServ domains can use the codepoints in Pool 2 for local or
             experimental use, without any IETF specification for the DSCP or
             associated PHB: Could the request be met by using a DSCP chosen
             from Pool 2? Or is the DSCP intended to be used at network interconnections?</t>
