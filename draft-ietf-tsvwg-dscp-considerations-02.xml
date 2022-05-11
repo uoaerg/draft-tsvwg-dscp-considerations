@@ -152,16 +152,15 @@
     <section title="Introduction">
       <t>The Differentiated Services (DiffServ) architecture has been deployed
       in many networks. It provides differentiated traffic forwarding based on
-      the value of the Diffserv field <xref target="RFC2474"></xref> carried
-      in the IP packet header.</t>
+      the DiffServ Code Point (DSCP) <xref
+      target="RFC2474"></xref> carried in the Diffserv field <xref target="RFC2474"></xref> of the IP packet header.</t>
 
       <t>Internet traffic can be associated with a service class, and
       categorised into Behavior Aggregates [RFC4594]. In IP networks, these
-      are associated with a DiffServ Code Point (DSCP) <xref
-      target="RFC2474"></xref>. Each DSCP is mapped to a Per Hop Behaviour
+      are associated with a DSCP. Each DSCP is mapped to a Per Hop Behaviour
       (PHB). A treatment aggregate is concerned only with the forwarding
-      treatment of the aggregated traffic, which could be marked with multiple
-      DSCPs <xref target="RFC5127"></xref>. Treatment differentiation can be
+      treatment of the aggregated traffic, which could be mapped from a set of
+      DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
       algorithms that implement access to the physical media.</t>
 
@@ -197,7 +196,8 @@ Traffic        Class
       <xref target="I-D.learmonth-rfc1226-bis"></xref>).</t>
     </section>
 
-    <section title="Definitions and Requirements Language">
+    <section title="Terminology">
+
       <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
       document are to be interpreted as described in <xref
@@ -285,8 +285,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <section title="Network Control Traffic">
         <t>Network Control Traffic is defined as packet flows that are
         essential for stable operation of the administered network (see <xref
-        target="RFC4594"></xref>, Section 3). This traffic is marked using a
-        set of Class Selector (CS) DSCPs. This traffic is
+        target="RFC4594"></xref>, Section 3). This traffic is marked with a
+        value from  a set of Class Selector (CS) DSCPs. This traffic is
         often a special case within a provider network, and ingress traffic
         with these DSCP markings can be remarked.</t>
 
@@ -504,7 +504,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           CS PHB. This behaviour is distinctive of non-DiffServ aware
           routers.</t>
 
-          <t>If remarking occurs, packets are treated using the PHB specified
+          <t>If remarking occurs, packets are forwarded using the PHB specified
           for the resulting codepoint. For example, the AF31 DSCP (0x1a) could
           be remarked to either AF11 or AF21.</t>
         </section>
@@ -534,11 +534,12 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       Diffserv field in an IP packet to select a lower layer forwarding
       treatment. In many cases, this use is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
-      infer mappings to a smaller L2 QoS field, for example, WiFi or
+      infer mapping to a smaller L2 QoS field, for example, WiFi or
       Multi-Protocol Label Switching (MPLS).</t>
 
       <section title="Mapping Specified for IEEE 802">
-        <t> This section discusses QoS and DiffServ alignment within IEEE 802 Standards.</t>
+        <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. <t>
+
       <section title="Mapping Specified for IEEE 802.1">
         <t>A 3-bit Priority Code Point (PCP) is specified in the IEEE 802.1Q
         tag to mark Ethernet frames to one of eight priority values <xref
@@ -619,7 +620,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
          802.11 networks.</postamble>
         </figure>
         <t>
-        An alternative to UP-to-DSCP remapping is using 
+        An alternative to UP-to-DSCP remapping uses 
         the DSCP value of a downstream IP packet (e.g., the Control And Provisioning of Wireless
         Access Points (CAPWAP) protocol, RFC5415, maps an IP packet Diffserv field to the Diffserv field of outer IP headier in a CAPWAP
         tunnel).</t>
@@ -635,7 +636,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
       </section>
 
-      <section title="Mappings Specified for MPLS">
+      <section title="Mapping Specified for MPLS">
 
         <t>Multi-Protocol Label Switching (MPLS) specified eight MPLS Traffic
         Classes (TCs), which restricts the number of different treatments
@@ -648,7 +649,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         the Short Pipe and the Uniform Model <xref target="RFC3270"></xref>.
         These only differ when a LSP performs a push or a pop.</t>
 
-        <section title="Mappings Specified for MPLS">
+        <section title="Mapping Specified for MPLS">
           <t><xref target="RFC3270">RFC3270</xref> defines a flexible solution
           for support of DiffServ over MPLS networks. This allows an MPLS
           network administrator to select how BAs (marked by DSCPs) are mapped
@@ -656,21 +657,21 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           Engineering and protection objectives within their particular
           network.</t>
 
-          <t>Mappings from the IP DSCP to the MPLS header are defined in
+          <t>Mapping from the IP DSCP to the MPLS header are defined in
           Section 4.2 of <xref target="RFC3270"></xref>.</t>
 
-          <t>Using the Pipe Model, the "LSP Diff-Serv Information" is conveyed
+          <t>The Pipe Model conveys the "LSP Diff-Serv Information"
           to the LSP Egress so that its forwarding treatment can be based on
           the IP DSCP.</t>
 
           <t>When Penultimate Hop Popping (PHP) is used, the Penultimate LSR
-          needs to be aware of the set of PHB to encapsulation mappings for
+          needs to be aware of the encapsulation mapping for a PHB to
           the label corresponding to the exposed header to perform DiffServ
           Information Encoding (Section 2.5.2 of <xref
           target="RFC3270">RFC3270</xref>).</t>
         </section>
 
-        <section title="Mappings Specified for MPLS Short Pipe">
+        <section title="Mapping Specified for MPLS Short Pipe">
 
           <t>The Short Pipe Model is an optional variation of the Pipe Model
           <xref target="RFC3270"></xref>.</t>
@@ -737,7 +738,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         target="SA-5G"></xref> identify traffic classes at the interface
         between User Equipment (UE) and the mobile Packet Core network by QCI
         (QoS Class Identifiers) and 5QI (5G QoS Identifier). The 3GPP
-        standards do not define or recommend any specific mappings between
+        standards do not define or recommend any specific mapping between
         each QCI or 5QI and Diffserv (and mobile QCIs are based on several
         criteria service class definitions). The way packets are mapped at the
         Packet Gateway (P-GW) boundary is determined by operators. However, TS
@@ -788,9 +789,9 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <t></t>
       </section>
 
-      <section title="Mappings Specified for Carrier Ethernet">
-
-        <t>Metro Ethernet Forum (MEF) provides mappings of DSCP codepoints at
+      <section title="Mapping Specified for Carrier Ethernet">
+           
+        <t>Metro Ethernet Forum (MEF) provides a mapping of DSCP codepoints at
         the IP layer to quality of service markings in the Ethernet frame
         headers <xref target="MEF23.1">MEF 23.1</xref>.</t>
       </section>
@@ -807,7 +808,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
 
       <section title="Summary">
-        <t>&lt;&lt; This section might contain a summary table &gt;&gt;</t>
+        <t>&lt;&lt; This section needs a summary</t>
       </section>
     </section>
 
