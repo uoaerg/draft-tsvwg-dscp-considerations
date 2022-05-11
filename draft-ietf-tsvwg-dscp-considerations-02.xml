@@ -538,7 +538,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       Multi-Protocol Label Switching (MPLS).</t>
 
       <section title="Mapping Specified for IEEE 802">
-        <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. <t>
+        <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. </t>
 
       <section title="Mapping Specified for IEEE 802.1">
         <t>A 3-bit Priority Code Point (PCP) is specified in the IEEE 802.1Q
@@ -1187,11 +1187,24 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           <t>Individual draft -01; Comments from Martin Duke; Brian Carpenter;
           Ruediger Geib, and revisions to improve language consistency.</t>
 
+
           <t>Individual draft -02; Revisions to improve language
           consistency.</t>
 
           <t>Working Group -00, replacing
-          draft-ietf-tsvwg-dscp-considerations-02.</t>
+          draft-custura-tsvwg-dscp-considerations-02</t>
+
+          <t>Working Group -01; Revisions to improve language consistency.</t>
+
+          <t>Working Group -02;
+          <list style="hanging">
+          <t>Revisions to improve language consistency. </t>
+          <t>Add clarification to RFC2474 and RFC2475 addressed in RFC3260 (Comments from Ruediger Geib).</t>
+          <t>Include figures to show the full list of codepoints, their assigned PHBs &amp; impact of ToS Precedence Bleaching.</t>
+          <t>Add network categories that differentiate between network operator approaches to DiffServ.</t>
+          <t>Add Terminology section to clarify representations of DSCPs.</t>
+          </list>
+          </t>
         </list></t>
     </section>
 
