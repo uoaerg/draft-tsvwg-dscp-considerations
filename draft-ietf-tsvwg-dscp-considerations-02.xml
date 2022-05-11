@@ -808,7 +808,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
 
       <section title="Summary">
-        <t>&lt;&lt; This section needs a summary</t>
+        <t>&lt;&lt; This section has discussed the various ways in which DSCP remarking pathologies can arise from interactions with lower layers.</t>
       </section>
     </section>
 
