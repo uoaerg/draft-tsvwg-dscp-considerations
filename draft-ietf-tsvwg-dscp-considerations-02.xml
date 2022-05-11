@@ -149,7 +149,7 @@
   </front>
 
   <middle>
-    <section title="Introduction">
+    <section anchor="introduction" title="Introduction">
       <t>The Differentiated Services (DiffServ) architecture has been deployed
       in many networks. It provides differentiated traffic forwarding based on
       the DiffServ Code Point (DSCP) <xref
@@ -315,7 +315,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
     </section>
 
-    <section title="Remarking the DSCP">
+    <section anchor="pathologies" title="Remarking the DSCP">
       <t>It is a feature of the DiffServ architecture that the DiffServ field
       of packets can be remarked at domain boundaries (see section 2.3.4.2 of
       <xref target="RFC2475">RFC2475</xref>). A DSCP can be remarked at the
@@ -529,7 +529,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
     </section>
 
-    <section title="Interpretation of the IP DSCP at Lower Layers">
+    <section anchor="lowerlayers" title="Interpretation of the IP DSCP at Lower Layers">
       <t>Transmission systems and subnetworks can, and do, utilise the
       DiffServ field in an IP packet to select a lower layer forwarding
       treatment. In many cases, this use is constrained by designs that
@@ -636,7 +636,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
       </section>
 
-      <section title="Mapping Specified for MPLS">
+      <section anchor="mpls" title="Mapping Specified for MPLS">
+
 
         <t>Multi-Protocol Label Switching (MPLS) specified eight MPLS Traffic
         Classes (TCs), which restricts the number of different treatments
@@ -864,7 +865,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         </section>
       </section>
 
-      <section title="Impact on deployed infrastructure">
+      <section anchor= "networks" title="Impact on deployed infrastructure">
         <t>Behaviour of deployed PHBs and conditioning treatments also needs
         to be considered when assigning a new DSCP. Network operators have choices
         when it comes to configuring DiffServ support within their domains, and the pathologies 
@@ -917,18 +918,20 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         RECOMMENDED codepoint". If approved, new IETF assignments are normally
         made by IANA in Pool 1, but the IETF can request assignments to be
         made from Pool 3 <xref target="RFC8436"></xref>.	
+        </t>
 
             <t>Many What are the effects of treatment aggregation on the
-            proposed method? Section XXX describes some examples of treatment aggregation.</t>
+            proposed method? <xref target="mpls"></xref> describes some examples of treatment aggregation.</t>
 
             <t>What are the implications of using the proposed DSCP on
             the expected lower layers over which the traffic may be
-            forwarded? Section XXX describes some observed treatments by layers
+            forwarded? <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. </t>
 		   
             <t>If a new DSCP is needed for an end-to-end service, then what is the expected effect of currently-deployed
-		    remarking on the end-to-end service? Section XXX describes some observed remarking pathologies, 
-		    and section XXX identifies root causes for why these remarking pathologies are observed.</t>
+		    remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking pathologies, 
+		    and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
+ 
           </list></t>
       </section>
     </section>
@@ -1183,20 +1186,19 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       publication.</t>
 
       <t><list style="symbols">
-          <t>Individual draft -00</t>
+          <t>Individual draft -00, initial document.</t>
 
-          <t>Individual draft -01; Comments from Martin Duke; Brian Carpenter;
+          <t>Individual draft -01, address comments from Martin Duke; Brian Carpenter;
           Ruediger Geib, and revisions to improve language consistency.</t>
 
 
-          <t>Individual draft -02; Revisions to improve language
-          consistency.</t>
+          <t>Individual draft -02, revise to improve language consistency.</t>
 
-          <t>Working Group -00, replacing individual draft.</t>
-	  <t>Working Group -01, addressing general feedback in preparation for IETF 113 Vienna.</t>
+          <t>Working Group -00, replace individual draft.</t>
+	  <t>Working Group -01, address feedback in preparation for IETF 113 Vienna.</t>
           <t>Working Group -02:
           <list style="hanging">
-          <t>Consolidate terminology after Vienna IETF. </t>
+          <t>Consolidate terminology after IETF 113 Vienna. </t>
           <t>Add clarification to RFC2474 and RFC2475 addressed in RFC3260 (Comments from Ruediger Geib).</t>
           <t>Include figures to show the full list of codepoints, their assigned PHBs &amp; impact of ToS Precedence Bleaching.</t>
           <t>Add network categories that differentiate between network operator approaches to DiffServ.</t>
