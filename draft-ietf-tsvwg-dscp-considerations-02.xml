@@ -308,7 +308,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <t> At the time of writing, there is evidence to suggest CS6 is 
 	actively used by network operators for control traffic. A study of 
         traffic at a large Internet Exchange showed around 40% of ICMP traffic 
-	carried this mark <xref target="ietf113dscp"></xref>. Similarly, another 
+	carried this mark <xref target="IETF113DSCP"></xref>. Similarly, another 
 	study found many routers remark all traffic except those packets with a DSCP
 	that sets the higher order bits to 0b11 (see Section 4 of this document).</t>
 
@@ -320,7 +320,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       of packets can be remarked at domain boundaries (see section 2.3.4.2 of
       <xref target="RFC2475">RFC2475</xref>). A DSCP can be remarked at the
       ingress of a DiffServ domain. This remarking
-      can change the DSCP value used on the remainder of an IP path or the
+      can change the DSCP value used on the remainder of an IP path, or the
       network  can restore the
       initial DSCP marking at the egress of the domain. The DiffServ
       field can also be remarked based upon common semantics and agreements
@@ -331,7 +331,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       unexpected DSCP, <xref target="RFC2474">RFC2474</xref> recommends
       forwarding the packet using a default (best effort) treatment, but
       without changing the DSCP. This seeks to support incremental DiffServ
-      deployment in existing networks as well as preserving DSCP markings by
+      deployment in existing networks as well as preserve DSCP markings by
       routers that have not been configured to support DiffServ. (See also
       <xref target="remark"></xref>).
 
@@ -462,7 +462,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 +=================+============+====+======+======+============+====+
 ]]></artwork>
 
-            <postamble>Figure showing 0b000xxx DSCPs, hightlighting any current assignments and whether they are affected by any known pathologies. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="dscp4"></xref>.
+            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known pathologies. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
             </postamble>
           </figure>
 
@@ -570,9 +570,9 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         target="RFC8325"></xref> use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is
         then in turn mapped to the four WiFi Multimedia (WMM) Access
-        Categories. The WiFi Alliance has also specified a more flexible mapping 
+        Categories. The Wi-Fi Alliance has also specified a more flexible mapping 
 	that follows RFC8325 and provides functions at an AP to remark packets as 
-		      well as a QoS Map that maps each DSCP to an AC <xref target="wifi-alliance-spec"></xref>.</t>
+		      well as a QoS Map that maps each DSCP to an AC <xref target="WIFI-ALLIANCE"></xref>.</t>
 
        <figure>
           <preamble></preamble>
@@ -855,7 +855,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         New DiffServ Codepoint assignments should consider unexpected
         consequences arising from this pathology.</t>
 
-        <section title="Where the proposed DSCP&amp;&amp;0x07=0x01">
+        <section title="Where the proposed DSCP&amp;0x07=0x01">
           <t>As a consequence of assigning the LE PHB <xref
           target="RFC8622"></xref>, the IETF allocated the DSCP 0b000001 from
           Pool 3.</t>
@@ -1024,7 +1024,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
       <!--- last informational individual specs and other references -->
 
-      <reference anchor="dscp4">
+      <reference anchor="DSCP4">
        <front>
         <title> Bogus DSCP value for SSH </title>
           <author initials="A." surname="Kolu"></author>
@@ -1033,7 +1033,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
        <seriesInfo name="online" value="https://lists.freebsd.org/pipermail/freebsd-stable/2010-July/057710.html"/>
       </reference>
 
-      <reference anchor="ietf113dscp">
+      <reference anchor="IETF113DSCP">
        <front>
        <title> Considerations for assigning DSCPs</title>
           <author initials="A." surname="Custura"></author>
@@ -1140,7 +1140,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </reference>
 
 
-      <reference anchor="wifi-alliance-spec">
+      <reference anchor="WIFI-ALLIANCE">
         <front>
           <title>Wi-Fi QoS Management Specification Version 2.0
           </title>
