@@ -126,7 +126,7 @@
       </address>
     </author>
 
-    <date day="09" month="May" year="2022" />
+    <date day="12" month="May" year="2022" />
 
     <area>TSVArea</area>
 
@@ -387,7 +387,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         target="RFC0791"></xref>, updated by specification as a part of the
         ToS Field <xref target="RFC1349">RFC1349</xref>. Since 1998, this
         practice has been deprecated by <xref target="RFC2474">RFC2474</xref>.
-        RFC 2474 defines codepoints 0bxxx000 as the Class Selector
+        RFC 2474 defines DSCPs 0bxxx000 as the Class Selector
         codepoints, where PHBs selected by these codepoints MUST meet the
         Class Selector PHB Requirements" described in Sec. 4.2.2.2 of that
         RFC.</t>
@@ -473,7 +473,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
           <t>A variation of this pathology clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
-          CS6 and CS7 codepoints). As a result, a DSCP value greater than 48
+          CS6 and CS7 DSCPs). As a result, a DSCP value greater than 48
           decimal (0x30) is less likely to be impacted by ToS Precedence
           Bleaching.</t>
         </section>
@@ -505,7 +505,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           routers.</t>
 
           <t>If remarking occurs, packets are forwarded using the PHB specified
-          for the resulting codepoint. For example, the AF31 DSCP (0x1a) could
+          for the resulting DSCP. For example, the AF31 DSCP (0x1a) could
           be remarked to either AF11 or AF21.</t>
         </section>
       </section>
@@ -592,7 +592,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <t><xref target="RFC8325">RFC8325</xref> notes inconsistencies that
         can result from such remarking, and recommends how to perform this
         remarking. It proposes several recommendations for mapping a DSCP to an IEEE 802.11 UP for
-        wired-to-wireless interconnection. The recommendation includes mapping network control traffic CS6 and CS7, as well unassigned codepoints, to UP 0.</t>
+        wired-to-wireless interconnection. The recommendation includes mapping network control traffic CS6 and CS7, as well unassigned DSCPs, to UP 0.</t>
 
         <t>In the upstream direction (wireless-to-wired interconnections, this mapping can result in a specific DSCP remarking pathology.
         Some Access Points (APs) currently use a
@@ -639,7 +639,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
       </section>
 
-      <section anchor="mpls" title="Diffserv and MPLS">
+      <section anchor="mpls" title="DiffServ and MPLS">
 
 
         <t>Multi-Protocol Label Switching (MPLS) specified eight MPLS Traffic
@@ -795,7 +795,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
       <section title="Mapping Specified for Carrier Ethernet">
            
-        <t>Metro Ethernet Forum (MEF) provides a mapping of DSCP codepoints at
+        <t>Metro Ethernet Forum (MEF) provides a mapping of DSCPs at
         the IP layer to quality of service markings in the Ethernet frame
         headers <xref target="MEF23.1">MEF 23.1</xref>.</t>
       </section>
@@ -838,7 +838,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <t>Although the IETF specifications require systems to use DSCP
         marking semantics in place of methods based on the former ToS field,
         the current recommendation is that any new assignment where the
-        codepoint is greater than 0x07 should consider the semantics
+        DSCP is greater than 0x07 should consider the semantics
         associated with the resulting DSCP when ToS Precedence Bleaching is
         experienced. For example, it can be desirable to avoid choosing a DSCP
         that could be remarked to LE, <xref target="RFC8622">Lower
@@ -852,7 +852,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         Bleaching, all traffic marked AF11, AF21, AF31 and AF41 would be
         aggregated with traffic marked with DSCP 2 (0x02), increasing the
         volume of traffic which receives the treatment associated with DSCP 2.
-        New DiffServ codepoint assignments should consider unexpected
+        New DiffServ Codepoint assignments should consider unexpected
         consequences arising from this pathology.</t>
 
         <section title="Where the proposed DSCP&amp;&amp;0x07=0x01">
@@ -903,8 +903,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         These questions include:</t>
 
         <t><list style="symbols">		
-            <t>Is the request for local use within a Diffserv domain that does not require
-	    interconnection with other DiffServ domains? This can use the codepoints in Pool 2 for local or
+            <t>Is the request for local use within a DiffServ domain that does not require
+	    interconnection with other DiffServ domains? This can use DSCPs in Pool 2 for local or
             experimental use, without any IETF specification for the DSCP or
             associated PHB.</t>
 
@@ -943,7 +943,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
     <section anchor="Acknowledgments" title="Acknowledgments">
       <t>The authors acknowledge the helpful discussions and analysis by Greg
-      White and Thomas Fossati in a draft concerning NQB. Rudiger Geib, and
+      White and Thomas Fossati in a draft concerning NQB. Ruediger Geib, and
       Brian Carpenter contributed comments, along with other memebers of the
       TSVWG.</t>
     </section>
@@ -1107,16 +1107,6 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <seriesInfo name="IR" value="34" />
       </reference>
 
-      <reference anchor="wifi-alliance-spec">
-        <front>
-          <title>Wi-Fi QoS Management™ Specification Version 2.0</title>
-          <author>
-            <organization>Wi-Fi Alliance</organization>
-          </author>
-          <date year="2021" />
-        </front>
-        <seriesInfo name="Wi-Fi QoS Management™ Specification Version" value="2.0" />
-      </reference>
 	    
       <reference anchor="ITU-T-Y-1566">
         <front>
@@ -1148,6 +1138,23 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
         <seriesInfo name="IEEE" value="802.11" />
       </reference>
+
+
+      <reference anchor="wifi-alliance-spec">
+        <front>
+          <title>Wi-Fi QoS Management Specification Version 2.0
+          </title>
+
+          <author>
+            <organization>Wi-Fi Alliance</organization>
+          </author>
+
+          <date year="2021" />
+        </front>
+
+        <seriesInfo name="Wi-Fi QoS Management Specification Version" value="2.0" />
+      </reference>
+
 
       <reference anchor="IEEE-802-1Q">
         <front>
