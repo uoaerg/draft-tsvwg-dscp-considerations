@@ -6,7 +6,9 @@
 <!ENTITY RFC0791 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.0791.xml">
 <!ENTITY RFC2119 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC2474 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2474.xml">
+<!ENTITY RFC2597 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2597.xml">
 <!ENTITY RFC2760 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2760.xml">
+<!ENTITY RFC3246 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3246.xml">
 <!ENTITY RFC3260 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3260.xml">
 <!ENTITY RFC3270 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3270.xml">
 <!ENTITY RFC3552 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3552.xml">
@@ -16,6 +18,7 @@
 <!ENTITY RFC5127 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5127.xml">
 <!ENTITY RFC5129 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5129.xml">
 <!ENTITY RFC5160 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5160.xml">
+<!ENTITY RFC5865 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5865.xml">
 <!ENTITY RFC8100 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8100.xml">
 <!ENTITY RFC8126 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8126.xml">
 <!ENTITY RFC8174 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml">
@@ -202,7 +205,7 @@ Traffic        Class
       <t> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
       NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
       "MAY", and "OPTIONAL" in this document are to be interpreted as
-      described in <xref target="RFC2119">BCP 14 [RFC2119]<xref> <xref target="RFC8174">[RFC8174]</xref> when, and only when, they
+      described in <xref target="RFC2119">BCP 14 [RFC2119]</xref> <xref target="RFC8174">[RFC8174]</xref> when, and only when, they
       appear in all capitals, as shown here.</t>
 
       <t>DSCPs are specified in the IANA registry <xref target="DSCP-registry"></xref> where a variety of different formats are described.  
@@ -276,6 +279,32 @@ A DSCP can sometimes referred to by name, such as "CS1", and
             <postamble>Figure showing the current list of assigned DSCPs and their assigned PHBs.</postamble>
           </figure>
 
+
+          <figure>
+            <preamble></preamble>
+
+ <artwork>
+<![CDATA[
++-----+-----------------------+-----------+
+| CS  | Class Selector        | RFC 2474  |
++-----+-----------------------+-----------+
+| AF  | Assured Forwarding    | RFC 2597  |
++-----+-----------------------+-----------+
+| EF  | Expedited Forwarding  | RFC 3246  |
++-----+-----------------------+-----------+
+| VA  | Voice Admit           | RFC 5865  |
++-----+-----------------------+-----------+
+| LE  | Lower Effort          | RFC 8622  |
++-----+-----------------------+-----------+
+]]>
+</artwork>
+
+	    <postamble>Figure showing the summary of the DSCP abbreviations used in previous RFCs <xref target="RFC2474"></xref> <xref
+                       target="RFC2597"></xref> <xref target="RFC3246"></xref> <xref
+                       target="RFC5865"></xref> <xref target="RFC8622"></xref>, as described in the IANA registry <xref
+                       target="DSCP-registry"></xref>.</postamble>
+
+          </figure>
 
 </t>
         <t>The DiffServ architecture allows forwarding treatments to be
@@ -999,12 +1028,13 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           <title>Differentiated Services Field Codepoints (DSCP)
           Registry</title>
 
-          <author fullname="IANA">
-            <organization>https://www.iana.org/assignments/dscp-registry/dscp-registry.xhtml</organization>
+          <author>
+            <organization>IANA</organization>
           </author>
-
-          <date />
+          <date year="2019" />
         </front>
+
+          <seriesInfo name="" value="https://www.iana.org/assignments/dscp-registry/dscp-registry.xhtml"/>
       </reference>
     </references>
 
@@ -1015,11 +1045,17 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
       &RFC1349;
 
+      &RFC2597;
+
+      &RFC3246;
+
       &RFC3270;
 
       &RFC5127;
 
       &RFC5160;
+
+      &RFC5865;
 
       &RFC8325;
 
