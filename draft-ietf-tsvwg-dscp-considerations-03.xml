@@ -451,7 +451,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
             <postamble>Figure showing the ToS Precedence Bleaching
             (/Bleach-ToS-Precedence/) pathology, based on Section 3 of <xref
-            target="RFC1349">RFC1349</xref>.</postamble>
+            target="RFC1349">RFC1349</xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
 
           <t></t>
@@ -532,7 +532,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
             <postamble>Figure showing ToS Precedence Remarking (/Remark-ToS/)
             pathology, based on Section 3 of <xref
-            target="RFC1349">RFC1349</xref>.</postamble>
+            target="RFC1349">RFC1349</xref>. The bit positions marked "x" remain unchanged.</postamble>
+
           </figure>
 
           <t>A less common remarking, ToS Precedence Remarking sets the first
@@ -621,7 +622,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 ]]></artwork>
 
           <postamble>Figure showing the DSCP bits commonly mapped to the UP in
-          802.11.</postamble>
+          802.11. The bit positions marked "x" are mapped to the 3-bit UP value, while the ones marked "." are ignored.</postamble>
         </figure>
 
         <t></t>
@@ -643,7 +644,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         case where there is no other classification and marking policy
         enforcement point, then this derived DSCP value will be used on the
         remainder of the Internet path." This can result in
-        remarking /Reset-low/.</t>
+        remarking /Bleach-low/.</t>
 
         <figure>
           <preamble></preamble>
