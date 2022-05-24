@@ -48,7 +48,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-02"
+<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-03"
      ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -1274,6 +1274,14 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           <t>Add Terminology section to clarify representations of DSCPs.</t>
           </list>
           </t>
+	  <t>Working Group -03
+           <list style="hanging">
+          <t>Add table to explain DSCP abbreviations (comment from Brian Carpenter).</t>
+          <t>Add some refs, improve language consistency (comments from Brian Carpenter).</t>
+          <t>Clarify figure captions.</t>
+          </list>
+
+        	</t>
         </list></t>
     </section>
 
