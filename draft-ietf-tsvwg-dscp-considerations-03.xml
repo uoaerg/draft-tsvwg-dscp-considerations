@@ -130,7 +130,7 @@
       </address>
     </author>
 
-    <date day="12" month="May" year="2022" />
+    <date day="25" month="May" year="2022" />
 
     <area>TSVArea</area>
 
@@ -231,7 +231,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
         <t>The DSCP space is divided into three pools for the purpose of
         assignment and management <xref target="DSCP-registry"></xref>. This
-        use of the pools can be summnarised in a table (where 'x' refers to either a
+        use of the pools can be summarised in a table (where 'x' refers to either a
         bit position with value '0' or '1').<list style="hanging">
             <t hangText="DSCP Pool 1:">A pool of 32 codepoints with a format
             0bxxxxx0, to be assigned by IANA Standards Action <xref
@@ -288,6 +288,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 +-----+-----------------------+-----------+
 | CS  | Class Selector        | RFC 2474  |
 +-----+-----------------------+-----------+
+| BE  | Best Effort (CS0)     | RFC 2474  |
++-----+-----------------------+-----------+
 | AF  | Assured Forwarding    | RFC 2597  |
 +-----+-----------------------+-----------+
 | EF  | Expedited Forwarding  | RFC 3246  |
@@ -302,7 +304,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 	    <postamble>Figure showing the summary of the DSCP abbreviations used in previous RFCs <xref target="RFC2474"></xref> <xref
                        target="RFC2597"></xref> <xref target="RFC3246"></xref> <xref
                        target="RFC5865"></xref> <xref target="RFC8622"></xref>, as described in the IANA registry <xref
-                       target="DSCP-registry"></xref>.</postamble>
+                       target="DSCP-registry"></xref>. BE, also known as CS0, describes the default service.</postamble>
 
           </figure>
 
@@ -854,8 +856,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
     </section>
 
     <section title="Considerations for DSCP Selection">
-      <t>This section provides advic
-	      e for the assignment of a new DSCP value.
+      <t>This section provides advice for the assignment of a new DSCP value.
       It identifies known issues that might influence the finally assigned
       DSCP, followed by a summary of considerations for assignment of a new
       DSCP.</t>
@@ -920,7 +921,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
             <t hangText="Networks that remark in some other way"> , which includes: 
             </t>
                 <t><list style='numbers'>
-                <t>Networks containing misconfigured devices that do not comply with the relevent RFCs.</t>
+                <t>Networks containing misconfigured devices that do not comply with the relevant RFCs.</t>
                 <t>Networks containing devices that implement an obsolete specification or contain software bugs.</t>
                 <t>Networks containing devices that remark the DSCP as a result of lower layer interactions.</t>
 		</list></t>
@@ -928,7 +929,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) pathology cannot arise in the
 	case of networks not remarking DiffServ, but can arise as a result of traffic
 	conditioning at operator boundaries. It can also arise in the case of
-	misconfiguration or in netwroks using old equipment which precedes DiffServ.
+	misconfiguration or in networks using old equipment which precedes DiffServ.
       </t>
     
       </section>
@@ -951,7 +952,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
             <t>Service Classes that can utilise existing PHBs should use
             assigned DSCPs to mark their traffic: Could the request be met by
-            using an existing IETF DSCP? The proposed new treatement be
+            using an existing IETF DSCP? The proposed new treatment be
             used to map traffic to a new or existing PHB.</t>
 		
    	   <t>Does the service class request assigning new DSCP? 
