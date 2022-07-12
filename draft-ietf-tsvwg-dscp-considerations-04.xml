@@ -145,7 +145,7 @@
 
     <abstract>
       <t>This document discusses considerations for assigning a new
-      recommended DiffServ Code Point (DSCP). It considers the common
+      recommended DiffServ Code Point (DSCP) for a new standard Per Hop Behaviour (PHB). It considers the common
       observed remarking behaviours  that the DiffServ field might be subjected to along
       an Internet path. It also notes some implications of using a specific
       DSCP.</t>
@@ -161,8 +161,8 @@
 
       <t>Internet traffic can be associated with a service class, and
       categorised into Behavior Aggregates [RFC4594]. In IP networks, these
-      are associated with a DSCP. Each DSCP is mapped to a Per Hop Behaviour
-      (PHB). A treatment aggregate is concerned only with the forwarding
+      are associated with a DSCP. Each DSCP is mapped to a PHB.
+      A treatment aggregate is concerned only with the forwarding
       treatment of the aggregated traffic, which could be mapped from a set of
       DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
@@ -185,7 +185,7 @@ Traffic        Class
           traffic for differential network treatment.</postamble>
         </figure></t>
 
-      <t>This document discusses considerations for assigning a new DSCP. It
+      <t>This document discusses considerations for assigning a new DSCP for a new standard PHB. It
       considers some commonly observed DSCP remarking behaviours that might be
       experienced along an Internet path. It also describes some packet
       forwarding treatments that a packet with a specific DSCP can expect to
@@ -313,10 +313,10 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         associated with each DSCP, and the RFC series describes some of these
         as PHBs. Although DSCPs are intended to identify specific treatment
         requirements, multiple DSCPs might also be mapped (aggregated) to the
-        same forwarding treatment. Several IP standards map treatment
-        aggregates to DSCPs, that might result in remarking: <xref
+        same forwarding treatment. DSCPs can be mapped to treatment
+        aggregates that might result in remarking (e.g., <xref
         target="RFC5160">RFC5160</xref> suggests Meta-QoS-Classes to help
-        enable deployment of standardized end-to-end QoS classes.</t>
+        enable deployment of standardized end-to-end QoS classes)</t>
 
       </section>
 
@@ -342,6 +342,10 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <t>DSCP CS7 is reserved for future use by network control traffic.
         "CS7 marked packets SHOULD NOT be sent across peering points" <xref
         target="RFC4594"></xref>.</t>
+
+	<t><xref target="RFC2474">RFC2474</xref> recommends PHBs selected by CS6 and
+        CS7  "MUST give packets preferential forwarding treatment by comparison to
+        the PHB seected by codepoint '000000'".</t> 
 
         <t> At the time of writing, there is evidence to suggest CS6 is 
 	actively used by network operators for control traffic. A study of 
@@ -561,10 +565,11 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         (0x00).</t>
 
         <t>In another example, some networks do not follow the recommendation
-        in <xref target="RFC2475">RFC2475</xref>, and instead remark packets
-        with an unknown or unexpected DSCP to the default class, CS0 (0x00) to
-        ensure that appropriate DSCPs are used within a DiffServ domain.
-        (e.g., see <xref target="RFC8100"></xref>).</t>
+        in <xref target="RFC2474">RFC2474</xref>, and instead remark packets
+        with an unknown or unexpected DSCP to the default class, CS0 (0x00), to
+        ensure that appropriate DSCPs are used within a DiffServ domain, as recommended
+        in <xref target="RFC2475">RFC2475</xref> and <xref target="RFC8100">RFC8100</xref>.
+        </t>
       </section>
     </section>
 
@@ -869,7 +874,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         intended to result in lower than best effort treatment, as was the
         case when defining the LE PHB <xref target="RFC8622"></xref>. In this
         case, bleaching, or remarking to "CS0" would result in elevating the
-        lower effort traffic to the default class. This is an example of
+        lower effort traffic (LE) to the default class (BE/CS0). This is an example of
         priority inversion.</t>
       </section>
 
