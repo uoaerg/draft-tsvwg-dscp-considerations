@@ -912,7 +912,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <section anchor= "networks" title="Impact on deployed infrastructure">
         <t>Behaviour of deployed PHBs and conditioning treatments also needs
         to be considered when assigning a new DSCP. Network operators have choices
-        when it comes to configuring DiffServ support within their domains, and the observed behaviours 
+        when it comes to configuring DiffServ support within their domains, and the observed remarking behaviours 
 	described in the previous section can result from different configurations 
 	and approaches:</t>
         <t><list style="hanging">
@@ -927,7 +927,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
                 <t>Networks containing devices that remark the DSCP as a result of lower layer interactions.</t>
 		</list></t>
        </list></t>
-      <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behaviour cannot arise in the
+      <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) remarking behaviour cannot be observed in the
 	case of networks not remarking DiffServ, but can arise as a result of traffic
 	conditioning at operator boundaries. It can also arise in the case of
 	misconfiguration or in networks using old equipment which precedes DiffServ.
@@ -972,7 +972,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
             forwarded? <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. </t>
 		   
-            <t> DSCPs are assigned to PHBs and can be used to enable all nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP is needed, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
+            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP assignment is requested, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
  
           </list></t>
       </section>
