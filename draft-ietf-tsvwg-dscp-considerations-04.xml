@@ -146,7 +146,7 @@
     <abstract>
       <t>This document discusses considerations for assigning a new
       recommended DiffServ Code Point (DSCP). It considers the common
-      remarking pathologies that the DiffServ field might be subjected to along
+      observed remarking behaviours  that the DiffServ field might be subjected to along
       an Internet path. It also notes some implications of using a specific
       DSCP.</t>
     </abstract>
@@ -186,7 +186,7 @@ Traffic        Class
         </figure></t>
 
       <t>This document discusses considerations for assigning a new DSCP. It
-      considers some commonly observed DSCP remarking pathologies that might be
+      considers some commonly observed DSCP remarking behaviours that might be
       experienced along an Internet path. It also describes some packet
       forwarding treatments that a packet with a specific DSCP can expect to
       receive when forwarded across a link or subnetwork.</t>
@@ -380,7 +380,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
       <t>Reports measuring existing deployments have categorised DSCP
       remarking <xref target="Custura"></xref> <xref target="Barik"></xref>
-      into the following seven remarking pathologies:</t>
+      into the following seven observed remarking behaviours:</t>
 
       <t><list style="hanging">
           <t hangText="Bleach:">bleaches all traffic (sets the DSCP to
@@ -452,7 +452,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 ]]></artwork>
 
             <postamble>Figure showing the ToS Precedence Bleaching
-            (/Bleach-ToS-Precedence/) pathology, based on Section 3 of <xref
+            (/Bleach-ToS-Precedence/) observed remarking behaviour, based on Section 3 of <xref
             target="RFC1349">RFC1349</xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
 
@@ -500,7 +500,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 +=================+============+====+======+======+============+====+
 ]]></artwork>
 
-            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known pathologies. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
+            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
             </postamble>
           </figure>
 
@@ -509,7 +509,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
           be remarked to 'x' &amp; 0x07and then would be treated according to the corresponding PHB.</t>
 
-          <t>A variation of this pathology clears the top three bits of a
+          <t>A variation of this observed remarking behaviour clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
           CS6 and CS7 DSCPs). As a result, a DSCP value greater than 48
           decimal (0x30) is less likely to be impacted by ToS Precedence
@@ -533,7 +533,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 ]]></artwork>
 
             <postamble>Figure showing ToS Precedence Remarking (/Remark-ToS/)
-            pathology, based on Section 3 of <xref
+            observed behaviour, based on Section 3 of <xref
             target="RFC1349">RFC1349</xref>. The bit positions marked "x" remain unchanged.</postamble>
 
           </figure>
@@ -557,7 +557,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         target="RFC4594"></xref>. For example, a common remarking is to remark
         all traffic to a single DSCP, thus removing any traffic
         differentiation (see <xref target="Bleaching"></xref>). Bleaching
-        (/Bleach/) is a specific example of this pathology that remarks to CS0
+        (/Bleach/) is a specific example of this observed remarking behaviour that remarks to CS0
         (0x00).</t>
 
         <t>In another example, some networks do not follow the recommendation
@@ -595,7 +595,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 	(e.g., the first three bits of the EF DSCP is mapped to a PCP of 5). However,
         <xref target="IEEE-802-1D"></xref> maps both PCP1 (Background) and
         PCP2 (Spare) to indicate lower priority than PCP0, RFC8622.
-        Therefore, different remarking pathologies are expected depending on the age of
+        Therefore, different remarking behaviours are expected depending on the age of
         deployed devices.</t>
     </section>
       <section title="Mapping Specified for IEEE 802.11">
@@ -633,7 +633,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         remarking. It proposes several recommendations for mapping a DSCP to an IEEE 802.11 UP for
         wired-to-wireless interconnection. The recommendation includes mapping network control traffic CS6 and CS7, as well unassigned DSCPs, to UP 0.</t>
 
-        <t>In the upstream direction (wireless-to-wired interconnections, this mapping can result in a specific DSCP remarking pathology.
+        <t>In the upstream direction (wireless-to-wired interconnections, this mapping can result in a specific DSCP remarking behaviour.
         Some Access Points (APs) currently use a
         default UP-to-DSCP mapping <xref target="RFC8325">RFC8325</xref>,
         wherein "DSCP values are derived from the layer 2 UP values by
@@ -658,7 +658,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
 ]]></artwork>
 
-          <postamble>Figure showing the pathology resulting from deriving from UP-to-DSCP mapping in some
+          <postamble>Figure showing the observed remarking behaviour resulting from deriving from UP-to-DSCP mapping in some
          802.11 networks.</postamble>
         </figure>
         <t>
@@ -734,7 +734,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           that the DSCP at the network ingress is restored at the network
           egress. This is only feasible in general for a small number of
           DSCPs. In this design, packets marked with other DSCPs can be
-          remarked (a /Remark/ pathology) or dealt with
+          remarked (a /Remark/ observed behaviour) or dealt with
           via an additional agreement(s) among the operators of the
           interconnected networks. Use of the MPLS Short Pipe Model favours
           remarking unexpected DSCP values to zero in the absence of an
@@ -851,7 +851,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
 
       <section title="Summary">
-        <t>This section has discussed the various ways in which DSCP remarking pathologies can arise from interactions with lower layers.</t>
+        <t>This section has discussed the various ways in which DSCP remarking behaviours can arise from interactions with lower layers.</t>
       </section>
     </section>
 
@@ -891,7 +891,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         aggregated with traffic marked with DSCP 2 (0x02), increasing the
         volume of traffic which receives the treatment associated with DSCP 2.
         New DiffServ Codepoint assignments should consider unexpected
-        consequences arising from this pathology.</t>
+        consequences arising from this observed remarking behaviour.</t>
 
         <section title="Where the proposed DSCP&amp;0x07=0x01">
           <t>As a consequence of assigning the LE PHB <xref
@@ -911,7 +911,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <section anchor= "networks" title="Impact on deployed infrastructure">
         <t>Behaviour of deployed PHBs and conditioning treatments also needs
         to be considered when assigning a new DSCP. Network operators have choices
-        when it comes to configuring DiffServ support within their domains, and the pathologies 
+        when it comes to configuring DiffServ support within their domains, and the observed behaviours 
 	described in the previous section can result from different configurations 
 	and approaches:</t>
         <t><list style="hanging">
@@ -926,7 +926,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
                 <t>Networks containing devices that remark the DSCP as a result of lower layer interactions.</t>
 		</list></t>
        </list></t>
-      <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) pathology cannot arise in the
+      <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behaviour cannot arise in the
 	case of networks not remarking DiffServ, but can arise as a result of traffic
 	conditioning at operator boundaries. It can also arise in the case of
 	misconfiguration or in networks using old equipment which precedes DiffServ.
@@ -971,7 +971,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
             forwarded? <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. </t>
 		   
-            <t> DSCPs are assigned to PHBs and can be used to enable all nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP is needed, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking pathologies, and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
+            <t> DSCPs are assigned to PHBs and can be used to enable all nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP is needed, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
  
           </list></t>
       </section>
