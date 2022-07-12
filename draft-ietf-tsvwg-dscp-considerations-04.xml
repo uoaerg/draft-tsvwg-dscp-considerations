@@ -874,7 +874,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         intended to result in lower than best effort treatment, as was the
         case when defining the LE PHB <xref target="RFC8622"></xref>. In this
         case, bleaching, or remarking to "CS0" would result in elevating the
-        lower effort traffic to the default class. This is an example of
+        lower effort traffic (LE) to the default class (BE/CS0). This is an example of
         priority inversion.</t>
       </section>
 
