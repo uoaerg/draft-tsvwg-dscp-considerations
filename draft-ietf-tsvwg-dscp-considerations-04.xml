@@ -554,8 +554,24 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
 
       <section anchor="remark" title="Remarking to a Particular DSCP">
+
         <t>A network device might remark the DiffServ field of an IP packet
-        based on a local policy with a specific (set of) DSCPs, /Remark/. This
+        based on a local policy with a specific (set of) DSCPs, /Remark/. 
+        </t>
+
+        <t>
+	Both <xref target="RFC2474">RFC2474</xref> and <xref
+        target="RFC8100">RFC8100</xref> recommend that DiffServ boundary nodes use
+        remarking, if necessary, to avoid theft/denial of service or ensure that
+        appropriate DSCPs are used within a DiffServ domain.  Some networks therefore
+        may not follow the earlier recommendation in <xref
+        target="RFC2474">RFC2474</xref> to carry unknown or unexpected DSCPs without
+        modification, and instead remark packets with these codepoints to the default
+        class, CS0 (0x00). 
+         </t>
+
+        <t>
+        Remarking
         is sometimes performed using a Multi-Field (MF) classifier <xref
         target="RFC2475"></xref> <xref target="RFC3290"></xref> <xref
         target="RFC4594"></xref>. For example, a common remarking is to remark
@@ -564,12 +580,6 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         (/Bleach/) is a specific example of this observed remarking behaviour that remarks to CS0
         (0x00).</t>
 
-        <t>In another example, some networks do not follow the recommendation
-        in <xref target="RFC2474">RFC2474</xref>, and instead remark packets
-        with an unknown or unexpected DSCP to the default class, CS0 (0x00), to
-        ensure that appropriate DSCPs are used within a DiffServ domain, as recommended
-        in <xref target="RFC2475">RFC2475</xref> and <xref target="RFC8100">RFC8100</xref>.
-        </t>
       </section>
     </section>
 
