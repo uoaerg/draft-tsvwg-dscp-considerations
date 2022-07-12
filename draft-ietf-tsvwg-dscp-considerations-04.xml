@@ -956,7 +956,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
             using an existing IETF DSCP? The proposed new treatment be
             used to map traffic to a new or existing PHB.</t>
 		
-   	   <t>Does the service class request assigning new DSCP? 
+   	   <t>Is this a request to assign a new DSCP? 
 		   Specification of a new recommended DSCP requires Standards Action.
         RFC2474 states: "Each standardized PHB MUST have an associated
         RECOMMENDED codepoint". If approved, new IETF assignments are normally
