@@ -733,19 +733,23 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           that use Short-Pipe tunnels, but can be applicable to other
           networks, both MPLS and non-MPLS.</t>
 
-          <t>RFC8100 recommends preserving the notion of end-to-end service
-          classes, and recommends that the original DSCP marking is not
-          changed when treatment aggregates are used. The key requirement is
-          that the DSCP at the network ingress is restored at the network
-          egress. This is only feasible in general for a small number of
-          DSCPs. In this design, packets marked with other DSCPs can be
-          remarked (a /Remark/ observed behaviour) or dealt with
-          via an additional agreement(s) among the operators of the
-          interconnected networks. Use of the MPLS Short Pipe Model favours
-          remarking unexpected DSCP values to zero in the absence of an
-          additional agreement(s), as explained in <xref
-          target="RFC8100">RFC8100</xref>. This can result in bleaching
-          (/Bleach/).</t>
+	  <t>RFC8100 recommends preserving the notion of end-to-end service
+          classes, and recommends a set of standard DSCPs mapped to a small set of
+         standard PHBs at interconnection.  The key requirement is that the DSCP at the
+         network ingress is restored at the network egress.  The current version of
+         RFC8100 limits the number DSCPs to 6 and 3 more are suggested for extension.
+         RFC8100 respects the deployment of PHB groups for DS domain internal use, which
+         limits the number of acceptable external DSCPs (and possibilities for their
+         transparent transport or restoration at network boundaries).  In this design,
+         packets marked with DSCPs not part of the RFC8100 codepoint scheme are treated
+         as unexpected and will possibly be remarked (a /Remark/ behaviour) or dealt
+         with via an additional agreement(s) among the operators of the interconnected
+         networks.  RFC8100 can be extended to support up to 32 DSCPs by future
+         standards. RFC8100 is operated by at least one Tier 1 backbone provider.  Use
+         of the MPLS Short Pipe Model favours remarking unexpected DSCP values to zero
+         in the absence of an additional agreement(s), as explained in <xref
+         target="RFC8100">RFC8100</xref>. This can result in bleaching (/Bleach/).
+         </t>
 
           <figure>
             <preamble></preamble>
