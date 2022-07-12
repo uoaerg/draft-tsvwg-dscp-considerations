@@ -857,8 +857,9 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
     <section title="Considerations for DSCP Selection">
       <t>This section provides advice for the assignment of a new DSCP value.
-      It identifies known issues that might influence the finally assigned
-      DSCP, followed by a summary of considerations for assignment of a new
+        It is intended to aid the IETF and IESG in considering a request for a new DSCP.
+      The section identifies known issues that might influence the finally assigned
+      DSCP, and provides a summary of considerations for assignment of a new
       DSCP.</t>
 
       <section title="Effect of Bleaching">
