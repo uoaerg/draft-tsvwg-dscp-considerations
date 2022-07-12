@@ -313,10 +313,10 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         associated with each DSCP, and the RFC series describes some of these
         as PHBs. Although DSCPs are intended to identify specific treatment
         requirements, multiple DSCPs might also be mapped (aggregated) to the
-        same forwarding treatment. Several IP standards map treatment
-        aggregates to DSCPs, that might result in remarking: <xref
+        same forwarding treatment. DSCPs can be mapped to treatment
+        aggregates that might result in remarking (e.g., <xref
         target="RFC5160">RFC5160</xref> suggests Meta-QoS-Classes to help
-        enable deployment of standardized end-to-end QoS classes.</t>
+        enable deployment of standardized end-to-end QoS classes)</t>
 
       </section>
 
