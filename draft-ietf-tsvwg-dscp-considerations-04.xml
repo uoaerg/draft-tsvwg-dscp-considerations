@@ -963,8 +963,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         made from Pool 3 <xref target="RFC8436"></xref>.	
         </t>
 
-            <t>Many What are the effects of treatment aggregation on the
-            proposed method? <xref target="mpls"></xref> describes examples of treatment aggregation.</t>
+            <t>What are the effects of treatment aggregation on the
+            proposed DSCP? <xref target="mpls"></xref> describes examples of treatment aggregation.</t>
 
             <t>What are the implications of using the proposed DSCP on
             the expected lower layers over which the traffic may be
