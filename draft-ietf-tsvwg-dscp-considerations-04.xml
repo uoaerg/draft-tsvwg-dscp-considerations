@@ -971,9 +971,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
             forwarded? <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. </t>
 		   
-            <t>If a new DSCP is needed for an end-to-end service, then what is the expected effect of currently-deployed
-		    remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking pathologies, 
-		    and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
+            <t> DSCPs are assigned to PHBs and can be used to enable all nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP is needed, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking pathologies, and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
  
           </list></t>
       </section>
