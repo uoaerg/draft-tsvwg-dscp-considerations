@@ -565,10 +565,11 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         (0x00).</t>
 
         <t>In another example, some networks do not follow the recommendation
-        in <xref target="RFC2475">RFC2475</xref>, and instead remark packets
-        with an unknown or unexpected DSCP to the default class, CS0 (0x00) to
-        ensure that appropriate DSCPs are used within a DiffServ domain.
-        (e.g., see <xref target="RFC8100"></xref>).</t>
+        in <xref target="RFC2474">RFC2474</xref>, and instead remark packets
+        with an unknown or unexpected DSCP to the default class, CS0 (0x00), to
+        ensure that appropriate DSCPs are used within a DiffServ domain, as recommended
+        in <xref target="RFC2475">RFC2475</xref> and <xref target="RFC8100">RFC8100</xref>.
+        </t>
       </section>
     </section>
 
