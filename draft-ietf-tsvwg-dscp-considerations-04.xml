@@ -796,14 +796,9 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
         <t>The GSM Association (GSMA) has defined four aggregated classes and
         seven associated PHBs in their guidelines for IPX Provider networks
-        <xref target="GSMA-IR-34">GSMA IR.34</xref>. This was previously
-        specified as the Inter-Service Provider IP Backbone Guidelines, and
-        provides a mobile ISP to ISP QoS mapping mechanism, and
-        interconnection with other IP networks in the general Internet. This
-        describes the case where the DSCP marking from a Service Provider
-        cannot be trusted (depending on the agreement between the Service
-        Provider and its IPX Provider), allowing the IPX Provider to remark
-        the DSCP value to a static default value.</t>
+        <xref target="GSMA-IR-34">GSMA IR.34</xref>. 
+This was previously specified as the Inter-Service Provider IP Backbone Guidelines, and provides a mobile ISP to ISP QoS mapping mechanism, and interconnection with other IP networks in the general Internet. If realized by an IP VPN, the operator is free to apply its DS Domain internal codepoint scheme at outer headers and inner IPX DSCPs may be transported transparently. The guidelines also describe a case where the DSCP marking from a Service Provider cannot be trusted (depending on the agreement between the Service Provider and its IPX Provider), in which situation the IPX Provider can remark the DSCP value to a static default value.
+        </t>
 
         <t><figure>
             <preamble></preamble>
