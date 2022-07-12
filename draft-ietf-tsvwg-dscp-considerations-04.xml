@@ -343,6 +343,10 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         "CS7 marked packets SHOULD NOT be sent across peering points" <xref
         target="RFC4594"></xref>.</t>
 
+	<t><xref target="RFC2474">RFC2474</xref> recommends PHBs selected by CS6 and
+        CS7  "MUST give packets preferential forwarding treatment by comparison to
+        the PHB seected by codepoint '000000'".</t> 
+
         <t> At the time of writing, there is evidence to suggest CS6 is 
 	actively used by network operators for control traffic. A study of 
         traffic at a large Internet Exchange showed around 40% of ICMP traffic 
