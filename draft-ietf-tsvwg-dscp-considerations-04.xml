@@ -366,7 +366,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       network  can restore the
       initial DSCP marking at the egress of the domain. The DiffServ
       field can also be remarked based upon common semantics and agreements
-      between providers at an exchange point. Furthermore, RFC 2475 states
+      between providers at an exchange point. Furthermore, <xref target="RFC2474">RFC 2474</xref> states
       that remarking must occur when there is a possibility of theft/denial-of-service attack.</t>
 
       <t>If packets are received that are marked with an unknown or an
