@@ -747,7 +747,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           classes, and recommends a set of standard DSCPs mapped to a small set of
          standard PHBs at interconnection.  The key requirement is that the DSCP at the
          network ingress is restored at the network egress.  The current version of
-         RFC8100 limits the number DSCPs to 6 and 3 more are suggested for extension.
+         RFC8100 limits the number of DSCPs to 6 and 3 more are suggested for extension.
          RFC8100 respects the deployment of PHB groups for DS domain internal use, which
          limits the number of acceptable external DSCPs (and possibilities for their
          transparent transport or restoration at network boundaries).  In this design,
@@ -811,7 +811,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
         <t>The GSM Association (GSMA) has defined four aggregated classes and
         seven associated PHBs in their guidelines for IPX Provider networks
         <xref target="GSMA-IR-34">GSMA IR.34</xref>. 
-This was previously specified as the Inter-Service Provider IP Backbone Guidelines, and provides a mobile ISP to ISP QoS mapping mechanism, and interconnection with other IP networks in the general Internet. If realized by an IP VPN, the operator is free to apply its DS Domain internal codepoint scheme at outer headers and inner IPX DSCPs may be transported transparently. The guidelines also describe a case where the DSCP marking from a Service Provider cannot be trusted (depending on the agreement between the Service Provider and its IPX Provider), in which situation the IPX Provider can remark the DSCP value to a static default value.
+This was previously specified as the Inter-Service Provider IP Backbone Guidelines, and provides a mobile ISP to ISP QoS mapping mechanism, and interconnection with other IP networks in the general Internet. If realised by an IP VPN, the operator is free to apply its DS Domain internal codepoint scheme at outer headers and inner IPX DSCPs may be transported transparently. The guidelines also describe a case where the DSCP marking from a Service Provider cannot be trusted (depending on the agreement between the Service Provider and its IPX Provider), in which situation the IPX Provider can remark the DSCP value to a static default value.
         </t>
 
         <t><figure>
