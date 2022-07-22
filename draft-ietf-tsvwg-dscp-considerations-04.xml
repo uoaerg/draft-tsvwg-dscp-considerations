@@ -594,8 +594,10 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
     <section anchor="lowerlayers" title="Interpretation of the IP DSCP at Lower Layers">
       <t>Transmission systems and subnetworks can, and do, utilise the
-      DiffServ field in an IP packet to select a lower layer forwarding
-      treatment. In many cases, this use is constrained by designs that
+      DiffServ field in an IP packet to set a QoS-related field or function at
+     the lower layer.  A lower layer could also implement a traffic conditioning
+     function that could remark the DSCP used at the IP layer.  In many cases, this
+      use is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
       infer mapping to a smaller L2 QoS field, for example, WiFi or
       Multi-Protocol Label Switching (MPLS).</t>
@@ -985,10 +987,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
             <t>What are the effects of treatment aggregation on the
             proposed DSCP? <xref target="mpls"></xref> describes examples of treatment aggregation.</t>
 
-            <t>What are the implications of using the proposed DSCP on
-            the expected lower layers over which the traffic may be
-            forwarded? <xref target="lowerlayers"></xref> describes some observed treatments by layers
-            below IP. </t>
+            <t> Section <xref target="lowerlayers"></xref> describes some observed treatments by layers
+            below IP. What are the implications of the treatments and mapping described in <xref target="lowerlayers"></xref> on the proposed DSCP? </t>
 		   
             <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP assignment is requested, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
  
