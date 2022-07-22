@@ -165,7 +165,7 @@
 
       In IP networks, these are associated with a DSCP. Each DSCP is mapped to a PHB.
       A Treatment Aggregate (TA) is concerned only with the forwarding
-      treatment of the aggregated traffic, which could be mapped from a set of
+      treatment of the the traffic forming a behaviour aggregate, which could be mapped from a set of
       DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
       algorithms that implement access to the physical media.
