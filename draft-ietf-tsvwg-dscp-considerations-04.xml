@@ -452,7 +452,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           that resets the first three bits of the DSCP field to zero (the former
           ToS Precedence field), leaving the last three bits unchanged (see section
           4.2.1 of <xref target="RFC2474">RFC2474</xref>). This remarking 
-          can occur when packets are processed by a router that is not configured wih DiffServ (e.g., <xref target="RFC791"></xref>), or is only configured to operate on the former ToS precedence field. At the time of writing, this is a common manipulation of the DiffServ field. The following Figure provides details.</t>
+          can occur when packets are processed by a router that is not configured wih DiffServ (e.g., configured to operate on the former ToS precedence field <xref target="RFC791"></xref>). At the time of writing, this is a common manipulation of the DiffServ field. The following Figure depicts this remarking.</t>
 
           <figure>
             <preamble></preamble>
@@ -464,6 +464,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 ]]></artwork>
 
             <postamble>Figure showing the ToS Precedence Bleaching
+	    <t>Note that this remarking could also be explicitly configured for a specific diffserv domain.</t>
             (/Bleach-ToS-Precedence/) observed remarking behaviour, based on Section 3 of <xref
             target="RFC1349">RFC1349</xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
