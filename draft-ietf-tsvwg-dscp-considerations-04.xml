@@ -553,7 +553,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
           <t>A less common remarking, ToS Precedence Remarking sets the first
           three bits of the DSCP to a non-zero value corresponding to a
-          CS PHB. This remarking is distinctive of routers performing non-DiffServ aware remarking.
+          CS PHB. This remarking occurs when routers are not configured to perform disserv remarking.
           </t>
 
           <t>If remarking occurs, packets are forwarded using the PHB specified
@@ -805,7 +805,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <section title="Mapping Specified for Mobile Networks">
 
         <t>Mobile LTE and 5G standards have evolved from older UMTS standards,
-        and are DiffServ aware. LTE (4G) and 5G standards <xref
+        and are not configured to support DiffServ. LTE (4G) and 5G standards <xref
         target="SA-5G"></xref> identify traffic classes at the interface
         between User Equipment (UE) and the mobile Packet Core network by QCI
         (QoS Class Identifiers) and 5QI (5G QoS Identifier). The 3GPP
