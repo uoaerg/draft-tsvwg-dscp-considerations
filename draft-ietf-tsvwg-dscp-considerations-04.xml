@@ -366,7 +366,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       </section>
     </section>
 
-    <section anchor="pathologies" title="Remarking the DSCP">
+    <section anchor="observed-remarking" title="Remarking the DSCP">
       <t>It is a feature of the DiffServ architecture that the DiffServ field
       of packets can be remarked at domain boundaries (see section 2.3.4.2 of
       <xref target="RFC2475">RFC2475</xref>). A DSCP can be remarked at the
@@ -990,7 +990,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
             forwarded? <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. </t>
 		   
-            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP assignment is requested, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="pathologies"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why these remarking pathologies are observed.</t>
+            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP assignment is requested, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="observed-remarking"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why this remarking is observed.</t>
  
           </list></t>
       </section>
