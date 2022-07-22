@@ -8,6 +8,7 @@
 <!ENTITY RFC2474 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2474.xml">
 <!ENTITY RFC2597 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2597.xml">
 <!ENTITY RFC2760 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2760.xml">
+<!ENTITY RFC3086 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3086.xml">
 <!ENTITY RFC3246 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3246.xml">
 <!ENTITY RFC3260 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3260.xml">
 <!ENTITY RFC3270 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3270.xml">
@@ -156,17 +157,25 @@
     <section anchor="introduction" title="Introduction">
       <t>The Differentiated Services (DiffServ) architecture has been deployed
       in many networks. It provides differentiated traffic forwarding based on
-      the DiffServ Code Point (DSCP) <xref
-      target="RFC2474"></xref> carried in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header.</t>
+      the DiffServ Code Point (DSCP) <xref target="RFC2474"></xref> carried in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header.</t>
 
-      <t>Internet traffic can be associated with a service class, and
-      categorised into Behavior Aggregates [RFC4594]. In IP networks, these
-      are associated with a DSCP. Each DSCP is mapped to a PHB.
-      A treatment aggregate is concerned only with the forwarding
+      <t>A DiffServ node associates traffic with a service class <xref target="RFC4597"></xref>, and
+      categorises it into Behavior Aggregates <xref target="RFC4594"></xref>.
+      Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>
+
+      In IP networks, these are associated with a DSCP. Each DSCP is mapped to a PHB.
+      A Treatment Aggregate (TA) is concerned only with the forwarding
       treatment of the aggregated traffic, which could be mapped from a set of
       DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
-      algorithms that implement access to the physical media.</t>
+      algorithms that implement access to the physical media.
+      Within a DiffServ domain, operators can specify Service Level
+      Specifications [<xref target="RFC3086"></xref>], each of which maps to a
+      particular PDB (Per-Domain Behaviour). The PDB defines which DSCP (or set of DSCPs) will be
+      associated with specific TAs as the packets pass through a DiffServ domain,
+      and whether the packets are remarked as they are forwarded.</t>
+
+
 
       <t><figure>
           <artwork><![CDATA[
@@ -182,7 +191,7 @@ Traffic        Class
 ]]></artwork>
 
           <postamble>Figure showing the role of DSCPs in classifying IP
-          traffic for differential network treatment.</postamble>
+          traffic for differential network treatment by a DiffServ Node.</postamble>
         </figure></t>
 
       <t>This document discusses considerations for assigning a new DSCP for a new standard PHB. It
@@ -965,7 +974,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
             characteristics of the traffic to be carried? What are the
             expectations for treatment? </t>
 
-            <t>Service Classes that can utilise existing PHBs should use
+            <t>Service classes <xref=RFC4594></xref> that can utilise existing PHBs should use
             assigned DSCPs to mark their traffic: Could the request be met by
             using an existing IETF DSCP? The proposed new treatment be
             used to map traffic to a new or existing PHB.</t>
@@ -1061,6 +1070,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       &RFC1349;
 
       &RFC2597;
+
+      &RFC3086;
 
       &RFC3246;
 
