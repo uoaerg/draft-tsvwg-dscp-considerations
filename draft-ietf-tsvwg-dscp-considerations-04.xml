@@ -863,13 +863,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       </section>
 
       <section title="Remarking as a Side-effect of Another Policy">
-        <t>The result of applying a QoS policy (such as matching the IP
-        address, or traffic reaching a rate limit) could also result in a
-        packet being remarked to a different DSCP (/Remark/) when it is not
-        admitted to a service. Traffic marked with an EF and VA DSCP are often
-        policed by such policies.</t>
-
-        <t>Policies and L2 procedures can also result in remarking traffic as
+        <t>This includes any other remarking that does not happen as a result of traffic conditioning, such as
+         policies and L2 procedures that result in remarking traffic as
         a side-effect of other functions (e.g., in response to DDos).</t>
       </section>
 
