@@ -451,9 +451,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
           <t>ToS Precedence Bleaching (/Bleach-ToS-Precedence/) is a practice
           that resets the first three bits of the DSCP field to zero (the former
           ToS Precedence field), leaving the last three bits unchanged (see section
-          4.2.1 of <xref target="RFC2474">RFC2474</xref>). This remarking is
-          distinctive of non-DiffServ aware routers and a common
-          manipulation of the DiffServ field. The following Figure provides details.</t>
+          4.2.1 of <xref target="RFC2474">RFC2474</xref>). This remarking 
+          can occur when packets are processed by a router that is not configured wih DiffServ (e.g., configured to operate on the former ToS precedence field <xref target="RFC791"></xref>). At the time of writing, this is a common manipulation of the DiffServ field. The following Figure depicts this remarking.</t>
 
           <figure>
             <preamble></preamble>
@@ -465,6 +464,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 ]]></artwork>
 
             <postamble>Figure showing the ToS Precedence Bleaching
+	    <t>Note that the same remarking would aleo result if a DiffServ node was configured with this policy for this set of DSCPs.</t>
             (/Bleach-ToS-Precedence/) observed remarking behaviour, based on Section 3 of <xref
             target="RFC1349">RFC1349</xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
@@ -553,8 +553,8 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 
           <t>A less common remarking, ToS Precedence Remarking sets the first
           three bits of the DSCP to a non-zero value corresponding to a
-          CS PHB. This remarking is distinctive of non-DiffServ aware
-          routers.</t>
+          CS PHB. This remarking occurs when routers are not configured to perform DiffServ remarking.
+          </t>
 
           <t>If remarking occurs, packets are forwarded using the PHB specified
           for the resulting DSCP. For example, the AF31 DSCP (0x1a) could
@@ -805,7 +805,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
       <section title="Mapping Specified for Mobile Networks">
 
         <t>Mobile LTE and 5G standards have evolved from older UMTS standards,
-        and are DiffServ aware. LTE (4G) and 5G standards <xref
+        and did not configure support for DiffServ. LTE (4G) and 5G standards <xref
         target="SA-5G"></xref> identify traffic classes at the interface
         between User Equipment (UE) and the mobile Packet Core network by QCI
         (QoS Class Identifiers) and 5QI (5G QoS Identifier). The 3GPP
