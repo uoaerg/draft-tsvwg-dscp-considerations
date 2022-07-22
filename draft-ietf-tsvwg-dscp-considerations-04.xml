@@ -464,7 +464,7 @@ A DSCP can sometimes referred to by name, such as "CS1", and
 ]]></artwork>
 
             <postamble>Figure showing the ToS Precedence Bleaching
-	    <t>Note that this remarking could also be explicitly configured for a specific diffserv domain.</t>
+	    <t>Note that the same remarking would aleo result if a diffserv node was configured with this policy for this set of DSCPs.</t>
             (/Bleach-ToS-Precedence/) observed remarking behaviour, based on Section 3 of <xref
             target="RFC1349">RFC1349</xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
