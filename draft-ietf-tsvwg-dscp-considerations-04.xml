@@ -883,10 +883,10 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 	In this case, bleaching, or
         remarking to "CS0" would result in elevating the lower effort traffic
         (LE) to the default class (BE/CS0).  This is an example of priority
-        inversion (in which packets marked with a LE DSCP  that were
+        inversion (in which packets marked with an LE DSCP that were
 	intended to be forwarded with lower
-	precedence thn default are instead forwarded with
-        a precedence higher than used for BE packets, see section 6 
+	precedence than default are instead forwarded with
+        a precedence higher than used for BE packets, see section 6
 	of <xref target="RFC8622"></xref>).</t>
        </section>
 
