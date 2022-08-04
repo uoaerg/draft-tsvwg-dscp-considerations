@@ -882,12 +882,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         case when defining the LE PHB <xref target="RFC8622"></xref>. 
 	In this case, bleaching, or
         remarking to "CS0" would result in elevating the lower effort traffic
-        (LE) to the default class (BE/CS0).  This is an example of priority
-        inversion (in which packets marked with an LE DSCP that were
-	intended to be forwarded with lower
-	precedence than default are instead forwarded with
-        a precedence higher than used for BE packets, see section 6
-	of <xref target="RFC8622"></xref>).</t>
+        (LE) to the default class (BE/CS0).</t>
        </section>
 
       <section title="Where the proposed DSCP &gt; 0x07 (7)">
@@ -899,7 +894,11 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         experienced. For example, it can be desirable to avoid choosing a DSCP
         that could be remarked to LE, <xref target="RFC8622">Lower
         Effort</xref>, which could otherwise potentially result in a priority
-        inversion in the treatment.</t>
+        inversion in the treatment (in which packets marked with a LE DSCP
+	that were  intended to be forwarded with lower
+        precedence thn default are instead forwarded with
+        a precedence higher than used for BE packets, see 
+	section 6 of <xref target="RFC8622">)</t>
       </section>
 
       <section title="Where the proposed DSCP &lt; 0x07 (7)">
