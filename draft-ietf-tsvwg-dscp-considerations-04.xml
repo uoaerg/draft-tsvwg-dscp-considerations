@@ -325,7 +325,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         same forwarding treatment. DSCPs can be mapped to treatment
         aggregates that might result in remarking (e.g., <xref
         target="RFC5160">RFC5160</xref> suggests Meta-QoS-Classes to help
-        enable deployment of standardized end-to-end QoS classes)</t>
+        enable deployment of standardized end-to-end QoS classes).</t>
 
       </section>
 
@@ -568,11 +568,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 	Both <xref target="RFC2474">RFC2474</xref> and <xref
         target="RFC8100">RFC8100</xref> recommend that DiffServ boundary nodes use
         remarking, if necessary, to avoid theft/denial of service or ensure that
-        appropriate DSCPs are used within a DiffServ domain.  Some networks therefore
-        may not follow the earlier recommendation in <xref
-        target="RFC2474">RFC2474</xref> to carry unknown or unexpected DSCPs without
-        modification, and instead remark packets with these codepoints to the default
-        class, CS0 (0x00). 
+        appropriate DSCPs are used within a DiffServ domain.  
          </t>
 
         <t>
@@ -872,8 +868,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
     </section>
 
     <section title="Considerations for DSCP Selection">
-      <t>This section provides advice for the assignment of a new DSCP value.
-        It is intended to aid the IETF and IESG in considering a request for a new DSCP.
+      <t>This section provides advice to aid the IETF and IESG in considering a request for
+      assigning a new DSCP.
       The section identifies known issues that might influence the finally assigned
       DSCP, and provides a summary of considerations for assignment of a new
       DSCP.</t>
@@ -883,11 +879,16 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         can limit the ability to provide the expected treatment end-to-end.
         This is particularly important for cases where the codepoint is
         intended to result in lower than best effort treatment, as was the
-        case when defining the LE PHB <xref target="RFC8622"></xref>. In this
-        case, bleaching, or remarking to "CS0" would result in elevating the
-        lower effort traffic (LE) to the default class (BE/CS0). This is an example of
-        priority inversion.</t>
-      </section>
+        case when defining the LE PHB <xref target="RFC8622"></xref>. 
+	In this case, bleaching, or
+        remarking to "CS0" would result in elevating the lower effort traffic
+        (LE) to the default class (BE/CS0).  This is an example of priority
+        inversion (in which packets marked with a LE DSCP  that were
+	intended to be forwarded with lower
+	precedence thn default are instead forwarded with
+        a precedence higher than used for BE packets, see section 6 
+	of <xref target="RFC8622"></xref>).</t>
+       </section>
 
       <section title="Where the proposed DSCP &gt; 0x07 (7)">
         <t>Although the IETF specifications require systems to use DSCP
@@ -969,8 +970,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 
             <t>Service classes <xref target="RFC4594"></xref> that can utilise existing PHBs should use
             assigned DSCPs to mark their traffic: Could the request be met by
-            using an existing IETF DSCP? The proposed new treatment be
-            used to map traffic to a new or existing PHB.</t>
+            using an existing IETF DSCP?</t>
 		
    	   <t>Is this a request to assign a new DSCP? 
 		   Specification of a new recommended DSCP requires Standards Action.
