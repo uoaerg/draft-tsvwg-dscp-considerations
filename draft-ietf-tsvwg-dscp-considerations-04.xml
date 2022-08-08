@@ -421,6 +421,12 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           <t hangText="Remark:">remarks all traffic to one or more particular
           (non-zero) DSCP values.</t>
         </list></t>
+	    
+	<t>NOTE: There can be multiple mechanisms that can result in a
+	DSCP being remarked (see below). It
+	is not generally possible for an external observer to
+	determine which mechanism results in a specific remarking 
+	solely from the change in an observed DSCP value.</t>
 
       <section anchor="Bleaching" title="Bleaching the DSCP Field">
         <t>A specific form of remarking occurs when the DiffServ field is
