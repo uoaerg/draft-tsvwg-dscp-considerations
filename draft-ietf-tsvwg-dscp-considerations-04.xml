@@ -263,7 +263,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
             target="RFC8436"></xref>. <xref
             target="RFC8622"></xref> assigned 0x01 from this pool and consequentially
 	     updated <xref
-            target="RFC4594"></xref>, any future request to assign 0x05 
+            target="RFC4594"></xref>. Any future request to assign 0x05 
 		would be expected to similarly update <xref target="RFC4594"></xref>.</t>
           </list></t>
         <t>The DSCP space is shown in the following Figure.
