@@ -260,7 +260,11 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
             this includes a use for DSCP values 0x01, 0x03, 0x05 and 0x07. Pool 3
             codepoints are now utilised for standardized assignments and are
             no longer available for assignment to experimental or local use <xref
-            target="RFC8436"></xref>.</t>
+            target="RFC8436"></xref>. <xref
+            target="RFC8622"></xref> assigned 0x01 from this pool and consequentially
+	     updated <xref
+            target="RFC4594"></xref>, any future request to assign 0x05 
+		would be expected to similarly update <xref target="RFC4594"></xref>.</t>
           </list></t>
         <t>The DSCP space is shown in the following Figure.
 
