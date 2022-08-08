@@ -254,13 +254,14 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
             <t hangText="DSCP Pool 3:">A pool of 16 codepoints with a 0bxxxx01.
             This was initially available for experimental or local use, but
             was originally specified to be preferentially utilised for
-            standardized assignments if Pool 1 is ever exhausted. Pool 3
+            standardized assignments if Pool 1 is ever exhausted. 
+            RFC 4594 had recommended a local use of DSCP values 000xx1b,
+            this includes a use for DSCP values 1, 3, 5 and 7. Pool 3
             codepoints are now utilised for standardized assignments and are
-            no longer available for experimental or local use <xref
+            no longer available for assignemnt to experimental or local use <xref
             target="RFC8436"></xref>.</t>
           </list></t>
         <t>The DSCP space is shown in the following Figure.
-   
 
           <figure>
             <preamble></preamble>
@@ -977,8 +978,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         RFC2474 states: "Each standardized PHB MUST have an associated
         RECOMMENDED codepoint". If approved, new IETF assignments are normally
         made by IANA in Pool 1, but the IETF can request assignments to be
-        made from Pool 3 <xref target="RFC8436"></xref>.	
-        </t>
+        made from Pool 3 <xref target="RFC8436"></xref>.</t>
 
             <t>What are the effects of treatment aggregation on the
             proposed DSCP? <xref target="mpls"></xref> describes examples of treatment aggregation.</t>
