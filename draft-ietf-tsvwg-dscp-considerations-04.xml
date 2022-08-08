@@ -203,7 +203,7 @@ Traffic        Class
 
       <t>The document is motivated by new opportunities to use DiffServ
       end-to-end across multiple domains, such as <xref
-      target="I-D.ietf-tsvwg-nqb"></xref>, proposals to build mechanisms using
+      target="I-D.ietf-tsvwg-nqb"></xref>, proposals to build ] using
       DSCPs in other standards-setting organisations, and the desire to use a
       common set of DSCPs across a range of infrastructure (e.g., <xref
       target="RFC8622"></xref><xref target="I-D.ietf-tsvwg-nqb">,</xref>,
@@ -423,8 +423,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           (non-zero) DSCP values.</t>
         </list></t>
 	    
-	<t>NOTE: There can be multiple mechanisms that can result in a
-	DSCP being remarked (see below). It
+	<t>NOTE: More than one mechanism could result in the
+	same DSCP remarking (see below). It
 	is not generally possible for an external observer to
 	determine which mechanism results in a specific remarking 
 	solely from the change in an observed DSCP value.</t>
