@@ -400,7 +400,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           <t hangText="Bleach:">bleaches all traffic (sets the DSCP to
           zero);</t>
 
-          <t hangText="Bleach-]-Precedence:">set the first three bits of the
+          <t hangText="Bleach-ToS-Precedence:">set the first three bits of the
           DSCP field to 0b000 (reset the 3 bits of the former ToS Precedence
           field, defined in  <xref target="RFC791">RFC791</xref>, and clarified in <xref target="RFC1122">RFC1122</xref>);</t>
 
