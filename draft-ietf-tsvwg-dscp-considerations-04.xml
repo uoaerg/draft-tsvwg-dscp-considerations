@@ -451,8 +451,12 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           <t>ToS Precedence Bleaching (/Bleach-ToS-Precedence/) is a practice
           that resets the first three bits of the DSCP field to zero (the former
           ToS Precedence field), leaving the last three bits unchanged (see section
-          4.2.1 of <xref target="RFC2474">RFC2474</xref>). This remarking 
-          can occur when packets are processed by a router that is not configured with DiffServ (e.g., configured to operate on the former ToS precedence field <xref target="RFC0791"></xref>). At the time of writing, this is a common manipulation of the DiffServ field. The following Figure depicts this remarking.</t>
+          4.2.1 of <xref target="RFC2474">RFC2474</xref>). A DiffServ node can be 
+	  configured in a way that results in this remarking. This remarking 
+          can also occur when packets are processed by a router that is not configured 
+	   with DiffServ (e.g., configured to operate on the former ToS precedence field 
+           <xref target="RFC0791"></xref>). At the time of writing, this is a common 
+           manipulation of the DiffServ field. The following Figure depicts this remarking.</t>
 
           <figure>
             <preamble></preamble>
