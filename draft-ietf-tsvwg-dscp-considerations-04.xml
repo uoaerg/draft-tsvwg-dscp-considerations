@@ -247,12 +247,12 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
             0bxxxxx0, to be assigned by IANA Standards Action <xref
             target="RFC8126"></xref>.</t>
 
-            <t hangText="DSCP Pool 2:">A pool of 16 codepoints with a format
+            <t hangText="DSCP Pool 2:">A pool of 16 codepoints with a format of
             0bxxxx11, reserved for experimental or local (private) use by
             network operators (see sections 4.1 and 4.2 of <xref
             target="RFC8126"></xref>.</t>
 
-            <t hangText="DSCP Pool 3:">A pool of 16 codepoints with a 0bxxxx01.
+            <t hangText="DSCP Pool 3:">A pool of 16 codepoints with a format of 0bxxxx01.
             This was initially available for experimental or local use, but
             was originally specified to be preferentially utilised for
             standardized assignments if Pool 1 is ever exhausted. 
