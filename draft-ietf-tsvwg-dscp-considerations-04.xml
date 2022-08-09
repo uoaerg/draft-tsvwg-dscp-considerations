@@ -891,11 +891,11 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         the current recommendation is that any new assignment where the
         DSCP is greater than 0x07 should consider the semantics
         associated with the resulting DSCP when ToS Precedence Bleaching is
-        experienced. For example, it can be desirable to avoid choosing a DSCP
-        of format 0bXXXXX1. This could be remarked to LE (0x01) <xref target="RFC8622">Lower
+        experienced. For example, a packet marked with 0bXXXXX1 
+	could be remarked to LE (0x01) <xref target="RFC8622">Lower
 		Effort</xref>, which would result in a priority
         inversion in the treatment, where instead of being forwarded with
-        a higher assurance, the packets are forwarded with a lower
+        a higher assurance, the packet is forwarded with a lower
         assurance than default  (see 
 	section 6 of <xref target="RFC8622">).</t>
       </section>
