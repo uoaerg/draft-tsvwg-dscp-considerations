@@ -256,8 +256,10 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
             was originally specified to be preferentially utilised for
             standardized assignments if Pool 1 is ever exhausted. 
             <xref
-            target="RFC4594"></xref> had recommended a local use of DSCP values 0b000xx1,
-            this includes a use for DSCP values 0x01, 0x03, 0x05 and 0x07. Pool 3
+            target="RFC4594"></xref> 
+	    had recommended a local use of DSCP values 0x01, 0x03, 0x05 and 0x07 
+	    (codepoints with the format of 0b000xx1).    
+	    Pool 3
             codepoints are now utilised for standardized assignments and are
             no longer available for assignment to experimental or local use <xref
             target="RFC8436"></xref>. <xref
