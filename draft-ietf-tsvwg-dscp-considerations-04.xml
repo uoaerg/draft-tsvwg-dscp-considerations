@@ -4,6 +4,7 @@
 <!ENTITY RFC1349 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.1349.xml">
 <!-- References -->
 <!ENTITY RFC0791 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.0791.xml">
+<!ENTITY RFC1122 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.1122.xml">
 <!ENTITY RFC2119 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC2474 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2474.xml">
 <!ENTITY RFC2597 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2597.xml">
@@ -401,7 +402,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
           <t hangText="Bleach-ToS-Precedence:">set the first three bits of the
           DSCP field to 0b000 (reset the 3 bits of the former ToS Precedence
-          field) ;</t>
+          field, defined in  <xref target="RFC791">RFC791</xref>, and clarified in <xref target="RFC1122">RFC1122</xref>);</t>
 
           <t hangText="Bleach-some-ToS:">set the first three bits of the
           DSCP field to 0b000 (reset the 3 bits of the former ToS Precedence
@@ -421,6 +422,12 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           <t hangText="Remark:">remarks all traffic to one or more particular
           (non-zero) DSCP values.</t>
         </list></t>
+	    
+	<t>NOTE: More than one mechanism could result in the
+	same DSCP remarking (see below). It
+	is not generally possible for an external observer to
+	determine which mechanism results in a specific remarking 
+	solely from the change in an observed DSCP value.</t>
 
       <section anchor="Bleaching" title="Bleaching the DSCP Field">
         <t>A specific form of remarking occurs when the DiffServ field is
