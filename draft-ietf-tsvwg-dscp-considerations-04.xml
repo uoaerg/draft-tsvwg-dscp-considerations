@@ -822,7 +822,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
       <section title="Mapping Specified for Mobile Networks">
 
         <t>Mobile LTE and 5G standards have evolved from older UMTS standards,
-        and did not configure support for DiffServ. LTE (4G) and 5G standards <xref
+        and support DiffServ. LTE (4G) and 5G standards <xref
         target="SA-5G"></xref> identify traffic classes at the interface
         between User Equipment (UE) and the mobile Packet Core network by QCI
         (QoS Class Identifiers) and 5QI (5G QoS Identifier). The 3GPP
