@@ -894,10 +894,10 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         experienced. For example, it can be desirable to avoid choosing a DSCP
         that could be remarked to LE, <xref target="RFC8622">Lower
         Effort</xref>, which could otherwise potentially result in a priority
-        inversion in the treatment (in which packets marked with a LE DSCP
-	that were  intended to be forwarded with lower
-        precedence thn default are instead forwarded with
-        a precedence higher than used for BE packets, see 
+        inversion in the treatment. For example,  packets marked with a LE DSCP
+	(which were intended to be forwarded with lower
+        assurance than default) are instead forwarded with
+        a higher assurance, see 
 	section 6 of <xref target="RFC8622">)</t>
       </section>
 
