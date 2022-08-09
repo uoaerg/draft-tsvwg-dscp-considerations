@@ -203,7 +203,7 @@ Traffic        Class
 
       <t>The document is motivated by new opportunities to use DiffServ
       end-to-end across multiple domains, such as <xref
-      target="I-D.ietf-tsvwg-nqb"></xref>, proposals to build ] using
+      target="I-D.ietf-tsvwg-nqb"></xref>, proposals to build mechanisms using
       DSCPs in other standards-setting organisations, and the desire to use a
       common set of DSCPs across a range of infrastructure (e.g., <xref
       target="RFC8622"></xref><xref target="I-D.ietf-tsvwg-nqb">,</xref>,
