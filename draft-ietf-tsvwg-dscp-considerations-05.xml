@@ -164,15 +164,15 @@
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>.
       Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>
 
-      In IP networks, these are associated with a DSCP. Each DSCP is mapped to a PHB.
+      In IP networks, these are associated with a DiffServ Code Point (DSCP). Each DSCP is mapped to a Per Hop Behaviour (PHB).
       A Treatment Aggregate (TA) is concerned only with the forwarding
       treatment of the traffic forming a behaviour aggregate, which could be mapped from a set of
       DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
       algorithms that implement access to the physical media.
-      Within a DiffServ domain, operators can specify Service Level
-      Specifications [<xref target="RFC3086"></xref>], each of which maps to a
-      particular PDB (Per-Domain Behaviour). The PDB defines which DSCP (or set of DSCPs) will be
+      Within a DiffServ domain, operators can specify service level
+      specifications [<xref target="RFC3086"></xref>], each of which maps to a
+      particular  Per Domain Behaviour (PDB). The PDB defines which DSCP (or set of DSCPs) will be
       associated with specific TAs as the packets pass through a DiffServ domain,
       and whether the packets are remarked as they are forwarded.</t>
 
@@ -195,7 +195,7 @@ Traffic        Class
           traffic for differential network treatment by a DiffServ Node.</postamble>
         </figure></t>
 
-      <t>This document discusses considerations for assigning a new DSCP for a new standard PHB. It
+      <t>This document discusses considerations for assigning a new DSCP for a standard PHB. It
       considers some commonly observed DSCP remarking behaviours that might be
       experienced along an Internet path. It also describes some packet
       forwarding treatments that a packet with a specific DSCP can expect to
@@ -240,8 +240,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         usually convenient and avoids confusion.</t>
 
         <t>The DSCP space is divided into three pools for the purpose of
-        assignment and management <xref target="DSCP-registry"></xref>. This
-        use of the pools can be summarised in a table (where 'x' refers to either a
+        assignment and management <xref target="DSCP-registry"></xref>. The
+        pools can be summarised in a table (where 'x' refers to either a
         bit position with value '0' or '1').<list style="hanging">
             <t hangText="DSCP Pool 1:">A pool of 32 codepoints with a format
             0bxxxxx0, to be assigned by IANA Standards Action <xref
@@ -322,7 +322,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 	    <postamble>Figure showing the summary of the DSCP abbreviations used in previous RFCs <xref target="RFC2474"></xref> <xref
                        target="RFC2597"></xref> <xref target="RFC3246"></xref> <xref
                        target="RFC5865"></xref> <xref target="RFC8622"></xref>, as described in the IANA registry <xref
-                       target="DSCP-registry"></xref>. BE, also known as CS0, describes the default service.</postamble>
+                       target="DSCP-registry"></xref>. BE, also known as CS0, describes the default forwarding treatment.</postamble>
 
           </figure>
 
@@ -626,8 +626,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         target="IEEE-802-1Q"></xref>. The value zero indicates the default
         best effort treatment, and the value one indicates a background
         traffic class. The remaining values indicate increasing priority.
-        Internet control traffic can be marked as six, and network control is
-        marked as seven.</t>
+        Internet control traffic can be marked as CS6, and network control is
+        marked as CS7.</t>
 
         <t>The mapping specified in <xref target="IEEE-802-1Q"></xref> revises
         a previous standard <xref target="IEEE-802-1D"></xref>, in an effort
@@ -646,7 +646,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         support QoS in WLANs using Access Classes (AC). The upstream User
         Priority (UP) in the 802.11 header has a 3-bit QoS value. A DSCP can
 		be mapped to the UP.</t>
-	      <t> Most existing WiFi implementations <xref
+	      <t> Most current WiFi implementations <xref
         target="RFC8325"></xref> use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is
         then in turn mapped to the four WiFi Multimedia (WMM) Access
@@ -882,7 +882,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       <section title="Remarking as a Side-effect of Another Policy">
         <t>This includes any other remarking that does not happen as a result of traffic conditioning, such as
          policies and L2 procedures that result in remarking traffic as
-        a side-effect of other functions (e.g., in response to DDos).</t>
+        a side-effect of other functions (e.g., in response to Distributed Denial of Service, DDoS).</t>
       </section>
 
       <section title="Summary">
@@ -926,7 +926,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         Bleaching, all traffic marked AF11, AF21, AF31 and AF41 would be
         aggregated with traffic marked with DSCP 2 (0x02), increasing the
         volume of traffic which receives the treatment associated with DSCP 2.
-        New DiffServ Codepoint assignments should consider unexpected
+        New DSCP assignments should consider unexpected
         consequences arising from this observed remarking behaviour.</t>
 
         <section title="Where the proposed DSCP&amp;0x07=0x01">
@@ -953,7 +953,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         <t><list style="hanging">
             <t hangText="Networks not remarking DiffServ:"> A network that either does not implement PHBs, or implements one or more PHBs whilst restoring the DSCP field at network egress with the value at network ingress. Operators in this category pass all DSCPs transparently.</t>
             <t hangText="Networks that condition the DSCP:"> A network that implements more than one PHB and enforces SLAs with its peers. Operators in this category use conditioning to ensure that
-        only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100">RFC8100</xref>). This requires operators to choose to support or remark a new DSCP assignment.</t>
+        only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100"></xref>). This requires operators to choose to support or remark a new DSCP assignment.</t>
             <t hangText="Networks that remark in some other way">, which includes: 
             </t>
                 <t><list style='numbers'>
@@ -978,33 +978,31 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 
         <t><list style="symbols">		
             <t>Is the request for local use within a DiffServ domain that does not require
-	    interconnection with other DiffServ domains? This can use DSCPs in Pool 2 for local or
+	    interconnection with other DiffServ domains? This request can use DSCPs in Pool 2 for local or
             experimental use, without any IETF specification for the DSCP or
             associated PHB.</t>
 
-	    <t>How is the proposed service class characterised? What are the
+	    <t>How is the proposed service class characterised: What are the
             characteristics of the traffic to be carried? What are the
             expectations for treatment? </t>
 
             <t>Service classes <xref target="RFC4594"></xref> that can utilise existing PHBs should use
             assigned DSCPs to mark their traffic: Could the request be met by
-            using an existing IETF DSCP? The proposed new treatment be
-            used to map traffic to a new or existing PHB.</t>
+            using an existing IETF DSCP?</t>
 		
-   	   <t>Is this a request to assign a new DSCP? 
-		   Specification of a new recommended DSCP requires Standards Action.
+   	   <t>Specification of a new recommended DSCP requires Standards Action.
         RFC2474 states: "Each standardized PHB MUST have an associated
         RECOMMENDED codepoint". If approved, new IETF assignments are normally
         made by IANA in Pool 1, but the IETF can request assignments to be
-        made from Pool 3 <xref target="RFC8436"></xref>.</t>
+        made from Pool 3 <xref target="RFC8436"></xref>. Does the ID contain an appropriate request to IANA?</t>
 
-            <t>What are the effects of treatment aggregation on the
-            proposed DSCP? <xref target="mpls"></xref> describes examples of treatment aggregation.</t>
+            <t><xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
+            proposed DSCP? </t>
 
-            <t> Section <xref target="lowerlayers"></xref> describes some observed treatments by layers
+            <t> <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. What are the implications of the treatments and mapping described in <xref target="lowerlayers"></xref> on the proposed DSCP? </t>
 		   
-            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. If a new DSCP assignment is requested, then what is the expected effect of currently-deployed remarking on the end-to-end service? <xref target="observed-remarking"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why this remarking is observed.</t>
+            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. <xref target="observed-remarking"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why this remarking is observed. What is the expected effect of currently-deployed remarking on the end-to-end service?</t>
  
           </list></t>
       </section>
