@@ -171,7 +171,7 @@
       realised using a variety of schedulers and queues, and also by
       algorithms that implement access to the physical media.
       Within a DiffServ domain, operators can specify service level
-      dpecifications [<xref target="RFC3086"></xref>], each of which maps to a
+      specifications [<xref target="RFC3086"></xref>], each of which maps to a
       particular  Per Domain Behaviour (PDB). The PDB defines which DSCP (or set of DSCPs) will be
       associated with specific TAs as the packets pass through a DiffServ domain,
       and whether the packets are remarked as they are forwarded.</t>
