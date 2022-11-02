@@ -160,7 +160,7 @@
       in many networks. It provides differentiated traffic forwarding based on
       the DiffServ Code Point (DSCP) <xref target="RFC2474"></xref> carried in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header.</t>
 
-      <t>A DiffServ node associates traffic with a service class <xref target="RFC4594"></xref>, and
+      <t>DiffServ associates traffic with a service class <xref target="RFC4594"></xref>, and
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>. Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>.
       In IP networks,  behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
       A Treatment Aggregate (TA) is concerned only with the forwarding
