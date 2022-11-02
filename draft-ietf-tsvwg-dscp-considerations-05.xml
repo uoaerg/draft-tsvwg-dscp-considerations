@@ -221,7 +221,7 @@ Traffic        Class
 
       <t>DSCPs are specified in the IANA registry <xref target="DSCP-registry"></xref> where a variety of different formats are described.  
 A DSCP can sometimes be referred to by name, such as "CS1", and
-        sometimes by a decimal, hex, or binary value. Hex values will be represented in text using prefix 0x. Binary values will use prefix 0b.
+        sometimes by a decimal, hex, or binary value. Hex values are represented in text using prefix 0x. Binary values use prefix 0b.
        </t>
     </section>
 
