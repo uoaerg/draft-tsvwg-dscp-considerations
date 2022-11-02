@@ -553,9 +553,14 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         </section>
 
         <section title="Impact of ToS Precedence Remarking">
-          <t>Practices based on ToS Precedence Remarking (/Remark-ToS/) <xref
-          target="RFC1349"></xref> were deprecated by <xref
-          target="RFC2474"></xref>. These practices based on ToS
+          <t><xref target="RFC2474"></xref> states "Implementors should note that 
+	  the DSCP field is six bits wide. DS-compliant nodes MUST select PHBs
+	  by matching against the entire 6-bit
+DSCP field, e.g., by treating the value of the field as a table index
+which is used to select a particular packet handling mechanism which
+has been implemented in that device". This replaced the practixes
+	  based on rmarking according to ToS precedence (/Remark-ToS/) <xref
+          target="RFC1349"></xref>. These practices based on ToS
           semantics have not yet been eliminated from deployed networks.</t>
 
           <figure>
