@@ -963,10 +963,10 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
                 <t>Networks containing devices that remark the DSCP as a result of lower layer interactions.</t>
 		</list></t>
        </list></t>
-      <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) remarking behaviour cannot be observed in the
-	case of networks not remarking DiffServ, but can arise as a result of traffic
-	conditioning at operator boundaries. It can also arise in the case of
-	misconfiguration or in networks using old equipment which precedes DiffServ.
+      <t>
+	For example, the DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
+	observed behaviour described in section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
+	It can also arise when traffic conditioning is provided by DiffServ routers at operator boundaries, or as a result of misconfiguration.
       </t>
     
       </section>
