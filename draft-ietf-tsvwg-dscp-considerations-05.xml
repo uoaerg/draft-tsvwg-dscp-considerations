@@ -339,11 +339,14 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
       </section>
 
-      <section title="Network Control Traffic">
+      <section title="DSCPs used for Network Control Traffic">
         <t>Network Control Traffic is defined as packet flows that are
         essential for stable operation of the administered network (see <xref
-        target="RFC4594"></xref>, Section 3). This traffic is marked with a
-        value from  a set of Class Selector (CS) DSCPs. This traffic is
+        target="RFC4594"></xref>, Section 3). The traffic consists of
+	the network control service class and the OAM service class.
+	This traffic is marked with a
+        value from  a set of Class Selector (CS) DSCPs.
+	This traffic is
         often a special case within a provider network, and ingress traffic
         with these DSCP markings can be remarked.</t>
 
@@ -524,12 +527,14 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 +=========+=======+============+====+======+======+============+====+
 | 0/CS0   | 1/LE  | 2          | 3  | 4    | 5    | 6          | 7  |
 +=========+=======+============+====+======+======+============+====+
-|Assigned         |ToS Prec Bl.|EXP/|Used  |Future|ToS Prec Bl.|Exp/|
-|                 |of AF11..41 |LU  |by SSH|NQB   |of AF13..EF |LU  |
+|Assigned         |ToS Prec Bl.|EXP/| *    |      |ToS Prec Bl.|Exp/|
+|                 |of AF11..41 |LU  |      |      |of AF13..EF |LU  |
 +=================+============+====+======+======+============+====+
 ]]></artwork>
 
-            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
+            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. 
+		For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. 
+		  * DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
             </postamble>
           </figure>
 
