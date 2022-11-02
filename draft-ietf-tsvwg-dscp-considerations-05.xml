@@ -579,10 +579,10 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           CS PHB. This remarking occurs when routers are not configured to perform DiffServ remarking.
           </t>
 
-          <t>If remarking occurs, packets are forwarded using the PHB specified
-          for the resulting DSCP. For example, the AF31 DSCP (0x1a) could
-          be remarked to either AF11 or AF21.</t>
-        </section>
+<t>If remarking occurs, packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
+For example, the AF31 DSCP (0x1a) could be remarked to either AF11 or AF21. 
+As this packet further traverses other domains, it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.</t>
+	        </section>
       </section>
 
       <section anchor="remark" title="Remarking to a Particular DSCP">
