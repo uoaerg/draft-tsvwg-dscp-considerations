@@ -481,7 +481,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 |0 0 0|x x x|
 +-+-+-+-+-+-+
 ]]></artwork>
-            <postamble>Figure showing the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behaviour, based on Section 3 of <xref target="RFC1349"></xref>. The bit positions marked "x" are not changed.</postamble>
+            <postamble>Figure showing the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behaviour, 
+		    based on Section 3 of <xref target="RFC1349"></xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
 
           <t></t>
@@ -509,7 +510,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 +=========+=======+==========+=====+==========+=====+==========+=====+
 ]]></artwork>
 
-            <postamble>As a result of ToS Precedence Bleaching, all the DSCPs in each column are remarked to the smallest DSCP in that column. The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path.
+            <postamble>As a result of ToS Precedence Bleaching, all the DSCPs in each column are remarked to the smallest DSCP in that column. 
+		  The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path.
             </postamble>
           </figure>
 
@@ -525,24 +527,29 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 | 0/CS0   | 1/LE  | 2          | 3  | 4    | 5    | 6          | 7  |
 +=========+=======+============+====+======+======+============+====+
 |Assigned         |ToS Prec Bl.|EXP/|Used  |Future|ToS Prec Bl.|Exp/|
-|                 |of AF11..41 |LU  |by SSH|NQB   |of AF13..EF |LU  |
+|                 |of AF11..41 |LU  |by SSH|NQ    |of AF13..EF |LU  |
 +=================+============+====+======+======+============+====+
 ]]></artwork>
 
-            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
+            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known 
+		    remarking behaviours. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic 
+		    being remarked with DSCP 2 in the Internet core. 
+		    DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
             </postamble>
           </figure>
 
           <t></t>
 
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
-          be remarked to 'x' &amp; 0x07and then would be treated according to the corresponding PHB.</t>
-
+          be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that domain. 
+	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.
+</t>
           <t>A variation of this observed remarking behaviour clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
           CS6 and CS7 DSCPs). As a result, a DSCP value greater than 48
           decimal (0x30) is less likely to be impacted by ToS Precedence
           Bleaching.</t>
+	
         </section>
 
         <section title="Impact of ToS Precedence Remarking">
