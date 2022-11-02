@@ -971,7 +971,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
     
       </section>
 
-      <section title="Questions to guide discussion of a proposed new DSCP">
+      <section title="Considerations to guide the discussion of a proposed new DSCP">
 
         <t>A series of questions emerge that need to be answered when
         considering a proposal to the IETF that requests a new assignment.
