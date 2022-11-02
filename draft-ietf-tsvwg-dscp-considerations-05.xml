@@ -162,7 +162,7 @@
 
       <t>DiffServ associates traffic with a service class <xref target="RFC4594"></xref>, and
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>. Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>.
-      In IP networks,  behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
+      Behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
       A Treatment Aggregate (TA) is concerned only with the forwarding
       treatment of the traffic forming a behaviour aggregate, which could be mapped from a set of
       DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
