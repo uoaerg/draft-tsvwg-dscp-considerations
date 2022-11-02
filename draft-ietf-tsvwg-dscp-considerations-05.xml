@@ -558,7 +558,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 	  by matching against the entire 6-bit
 DSCP field, e.g., by treating the value of the field as a table index
 which is used to select a particular packet handling mechanism which
-has been implemented in that device". This replaced the practixes
+has been implemented in that device". This replaced the practices
 	  based on rmarking according to ToS precedence (/Remark-ToS/) <xref
           target="RFC1349"></xref>. These practices based on ToS
           semantics have not yet been eliminated from deployed networks.</t>
