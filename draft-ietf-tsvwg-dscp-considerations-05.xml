@@ -388,13 +388,16 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
       between providers at an exchange point. Furthermore, <xref target="RFC2474"></xref> states
       that remarking must occur when there is a possibility of theft/denial-of-service attack.</t>
 
-      <t>If packets are received that are marked with an unknown or an
-      unexpected DSCP, <xref target="RFC2474"></xref> recommends
-      forwarding the packet using a default (best effort) treatment, but
-      without changing the DSCP. This seeks to support incremental DiffServ
-      deployment in existing networks as well as preserve DSCP markings by
-      routers that have not been configured to support DiffServ. (See also
-      <xref target="remark"></xref>).
+      <t>The treatment of packets that are marked with an unknown or an
+unexpected DSCP at DiffServ domain boundaries are a matter of
+administrative policy and outside the scope of <xref target="RFC2474"></xref>.
+If packets are received that are marked with an unknown or an
+unexpected DSCP by a DiffServ domain interior node, <xref target="RFC2474"></xref>
+recommends forwarding the packet using a
+default (best effort) treatment, but without changing the DSCP.
+This seeks to support incremental DiffServ deployment in existing networks
+as well as preserve DSCP markings by routers that have not been
+configured to support DiffServ. (See also <xref target="remark"></xref>).
 
      <xref target="RFC3260"></xref> clarifies that this remarking specified by RFC2474
    is intended for interior nodes within a DiffServ domain. For DiffServ ingress nodes the
