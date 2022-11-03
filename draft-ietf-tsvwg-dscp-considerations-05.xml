@@ -163,13 +163,9 @@
       <t>DiffServ associates traffic with a service class <xref target="RFC4594"></xref>, and
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>. Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>.
       Behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
-      A Treatment Aggregate (TA) is concerned only with the forwarding
-      treatment of the traffic forming a behaviour aggregate, which could be mapped from a set of
-      DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
+      Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
-      algorithms that implement access to the physical media.
-   </t>
-
+	    algorithms that implement access to the physical media.</t>
     <t>
       Within a DiffServ domain, operators can set service level
       specifications <xref target="RFC3086"></xref>, each of which maps to a
@@ -187,8 +183,8 @@ Traffic        Class
                Behavior  -> DiffServ -> Per Hop
                Aggregate    Codepoint   Behavior
                                           |
-                                        Treatment -> Schedule
-                                        Aggregate    Queue, Drop
+                                        Schedule,
+                                        Queue, Drop    
 
 ]]></artwork>
 
@@ -339,11 +335,14 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
       </section>
 
-      <section title="Network Control Traffic">
+      <section title="DSCPs used for Network Control Traffic">
         <t>Network Control Traffic is defined as packet flows that are
         essential for stable operation of the administered network (see <xref
-        target="RFC4594"></xref>, Section 3). This traffic is marked with a
-        value from  a set of Class Selector (CS) DSCPs. This traffic is
+        target="RFC4594"></xref>, Section 3). The traffic consists of
+	the network control service class and the OAM service class.
+	This traffic is marked with a
+        value from  a set of Class Selector (CS) DSCPs.
+	This traffic is
         often a special case within a provider network, and ingress traffic
         with these DSCP markings can be remarked.</t>
 
@@ -524,12 +523,14 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 +=========+=======+============+====+======+======+============+====+
 | 0/CS0   | 1/LE  | 2          | 3  | 4    | 5    | 6          | 7  |
 +=========+=======+============+====+======+======+============+====+
-|Assigned         |ToS Prec Bl.|EXP/|Used  |Future|ToS Prec Bl.|Exp/|
-|                 |of AF11..41 |LU  |by SSH|NQB   |of AF13..EF |LU  |
+|Assigned         |ToS Prec Bl.|EXP/| *    |      |ToS Prec Bl.|Exp/|
+|                 |of AF11..41 |LU  |      |      |of AF13..EF |LU  |
 +=================+============+====+======+======+============+====+
 ]]></artwork>
 
-            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
+            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. 
+		For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. 
+		  * DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
             </postamble>
           </figure>
 
@@ -616,7 +617,10 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
       use is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
       infer mapping to a smaller L2 QoS field, for example, WiFi or
-      Multi-Protocol Label Switching (MPLS).</t>
+      Multi-Protocol Label Switching (MPLS).      
+      A Treatment Aggregate (TA) <xref target="RFC5127"></xref>
+      is an optional intermediary mapping groups of BAs to PHBs.
+   </t>
 
       <section title="Mapping Specified for IEEE 802">
         <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. </t>
@@ -730,7 +734,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         introduces four DiffServ Treatment Aggregates. Traffic marked with
         multiple DSCPs can be forwarded in a single MPLS TC.</t>
 
-        <t>There are three Label-Switched Router (LSR) behaviours: the Pipe,
+        <t>There are three Label-Switched Router (LSR) models: the Pipe,
         the Short Pipe and the Uniform Model <xref target="RFC3270"></xref>.
         These only differ when a LSP performs a push or a pop.</t>
 
@@ -963,15 +967,15 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
                 <t>Networks containing devices that remark the DSCP as a result of lower layer interactions.</t>
 		</list></t>
        </list></t>
-      <t>For example, the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) remarking behaviour cannot be observed in the
-	case of networks not remarking DiffServ, but can arise as a result of traffic
-	conditioning at operator boundaries. It can also arise in the case of
-	misconfiguration or in networks using old equipment which precedes DiffServ.
+      <t>
+	For example, the DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
+	observed behaviour described in section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
+	It can also arise when traffic conditioning is provided by DiffServ routers at operator boundaries, or as a result of misconfiguration.
       </t>
     
       </section>
 
-      <section title="Questions to guide discussion of a proposed new DSCP">
+      <section title="Considerations to guide the discussion of a proposed new DSCP">
 
         <t>A series of questions emerge that need to be answered when
         considering a proposal to the IETF that requests a new assignment.
