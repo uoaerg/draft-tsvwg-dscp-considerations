@@ -387,13 +387,16 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
       between providers at an exchange point. Furthermore, <xref target="RFC2474"></xref> states
       that remarking must occur when there is a possibility of theft/denial-of-service attack.</t>
 
-      <t>If packets are received that are marked with an unknown or an
-      unexpected DSCP, <xref target="RFC2474"></xref> recommends
-      forwarding the packet using a default (best effort) treatment, but
-      without changing the DSCP. This seeks to support incremental DiffServ
-      deployment in existing networks as well as preserve DSCP markings by
-      routers that have not been configured to support DiffServ. (See also
-      <xref target="remark"></xref>).
+      <t>The treatment of packets that are marked with an unknown or an
+unexpected DSCP at DiffServ domain boundaries is a matter of
+administrative policy and outside the scope of <xref target="RFC2474"></xref>.
+If packets are received that are marked with an unknown or an
+unexpected DSCP by a DiffServ domain interior node, <xref target="RFC2474"></xref>
+recommends forwarding the packet using a
+default (best effort) treatment, but without changing the DSCP.
+This seeks to support incremental DiffServ deployment in existing networks
+as well as preserve DSCP markings by routers that have not been
+configured to support DiffServ. (See also <xref target="remark"></xref>).
 
      <xref target="RFC3260"></xref> clarifies that this remarking specified by RFC2474
    is intended for interior nodes within a DiffServ domain. For DiffServ ingress nodes the
@@ -480,7 +483,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 |0 0 0|x x x|
 +-+-+-+-+-+-+
 ]]></artwork>
-            <postamble>Figure showing the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behaviour, based on Section 3 of <xref target="RFC1349"></xref>. The bit positions marked "x" are not changed.</postamble>
+            <postamble>Figure showing the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behaviour, 
+		    based on Section 3 of <xref target="RFC1349"></xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
 
           <t></t>
@@ -508,7 +512,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 +=========+=======+==========+=====+==========+=====+==========+=====+
 ]]></artwork>
 
-            <postamble>As a result of ToS Precedence Bleaching, all the DSCPs in each column are remarked to the smallest DSCP in that column. The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path.
+            <postamble>As a result of ToS Precedence Bleaching, all the DSCPs in each column are remarked to the smallest DSCP in that column. 
+		  The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path.
             </postamble>
           </figure>
 
@@ -537,20 +542,26 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           <t></t>
 
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
-          be remarked to 'x' &amp; 0x07and then would be treated according to the corresponding PHB.</t>
-
+          be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that domain. 
+	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.
+</t>
           <t>A variation of this observed remarking behaviour clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
           CS6 and CS7 DSCPs). As a result, a DSCP value greater than 48
           decimal (0x30) is less likely to be impacted by ToS Precedence
           Bleaching.</t>
+	
         </section>
 
         <section title="Impact of ToS Precedence Remarking">
-          <t>Practices based on ToS Precedence Remarking (/Remark-ToS/) <xref
-          target="RFC1349"></xref> were deprecated by <xref
-          target="RFC2474"></xref>. These practices based on ToS
-          semantics have not yet been eliminated from deployed networks.</t>
+          <t><xref target="RFC2474"></xref> states "Implementors should note that 
+	  the DSCP field is six bits wide. DS-compliant nodes MUST select PHBs
+	  by matching against the entire 6-bit
+DSCP field, e.g., by treating the value of the field as a table index
+which is used to select a particular packet handling mechanism which
+has been implemented in that device". This replaced remarking according 
+to ToS precedence (/Remark-ToS/) <xref target="RFC1349"></xref>. These practices based on ToS
+semantics have not yet been eliminated from deployed networks.</t>
 
           <figure>
             <preamble></preamble>
@@ -573,10 +584,10 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           CS PHB. This remarking occurs when routers are not configured to perform DiffServ remarking.
           </t>
 
-          <t>If remarking occurs, packets are forwarded using the PHB specified
-          for the resulting DSCP. For example, the AF31 DSCP (0x1a) could
-          be remarked to either AF11 or AF21.</t>
-        </section>
+<t>If remarking occurs, packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
+For example, the AF31 DSCP (0x1a) could be remarked to either AF11 or AF21. 
+As this packet further traverses other domains, it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.</t>
+	        </section>
       </section>
 
       <section anchor="remark" title="Remarking to a Particular DSCP">
@@ -968,7 +979,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 		</list></t>
        </list></t>
       <t>
-	For example, the DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
+	The DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
 	observed behaviour described in section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
 	It can also arise when traffic conditioning is provided by DiffServ routers at operator boundaries, or as a result of misconfiguration.
       </t>
