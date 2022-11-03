@@ -913,8 +913,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       DSCP, and provides a summary of considerations for assignment of a new
       DSCP.</t>
 
-      <section title="Effect of Bleaching">
-        <t>New DSCP assignments should consider the impact of bleaching, which
+      <section title="Effect of Bleaching and Remarking to a single DSCP">
+        <t>New DSCP assignments should consider the impact of bleaching (/Bleach/) or remarking (/Remark/) to a single DSCP, which
         can limit the ability to provide the expected treatment end-to-end.
         This is particularly important for cases where the codepoint is
         intended to result in lower than best effort treatment, as was the
@@ -922,6 +922,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         case, bleaching, or remarking to "CS0" would result in elevating the
         lower effort traffic (LE) to the default class (BE/CS0). This is an example of
         priority inversion.</t>
+	Bleaching the lower three bits of the DSCP (/Bleach-low/ and /Bleach-some-low/) could result in the same priority inversion.
       </section>
 
       <section title="Where the proposed DSCP &gt; 0x07 (7)">
@@ -929,7 +930,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         marking semantics in place of methods based on the former ToS field,
         the current recommendation is that any new assignment where the
         DSCP is greater than 0x07 should consider the semantics
-        associated with the resulting DSCP when ToS Precedence Bleaching is
+        associated with the resulting DSCP when ToS Precedence Bleaching (/Bleach-ToS-Precedence/ and /Bleach-some-ToS/)
+	or ToS Precedence Remarking (/Remark-ToS/) is
         experienced. For example, it can be desirable to avoid choosing a DSCP
         that could be remarked to LE, <xref target="RFC8622">Lower
         Effort</xref>, which could otherwise potentially result in a priority
@@ -937,14 +939,14 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       </section>
 
       <section title="Where the proposed DSCP &lt; 0x07 (7)">
-        <t>ToS Precedence Bleaching can unintentionally result in extra traffic
+        <t>ToS Precedence Bleaching or ToS Precedence Remarking can unintentionally result in extra traffic
         aggregated to the same DSCP. For example, after experiencing ToS Precedence
         Bleaching, all traffic marked AF11, AF21, AF31 and AF41 would be
         aggregated with traffic marked with DSCP 2 (0x02), increasing the
         volume of traffic which receives the treatment associated with DSCP 2.
         New DSCP assignments should consider unexpected
         consequences arising from this observed remarking behaviour.</t>
-
+	 
         <section title="Where the proposed DSCP&amp;0x07=0x01">
           <t>As a consequence of assigning the LE PHB <xref
           target="RFC8622"></xref>, the IETF allocated the DSCP 0b000001 from
@@ -958,6 +960,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 	  of remarking
           when shooing to  assign a DSCP with this format.</t>
         </section>
+
       </section>
 
       <section anchor= "networks" title="Impact on deployed infrastructure">
