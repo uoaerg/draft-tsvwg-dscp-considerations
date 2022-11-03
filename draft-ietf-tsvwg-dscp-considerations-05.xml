@@ -1021,7 +1021,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
             <t> <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. What are the implications of the treatments and mapping described in <xref target="lowerlayers"></xref> on the proposed DSCP? </t>
 		   
-            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. <xref target="observed-remarking"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why this remarking is observed. What is the expected effect of currently-deployed remarking on the end-to-end service?</t>
+            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. <xref target="observed-remarking"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why this remarking is observed. 
+		    What is the expected effect of currently-deployed remarking on the service, end-to-end or otherwise?</t>
  
           </list></t>
       </section>
