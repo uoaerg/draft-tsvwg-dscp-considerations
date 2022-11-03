@@ -162,13 +162,9 @@
 
       <t>A DiffServ node associates traffic with a service class <xref target="RFC4594"></xref>, and
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>. Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>.
-      In IP networks,  behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
-      A Treatment Aggregate (TA) is concerned only with the forwarding
-      treatment of the traffic forming a behaviour aggregate, which could be mapped from a set of
-      DSCP values <xref target="RFC5127"></xref>. Treatment differentiation can be
+      In IP networks,  behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
-      algorithms that implement access to the physical media.
-   </t>
+	      algorithms that implement access to the physical media.</t>
 
     <t>
       Within a DiffServ domain, operators can set service level
@@ -187,8 +183,8 @@ Traffic        Class
                Behavior  -> DiffServ -> Per Hop
                Aggregate    Codepoint   Behavior
                                           |
-                                        Treatment -> Schedule
-                                        Aggregate    Queue, Drop
+                                        Schedule,
+                                        Queue, Drop    
 
 ]]></artwork>
 
@@ -616,7 +612,10 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
       use is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
       infer mapping to a smaller L2 QoS field, for example, WiFi or
-      Multi-Protocol Label Switching (MPLS).</t>
+      Multi-Protocol Label Switching (MPLS).      
+      A Treatment Aggregate (TA) <xref target="RFC5127"></xref>
+      is an optional intermediary mapping groups of BAs to PHBs.
+   </t>
 
       <section title="Mapping Specified for IEEE 802">
         <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. </t>
@@ -730,7 +729,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         introduces four DiffServ Treatment Aggregates. Traffic marked with
         multiple DSCPs can be forwarded in a single MPLS TC.</t>
 
-        <t>There are three Label-Switched Router (LSR) behaviours: the Pipe,
+        <t>There are three Label-Switched Router (LSR) models: the Pipe,
         the Short Pipe and the Uniform Model <xref target="RFC3270"></xref>.
         These only differ when a LSP performs a push or a pop.</t>
 
