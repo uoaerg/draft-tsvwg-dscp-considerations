@@ -132,7 +132,7 @@
       </address>
     </author>
 
-    <date day="8" month="November" year="2022" />
+    <date day="14" month="November" year="2022" />
 
     <area>TSVArea</area>
 
@@ -633,10 +633,10 @@ If such a remarked packet further traverses other domains, it would receive trea
       is an optional intermediary mapping groups of BAs to PHBs.
    </t>
 
-      <section title="Mapping Specified for IEEE 802">
+     <section title="Mapping Specified for IEEE 802">
         <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. </t>
 
-      <section title="Mapping Specified for IEEE 802.1">
+       <section title="Mapping Specified for IEEE 802.1">
         <t>A 3-bit Priority Code Point (PCP) is specified in the IEEE 802.1Q
         tag to mark Ethernet frames to one of eight priority values <xref
         target="IEEE-802-1Q"></xref>. The value zero indicates the default
@@ -654,16 +654,17 @@ If such a remarked packet further traverses other domains, it would receive trea
         PCP2 (Spare) to indicate lower priority than PCP0, RFC8622.
         Therefore, different remarking behaviours are expected depending on the age of
         deployed devices.</t>
-    </section>
-      <section title="Mapping Specified for IEEE 802.11">
+        </section>
+
+       <section title="Mapping Specified for IEEE 802.11">
         <t>Section 6 of <xref target="RFC8325"></xref> provides a
         brief overview of IEEE 802.11 QoS. The IEEE <xref
         target="IEEE-802-11">802.11 standards</xref> provide MAC functions to
         support QoS in WLANs using Access Classes (AC). The upstream User
         Priority (UP) in the 802.11 header has a 3-bit QoS value. A DSCP can
-		be mapped to the UP.</t>
-	      <t> Most current WiFi implementations <xref
-        target="RFC8325"></xref> use a default mapping that maps the first three
+	be mapped to the UP.</t>
+
+	<t> Most current WiFi implementations <xref target="RFC8325"></xref> use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is
         then in turn mapped to the four WiFi Multimedia (WMM) Access
         Categories. The Wi-Fi Alliance has also specified a more flexible mapping 
@@ -723,17 +724,13 @@ If such a remarked packet further traverses other domains, it would receive trea
         the DSCP value of a downstream IP packet (e.g., the Control And Provisioning of Wireless
         Access Points (CAPWAP) protocol, RFC5415, maps an IP packet DiffServ field to the DiffServ field of the outer IP header in a CAPWAP
         tunnel).</t>
-
         <t>Some current constraints of WiFi mapping are discussed in section 2
         of <xref target="RFC8325"></xref>. A QoS profile can be used to limit
         the maximum DSCP value used for the upstream and downstream
         traffic.</t>
-
- 
     </section>
 
-
-      </section>
+</section>
 
       <section anchor="mpls" title="DiffServ and MPLS">
 
@@ -921,8 +918,9 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         case when defining the LE PHB <xref target="RFC8622"></xref>. In this
         case, bleaching, or remarking to "CS0" would result in elevating the
         lower effort traffic (LE) to the default class (BE/CS0). This is an example of
-        priority inversion.</t>
+        priority inversion.
 	Bleaching the lower three bits of the DSCP (/Bleach-low/ and /Bleach-some-low/) could result in the same priority inversion.
+        </t>
       </section>
 
       <section title="Where the proposed DSCP &gt; 0x07 (7)">
