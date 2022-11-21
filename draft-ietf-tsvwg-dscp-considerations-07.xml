@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<!DOCTYPE rfc [
 <!-- Historic references will result in warnings! -->
 <!ENTITY RFC1349 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.1349.xml">
 <!-- References -->
@@ -27,10 +27,9 @@
 <!ENTITY RFC8325 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8325.xml">
 <!ENTITY RFC8436 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8436.xml">
 <!ENTITY RFC8622 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8622.xml">
-<!ENTITY I-D.ietf-tsvwg-nqb SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-ietf-tsvwg-nqb-04.xml">
+<!ENTITY I-D.ietf-tsvwg-nqb SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-ietf-tsvwg-nqb-14.xml">
 <!ENTITY I-D.learmonth-rfc1226-bis SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-learmonth-rfc1226-bis-03.xml">
 ]>
-<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 <?rfc strict="yes" ?>
 <!-- give errors regarding ID-nits and DTD validation -->
 <!-- control the table of contents (ToC) -->
@@ -50,7 +49,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-06"
+<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-07"
      ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -210,11 +209,11 @@ Traffic        Class
 
     <section title="Terminology">
 
-      <t> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
-      NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
-      "MAY", and "OPTIONAL" in this document are to be interpreted as
-      described in <xref target="RFC2119">BCP 14 [RFC2119]</xref> <xref target="RFC8174">[RFC8174]</xref> when, and only when, they
-      appear in all capitals, as shown here.</t>
+      <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL"
+in this document are to be interpreted as described in BCP 14 <xref
+target="RFC2119"/> <xref target="RFC8174"/> when, and only when, they appear in
+all capitals, as shown here.</t>
 
       <t>DSCPs are specified in the IANA registry <xref target="DSCP-registry"></xref> where a variety of different formats are described.  
 A DSCP can sometimes be referred to by name, such as "CS1", and
