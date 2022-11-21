@@ -50,7 +50,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-07"
+<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-06"
      ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -146,12 +146,11 @@
     <keyword>DSCP DiffServ Codepoints</keyword>
 
     <abstract>
- <t>This document discusses considerations for assigning a new
+      <t>This document discusses considerations for assigning a new
       recommended DiffServ Code Point (DSCP) for a new standard Per Hop Behaviour (PHB). It considers the common
       observed remarking behaviours  that the DiffServ field might be subjected to along
       an Internet path. It also notes some implications of using a specific
       DSCP.</t>
-
     </abstract>
   </front>
 
@@ -166,7 +165,7 @@
       Behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
       Treatment differentiation can be
       realised using a variety of schedulers and queues, and also by
-	algorithms that implement access to the physical media.</t>
+	    algorithms that implement access to the physical media.</t>
 
       <t>Within a DiffServ domain, operators can set service level
    specifications <xref target="RFC3086"></xref>, each of which maps to a particular Per
@@ -407,8 +406,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 
       <t>Reports measuring existing deployments have categorised DSCP
       remarking <xref target="Custura"></xref> <xref target="Barik"></xref>
-      into the following seven observed remarking behaviours: </t>
-
+      into the following seven observed remarking behaviours:</t>
 
       <t><list style="hanging">
           <t hangText="Bleach:">bleaches all traffic (sets the DSCP to
@@ -437,12 +435,13 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
           (non-zero) DSCP values.</t>
         </list></t>
 	    
-	<t>NOTE: More than one mechanism could result in the
-	same DSCP remarking (see below). The behaviours were measured on Internet paths between 2017 and 2021.
+        <t>NOTE: More than one mechanism could result in the
+        same DSCP remarking (see below). The behaviours were measured on Internet paths between 2017 and 2021.
         The network nodes forming a particular path may or may not have supported DiffServ.
-	It is not generally possible for an external observer to
-	determine which mechanism results in a specific remarking 
-	solely from the change in an observed DSCP value.</t>
+        It is not generally possible for an external observer to
+        determine which mechanism results in a specific remarking 
+        solely from the change in an observed DSCP value.</t>
+
 
       <section anchor="Bleaching" title="Bleaching the DSCP Field">
         <t>A specific form of remarking occurs when the DiffServ field is
@@ -637,10 +636,10 @@ If such a remarked packet further traverses other domains, it would receive trea
       is an optional intermediary mapping groups of BAs to PHBs.
    </t>
 
-      <section title="Mapping Specified for IEEE 802">
+     <section title="Mapping Specified for IEEE 802">
         <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. </t>
 
-      <section title="Mapping Specified for IEEE 802.1">
+       <section title="Mapping Specified for IEEE 802.1">
         <t>A 3-bit Priority Code Point (PCP) is specified in the IEEE 802.1Q
         tag to mark Ethernet frames to one of eight priority values <xref
         target="IEEE-802-1Q"></xref>. The value zero indicates the default
@@ -658,16 +657,17 @@ If such a remarked packet further traverses other domains, it would receive trea
         PCP2 (Spare) to indicate lower priority than PCP0, RFC8622.
         Therefore, different remarking behaviours are expected depending on the age of
         deployed devices.</t>
-    </section>
-      <section title="Mapping Specified for IEEE 802.11">
+        </section>
+
+       <section title="Mapping Specified for IEEE 802.11">
         <t>Section 6 of <xref target="RFC8325"></xref> provides a
         brief overview of IEEE 802.11 QoS. The IEEE <xref
         target="IEEE-802-11">802.11 standards</xref> provide MAC functions to
         support QoS in WLANs using Access Classes (AC). The upstream User
         Priority (UP) in the 802.11 header has a 3-bit QoS value. A DSCP can
-		be mapped to the UP.</t>
-	      <t> Most current WiFi implementations <xref
-        target="RFC8325"></xref> use a default mapping that maps the first three
+	be mapped to the UP.</t>
+
+	<t> Most current WiFi implementations <xref target="RFC8325"></xref> use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is
         then in turn mapped to the four WiFi Multimedia (WMM) Access
         Categories. The Wi-Fi Alliance has also specified a more flexible mapping 
@@ -727,17 +727,13 @@ If such a remarked packet further traverses other domains, it would receive trea
         the DSCP value of a downstream IP packet (e.g., the Control And Provisioning of Wireless
         Access Points (CAPWAP) protocol, RFC5415, maps an IP packet DiffServ field to the DiffServ field of the outer IP header in a CAPWAP
         tunnel).</t>
-
         <t>Some current constraints of WiFi mapping are discussed in section 2
         of <xref target="RFC8325"></xref>. A QoS profile can be used to limit
         the maximum DSCP value used for the upstream and downstream
         traffic.</t>
-
- 
     </section>
 
-
-      </section>
+</section>
 
       <section anchor="mpls" title="DiffServ and MPLS">
 
@@ -925,8 +921,9 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         case when defining the LE PHB <xref target="RFC8622"></xref>. In this
         case, bleaching, or remarking to "CS0" would result in elevating the
         lower effort traffic (LE) to the default class (BE/CS0). This is an example of
-        priority inversion.</t>
+        priority inversion.
 	Bleaching the lower three bits of the DSCP (/Bleach-low/ and /Bleach-some-low/) could result in the same priority inversion.
+        </t>
       </section>
 
       <section title="Where the proposed DSCP &gt; 0x07 (7)">
@@ -1370,13 +1367,13 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
           <t>Improve readibility.</t>
           </list>
        	</t>
-
            <t>Working Group -07
            <list style="hanging">
           <t>Update Section 4 to clarify both types of paths measured.</t>
           <t>Revised paragraph 2 in Introduction</t>
           </list>
-       	</t>
+        </t>
+
 
 
 
