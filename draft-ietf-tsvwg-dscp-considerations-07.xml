@@ -604,7 +604,7 @@ If such a remarked packet further traverses other domains, it would receive trea
 	"Packets received with an unrecognized codepoint SHOULD be forwarded as if 
 	they were marked for the Default behavior (see Sec. 4), and their codepoints 
 	should not be changed."  Some networks might not follow this recommendation 
-	instead remark packets with these codepoints to the default class, CS0 (0x00). 
+	and instead remark packets with these codepoints to the default class, CS0 (0x00). 
          </t>
 
         <t>
