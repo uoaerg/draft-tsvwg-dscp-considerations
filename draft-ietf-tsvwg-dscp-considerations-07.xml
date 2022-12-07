@@ -589,7 +589,7 @@ semantics have not yet been eliminated from deployed networks.</t>
 
 <t>If ToS Precedence Remarking occurs, packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
 For example, the AF31 DSCP (0x1a) could be remarked to either AF11 or AF21. 
-If such a remarked packet further traverses other domains, it would receive treatment as specified by the domain's operator corresponding to the remarked codepoint.</t>
+If such a remarked packet further traverses other Diffserv domains, it would receive treatment as specified by the domain's operator corresponding to the remarked codepoint.</t>
 	        </section>
       </section>
 
