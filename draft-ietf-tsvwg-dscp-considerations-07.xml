@@ -631,8 +631,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
      function that could remark the DSCP used at the IP layer.  In many cases, this
       use is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
-      infer mapping to a smaller L2 QoS field, for example, the 3-bit PCP field in an IEEE Ethernet 802.1Q header, WiFi or
-      Multi-Protocol Label Switching (MPLS).      
+      infer mapping to a smaller L2 QoS field, for example, the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
+      the 3-bit Traffic Class field of Multi-Protocol Label Switching (MPLS).      
       A Treatment Aggregate (TA) <xref target="RFC5127"></xref>
       is an optional intermediary mapping groups of BAs to PHBs.
    </t>
