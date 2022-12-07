@@ -600,9 +600,9 @@ If such a remarked packet further traverses other domains, it would receive trea
         </t>
 
         <t>
-	Section 3 of RFC <xref target="RFC2474"></xref> recommends: 
+	Section 3 of <xref target="RFC2474"></xref> recommends: 
 	"Packets received with an unrecognized codepoint SHOULD be forwarded as if 
-	they were marked for the Default behavior (see Sec. 4), and their codepoints 
+	they were marked for the Default behavior, and their codepoints 
 	should not be changed."  Some networks might not follow this recommendation 
 	and instead remark packets with these codepoints to the default class, CS0 (0x00). 
          </t>
