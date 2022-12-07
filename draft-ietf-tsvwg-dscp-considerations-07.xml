@@ -611,7 +611,7 @@ If such a remarked packet further traverses other domains, it would receive trea
         Remarking
         is sometimes performed using a Multi-Field (MF) classifier <xref
         target="RFC2475"></xref> <xref target="RFC3290"></xref> <xref
-        target="RFC4594"></xref>. If remarking to a single DSCP occurs, 
+        target="RFC4594"></xref>. If remarking occurs, 
 	packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
 	As an example,remarking traffic AF31, AF32 and AF33 all to a single DSCP AF11 stops 
         any drop probability differentiation, which may have been expressed 
