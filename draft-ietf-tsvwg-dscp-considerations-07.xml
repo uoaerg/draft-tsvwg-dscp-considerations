@@ -936,11 +936,11 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
   	Forwarding LE using the default PHB is in line with RFC8622, but
    	it is recommended to maintain the distinct LE DSCP codepoint 
   	end-to-end to allow for differentiated treatment by 
-   	domains supporting LE. Rewriting the LE DSCP to the default class, the BE DSCP (lso known as"CS0"),
+   	domains supporting LE. Rewriting the LE DSCP to the default class (CS0)
    	results in an undesired promotion of the priority for LE traffic in such a domain.
    	Bleaching the lower three bits of the DSCP (/Bleach-low/
    	and /Bleach-some-low/), as well as remarking to a particular 
-  	 DSCP can result in a similar promition of the priority.
+  	 DSCP can result in similar priority inversions for other DSCPs.
 	 </t>
       </section>
 
@@ -1043,7 +1043,7 @@ of misconfiguration.
         made from Pool 3 <xref target="RFC8436"></xref>. Does the ID contain an appropriate request to IANA?</t>
 
             <t>The value selected for a new DSCP can impact the ability of an operator to apply
-		    logical functions (e.g., a bitwise mask) to group related codepoints when configuring diffserv.
+		    logical functions (e.g., a bitwise mask) to related codepoints when configuring DiffServ.
 		    A suitable value can simplify configurations by
 		    aggregating classification on a range of DSCPs. This can
 		    also increase the comprehensibilty of documenting forwarding differentiaton.</t>
