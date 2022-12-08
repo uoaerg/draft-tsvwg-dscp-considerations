@@ -1043,10 +1043,10 @@ of misconfiguration.
         made from Pool 3 <xref target="RFC8436"></xref>. Does the ID contain an appropriate request to IANA?</t>
 
             <t>The value selected for a new DSCP can impact the ability of an operator to apply
-		    mask and logical functions to group related codepoints in their configuration.
-		    A suitable value can simplify
-		    aggregated by classification on a range of DSCPs, which can
-		    also increase the comprehensibilty of forwarding differentiaton.</t>
+		    logical functions (e.g., a bitwise mask) to group related codepoints when configuring diffserv.
+		    A suitable value can simplify configurations by
+		    aggregating classification on a range of DSCPs. This can
+		    also increase the comprehensibilty of documenting forwarding differentiaton.</t>
 	     <t>    
 		    <xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
             proposed DSCP? </t>
