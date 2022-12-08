@@ -606,13 +606,14 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 	they were marked for the Default behavior, and their codepoints 
 	should not be changed."  Some networks might not follow this recommendation 
 	and instead remark packets with these codepoints to the default class, CS0 (0x00). 
-         </t>
-
-        <t>
-        Remarking
+        This remarking
         is sometimes performed using a Multi-Field (MF) classifier <xref
         target="RFC2475"></xref> <xref target="RFC3290"></xref> <xref
-        target="RFC4594"></xref>. If remarking occurs, 
+        target="RFC4594"></xref>. 
+         </t>
+
+        <t>	
+        If remarking occurs, 
 	packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
 	As an example,remarking traffic AF31, AF32 and AF33 all to a single DSCP AF11 stops 
         any drop probability differentiation, which may have been expressed 
