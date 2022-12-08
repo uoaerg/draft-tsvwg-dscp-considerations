@@ -49,9 +49,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-
-<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-08"
-
+<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-07"
      ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -133,7 +131,7 @@
       </address>
     </author>
 
-    <date day="08" month="December" year="2022" />
+    <date day="21" month="November" year="2022" />
 
     <area>TSVArea</area>
 
@@ -379,9 +377,9 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
     <section anchor="observed-remarking" title="Remarking the DSCP">
       <t>It is a feature of the DiffServ architecture that the DiffServ field
-      of packets can be remarked at the Diffserv domain boundaries (see section 2.3.4.2 of
+      of packets can be remarked at domain boundaries (see section 2.3.4.2 of
       <xref target="RFC2475"></xref>). A DSCP can be remarked at the
-      ingress of a domain. This remarking
+      ingress of a DiffServ domain. This remarking
       can change the DSCP value used on the remainder of an IP path, or the
       network  can restore the
       initial DSCP marking at the egress of the domain. The DiffServ
@@ -438,7 +436,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 	    
         <t>NOTE: More than one mechanism could result in the
         same DSCP remarking (see below). The behaviours were measured on Internet paths between 2017 and 2021.
-        The network nodes forming a particular path might or might not have supported DiffServ.
+        The network nodes forming a particular path may or may not have supported DiffServ.
         It is not generally possible for an external observer to
         determine which mechanism results in a specific remarking 
         solely from the change in an observed DSCP value.</t>
@@ -546,7 +544,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
           <t></t>
 
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
-          be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that Diffserv domain. 
+          be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that domain. 
 	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.
 </t>
           <t>A variation of this observed remarking behaviour clears the top three bits of a
@@ -590,7 +588,7 @@ semantics have not yet been eliminated from deployed networks.</t>
 
 <t>If ToS Precedence Remarking occurs, packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
 For example, the AF31 DSCP (0x1a) could be remarked to either AF11 or AF21. 
-If such a remarked packet further traverses other Diffserv domains, it would receive treatment as specified by each domain's operator corresponding to the remarked codepoint.</t>
+If such a remarked packet further traverses other domains, it would receive treatment as specified by the domain's operator corresponding to the remarked codepoint.</t>
 	        </section>
       </section>
 
@@ -601,27 +599,25 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         </t>
 
         <t>
-	Section 3 of <xref target="RFC2474"></xref> recommends: 
-	"Packets received with an unrecognized codepoint SHOULD be forwarded as if 
-	they were marked for the Default behavior, and their codepoints 
-	should not be changed."  Some networks might not follow this recommendation 
-	and instead remark packets with these codepoints to the default class, CS0 (0x00). 
-        This remarking
-        is sometimes performed using a Multi-Field (MF) classifier <xref
-        target="RFC2475"></xref> <xref target="RFC3290"></xref> <xref
-        target="RFC4594"></xref>. 
+	Both <xref target="RFC2474"></xref> and <xref
+        target="RFC8100"></xref> recommend that DiffServ boundary nodes use
+        remarking, if necessary, to avoid theft/denial of service or ensure that
+        appropriate DSCPs are used within a DiffServ domain.  Some networks therefore
+        may not follow the earlier recommendation in <xref
+        target="RFC2474"></xref> to carry unknown or unexpected DSCPs without
+        modification, and instead remark packets with these codepoints to the default
+        class, CS0 (0x00).
          </t>
 
-        <t>	
-        If remarking occurs, 
-	packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
-	As an example, remarking traffic AF31, AF32 and AF33 all to a single DSCP AF11 stops 
-        any drop probability differentiation, which may have been expressed 
-        by these three DSCPs. If such a remarked packet further traverses 
-        other domains, it would receive treatment as specified by the domain's operator 
-	corresponding to the remarked codepoint. Bleaching
+        <t>
+        Remarking
+        is sometimes performed using a Multi-Field (MF) classifier <xref
+        target="RFC2475"></xref> <xref target="RFC3290"></xref> <xref
+        target="RFC4594"></xref>. For example, it is common to remark
+        all traffic to a single DSCP, thus removing any traffic
+        differentiation (see <xref target="Bleaching"></xref>). Bleaching
         (/Bleach/) is a specific example of this observed remarking behaviour that remarks to CS0
-        (0x00) (see <xref target="Bleaching"></xref>).</t>
+        (0x00).</t>
 
       </section>
     </section>
@@ -633,8 +629,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
      function that could remark the DSCP used at the IP layer.  In many cases, this
       use is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
-      infer mapping to a smaller L2 QoS field, for example, the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
-      the 3-bit Traffic Class field of Multi-Protocol Label Switching (MPLS).      
+      infer mapping to a smaller L2 QoS field, for example, WiFi or
+      Multi-Protocol Label Switching (MPLS).      
       A Treatment Aggregate (TA) <xref target="RFC5127"></xref>
       is an optional intermediary mapping groups of BAs to PHBs.
    </t>
@@ -671,9 +667,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 	be mapped to the UP.</t>
 
 	<t> Most current WiFi implementations <xref target="RFC8325"></xref> use a default mapping that maps the first three
-        bits of the DSCP to the 802.11 UP value. This is an example of equipment still classifying on ToS Precedence 
-	(which could be seen as a simple method to map IP layer DiffServ to layers offering only 3-bit QoS codepoints). Then, 
-        in turn, this is mapped to the four WiFi Multimedia (WMM) Access
+        bits of the DSCP to the 802.11 UP value. This is
+        then in turn mapped to the four WiFi Multimedia (WMM) Access
         Categories. The Wi-Fi Alliance has also specified a more flexible mapping 
 	that follows RFC8325 and provides functions at an AP to remark packets as 
         well as a QoS Map that maps each DSCP to an AC <xref target="WIFI-ALLIANCE"></xref>.</t>
@@ -741,25 +736,18 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 
       <section anchor="mpls" title="DiffServ and MPLS">
 
-   <t>Multi-Protocol Label Switching (MPLS) specified eight MPLS Traffic
-   Classes (TCs), which restrict the number of different treatments
-   <xref target="RFC5129"></xref>.  RFC 5127 describes aggregation of 
-   DiffServ TCs <xref target="RFC5127"></xref>
-   and introduces four DiffServ Treatment Aggregates.  Traffic marked
-   with multiple DSCPs can be forwarded in a single MPLS TC.</t>
 
-   There are three Label-Switched Router (LSR) models: the Pipe, the
-   Short Pipe and the Uniform Model <xref target="RFC3270"></xref>.  
-   In the Uniform and Pipe model, the egress MPLS router forwards 
-   traffic based on the received MPLS TC. The Uniform model includes 
-   an egress DSCP rewrite. With the Short Pipe model, the 
-   egress MPLS router forwards traffic based on the DiffServ DSCP 
-   as present at the egress router. If the domain supports IP and 
-   MPLS QoS differentiation, controlled behaviour requires the DSCP of an (outer) 
-   IP header to be assigned or re-written by all domain ingress routers 
-   to conform with the domain internal DiffServ deployment. 
-   Note that the short pipe model is prevalent in MPLS domains.
-	      
+        <t>Multi-Protocol Label Switching (MPLS) specified eight MPLS Traffic
+        Classes (TCs), which restrict the number of different treatments
+        <xref target="RFC5129"></xref>. RFC 5127 describes
+        aggregation of DiffServ TCs <xref target="RFC5127"></xref>, and
+        introduces four DiffServ Treatment Aggregates. Traffic marked with
+        multiple DSCPs can be forwarded in a single MPLS TC.</t>
+
+        <t>There are three Label-Switched Router (LSR) models: the Pipe,
+        the Short Pipe and the Uniform Model <xref target="RFC3270"></xref>.
+        These only differ when a LSP performs a push or a pop.</t>
+
         <section title="Mapping Specified for MPLS">
           <t><xref target="RFC3270">RFC3270</xref> defines a flexible solution
           for support of DiffServ over MPLS networks. This allows an MPLS
@@ -914,9 +902,6 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 
       <section title="Summary">
         <t>This section has discussed the various ways in which DSCP remarking behaviours can arise from interactions with lower layers.</t>
-	     <t> A provider service path may consist of sections where multiple and 
-   changing layers use their own code points to determine
-		     differentiated forwarding (e.g., IP - MPLS - IP - Ethernet - WiFi).</t>
       </section>
     </section>
 
@@ -928,22 +913,16 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       DSCP.</t>
 
       <section title="Effect of Bleaching and Remarking to a single DSCP">
-        <t>Section 4 describes remarking of the DSCP.
-	New DSCP assignments should consider the impact of bleaching
-  	(/Bleach/) or remarking (/Remark/) to a single DSCP, which can limit
-   	the ability to provide the expected treatment end-to-end.  This is
-   	particularly important for cases where the codepoint is intended to
-  	result in lower than best effort treatment, as was the case when
-  	defining the LE PHB <xref target="RFC8622"></xref>.
-  	Forwarding LE using the default PHB is in line with RFC8622, but
-   	it is recommended to maintain the distinct LE DSCP codepoint 
-  	end-to-end to allow for differentiated treatment by 
-   	domains supporting LE. Rewriting the LE DSCP to the default class (CS0)
-   	results in an undesired promotion of the priority for LE traffic in such a domain.
-   	Bleaching the lower three bits of the DSCP (/Bleach-low/
-   	and /Bleach-some-low/), as well as remarking to a particular 
-  	 DSCP can result in similar changes of priority relative to traffic that is marked with other DSCPs.
-	 </t>
+        <t>New DSCP assignments should consider the impact of bleaching (/Bleach/) or remarking (/Remark/) to a single DSCP, which
+        can limit the ability to provide the expected treatment end-to-end.
+        This is particularly important for cases where the codepoint is
+        intended to result in lower than best effort treatment, as was the
+        case when defining the LE PHB <xref target="RFC8622"></xref>. In this
+        case, bleaching, or remarking to "CS0" would result in elevating the
+        lower effort traffic (LE) to the default class (BE/CS0). This is an example of
+        priority inversion.
+	Bleaching the lower three bits of the DSCP (/Bleach-low/ and /Bleach-some-low/) could result in the same priority inversion.
+        </t>
       </section>
 
       <section title="Where the proposed DSCP &gt; 0x07 (7)">
@@ -991,15 +970,9 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 	described in the previous section can result from different configurations 
 	and approaches:</t>
         <t><list style="hanging">
-            <t hangText="Networks not remarking DiffServ:"> A network that either does not implement PHBs, or 
-		    implements one or more PHBs whilst restoring the DSCP field at network egress with the value 
-		    at network ingress. Operators in this category pass all DSCPs transparently.</t>
-            <t hangText="Networks that condition the DSCP:"> A network that implements more than one PHB and enforces 
-	Service Level Agreements (SLAs) with its peers. Operators in this category use conditioning to ensure that
-        only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100"></xref>). 
-	Operators need to either map the new DSCP to a corresponding PHB or remark the DSCP to a value 
-		    appropriate for the domain's deployed DiffServ infrastructure.</t>
-		
+            <t hangText="Networks not remarking DiffServ:"> A network that either does not implement PHBs, or implements one or more PHBs whilst restoring the DSCP field at network egress with the value at network ingress. Operators in this category pass all DSCPs transparently.</t>
+            <t hangText="Networks that condition the DSCP:"> A network that implements more than one PHB and enforces SLAs with its peers. Operators in this category use conditioning to ensure that
+        only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100"></xref>). This requires operators to choose to support or remark a new DSCP assignment.</t>
             <t hangText="Networks that remark in some other way">, which includes: 
             </t>
                 <t><list style='numbers'>
@@ -1011,10 +984,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       <t>
 	The DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
 	observed behaviour described in section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
-The same remarking can also arise in some cases when traffic conditioning is
-provided by DiffServ routers at operator boundaries, or as a result
-of misconfiguration.
-	 </t>
+	It can also arise when traffic conditioning is provided by DiffServ routers at operator boundaries, or as a result of misconfiguration.
+      </t>
     
       </section>
 
@@ -1044,13 +1015,7 @@ of misconfiguration.
         made by IANA in Pool 1, but the IETF can request assignments to be
         made from Pool 3 <xref target="RFC8436"></xref>. Does the ID contain an appropriate request to IANA?</t>
 
-            <t>The value selected for a new DSCP can impact the ability of an operator to apply
-		    logical functions (e.g., a bitwise mask) to related codepoints when configuring DiffServ.
-		    A suitable value can simplify configurations by
-		    aggregating classification on a range of DSCPs. This can
-		    also increase the comprehensibilty of documenting forwarding differentiaton.</t>
-	     <t>    
-		    <xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
+            <t><xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
             proposed DSCP? </t>
 
             <t> <xref target="lowerlayers"></xref> describes some observed treatments by layers
@@ -1407,11 +1372,10 @@ of misconfiguration.
           <t>Revised paragraph 2 in Introduction</t>
           </list>
         </t>
-  <t>Working Group -08
-           <list style="hanging">
-          <t>Update after Shepherd review with additional comments from R. Geib.</t>
-          </list>
-        </t>
+
+
+
+
         </list></t>
     </section>
 
