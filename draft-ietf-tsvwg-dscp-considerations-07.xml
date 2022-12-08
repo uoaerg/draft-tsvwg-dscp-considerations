@@ -378,9 +378,9 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
     <section anchor="observed-remarking" title="Remarking the DSCP">
       <t>It is a feature of the DiffServ architecture that the DiffServ field
-      of packets can be remarked at domain boundaries (see section 2.3.4.2 of
+      of packets can be remarked at the Diffserv domain boundaries (see section 2.3.4.2 of
       <xref target="RFC2475"></xref>). A DSCP can be remarked at the
-      ingress of a DiffServ domain. This remarking
+      ingress of a domain. This remarking
       can change the DSCP value used on the remainder of an IP path, or the
       network  can restore the
       initial DSCP marking at the egress of the domain. The DiffServ
@@ -545,7 +545,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
           <t></t>
 
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
-          be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that domain. 
+          be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that Diffserv domain. 
 	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.
 </t>
           <t>A variation of this observed remarking behaviour clears the top three bits of a
@@ -912,8 +912,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 
       <section title="Summary">
         <t>This section has discussed the various ways in which DSCP remarking behaviours can arise from interactions with lower layers.</t>
-	     <t> Provider service paths may consist of sections where multiple and 
-   changing layers determine forwarding by own code points determining
+	     <t> A provider service path may consist of sections where multiple and 
+   changing layers use their own code points to determine
 		     differentiated forwarding (e.g., IP - MPLS - IP - Ethernet - WiFi).</t>
       </section>
     </section>
@@ -936,11 +936,11 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
   	Forwarding LE using the default PHB is in line with RFC8622, but
    	it is recommended to maintain the distinct LE DSCP codepoint 
   	end-to-end to allow for differentiated treatment by 
-   	domains supporting LE. Rewriting the LE DSCP to default DSCP  ("CS0")
-   	results in an undesired priority promotion for LE traffic in such a domain.
+   	domains supporting LE. Rewriting the LE DSCP to the default class, the BE DSCP (lso known as"CS0"),
+   	results in an undesired promotion of the priority for LE traffic in such a domain.
    	Bleaching the lower three bits of the DSCP (/Bleach-low/
-   	and /Bleach-some-low/), as well well as  remarking to a particular 
-  	 DSCP can result in a similar priority promotion.
+   	and /Bleach-some-low/), as well as remarking to a particular 
+  	 DSCP can result in a similar promition of the priority.
 	 </t>
       </section>
 
@@ -995,7 +995,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
             <t hangText="Networks that condition the DSCP:"> A network that implements more than one PHB and enforces 
 	Service Level Agreements (SLAs) with its peers. Operators in this category use conditioning to ensure that
         only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100"></xref>). 
-	Operators need to either map the new DSCP to a corresponding PHB or remark the DSCP to a codepoint value 
+	Operators need to either map the new DSCP to a corresponding PHB or remark the DSCP to a value 
 		    appropriate for the domain's deployed DiffServ infrastructure.</t>
 		
             <t hangText="Networks that remark in some other way">, which includes: 
@@ -1042,9 +1042,11 @@ of misconfiguration.
         made by IANA in Pool 1, but the IETF can request assignments to be
         made from Pool 3 <xref target="RFC8436"></xref>. Does the ID contain an appropriate request to IANA?</t>
 
-            <t>The value of new codepoint value can be assigned to simplify configuration when the DSCP can be 
-		    aggregated by classification on a range of DSCPs. This can
-		    also increase the comprehensibilty of forwarding differentiaton. How might the IANA-assigned value impact this?</t>
+            <t>The value selected for a new DSCP can impact the ability of an operator to apply
+		    mask and logical functions to group related codepoints in their configuration.
+		    A suitable value can simplify
+		    aggregated by classification on a range of DSCPs, which can
+		    also increase the comprehensibilty of forwarding differentiaton.</t>
 	     <t>    
 		    <xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
             proposed DSCP? </t>
