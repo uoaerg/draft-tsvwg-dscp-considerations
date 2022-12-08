@@ -606,14 +606,14 @@ If such a remarked packet further traverses other domains, it would receive trea
         may not follow the earlier recommendation in <xref
         target="RFC2474"></xref> to carry unknown or unexpected DSCPs without
         modification, and instead remark packets with these codepoints to the default
-        class, CS0 (0x00). 
+        class, CS0 (0x00).
          </t>
 
         <t>
         Remarking
         is sometimes performed using a Multi-Field (MF) classifier <xref
         target="RFC2475"></xref> <xref target="RFC3290"></xref> <xref
-        target="RFC4594"></xref>. For example, a common remarking is to remark
+        target="RFC4594"></xref>. For example, it is common to remark
         all traffic to a single DSCP, thus removing any traffic
         differentiation (see <xref target="Bleaching"></xref>). Bleaching
         (/Bleach/) is a specific example of this observed remarking behaviour that remarks to CS0
