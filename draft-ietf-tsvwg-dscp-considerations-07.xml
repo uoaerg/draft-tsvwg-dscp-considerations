@@ -942,7 +942,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
    	results in an undesired promotion of the priority for LE traffic in such a domain.
    	Bleaching the lower three bits of the DSCP (/Bleach-low/
    	and /Bleach-some-low/), as well as remarking to a particular 
-  	 DSCP can result in similar priority inversions for other DSCPs.
+  	 DSCP can result in similar changes of piority relative to traffic that is marked with other DSCPs.
 	 </t>
       </section>
 
