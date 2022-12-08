@@ -590,7 +590,7 @@ semantics have not yet been eliminated from deployed networks.</t>
 
 <t>If ToS Precedence Remarking occurs, packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
 For example, the AF31 DSCP (0x1a) could be remarked to either AF11 or AF21. 
-If such a remarked packet further traverses other Diffserv domains, it would receive treatment as specified by the domain's operator corresponding to the remarked codepoint.</t>
+If such a remarked packet further traverses other Diffserv domains, it would receive treatment as specified by each domain's operator corresponding to the remarked codepoint.</t>
 	        </section>
       </section>
 
@@ -615,7 +615,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         <t>	
         If remarking occurs, 
 	packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
-	As an example,remarking traffic AF31, AF32 and AF33 all to a single DSCP AF11 stops 
+	As an example, remarking traffic AF31, AF32 and AF33 all to a single DSCP AF11 stops 
         any drop probability differentiation, which may have been expressed 
         by these three DSCPs. If such a remarked packet further traverses 
         other domains, it would receive treatment as specified by the domain's operator 
@@ -942,7 +942,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
    	results in an undesired promotion of the priority for LE traffic in such a domain.
    	Bleaching the lower three bits of the DSCP (/Bleach-low/
    	and /Bleach-some-low/), as well as remarking to a particular 
-  	 DSCP can result in similar changes of piority relative to traffic that is marked with other DSCPs.
+  	 DSCP can result in similar changes of priority relative to traffic that is marked with other DSCPs.
 	 </t>
       </section>
 
