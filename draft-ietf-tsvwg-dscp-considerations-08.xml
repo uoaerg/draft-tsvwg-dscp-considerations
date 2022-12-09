@@ -1047,8 +1047,8 @@ of misconfiguration.
             <t>The value selected for a new DSCP can impact the ability of an operator to apply
 		    logical functions (e.g., a bitwise mask) to related codepoints when configuring DiffServ.
 		    A suitable value can simplify configurations by
-		    aggregating classification on a range of DSCPs. This can
-		    also increase the comprehensibilty of documenting forwarding differentiaton.</t>
+		    aggregating classification on a range of DSCPs. This classification based on DSCP ranges
+		    can increase the comprehensibilty of documenting forwarding differentiaton.</t>
 	     <t>    
 		    <xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
             proposed DSCP? </t>
