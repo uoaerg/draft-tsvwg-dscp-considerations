@@ -518,7 +518,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 ]]></artwork>
 
             <postamble>As a result of ToS Precedence Bleaching, all the DSCPs in each column are remarked to the smallest DSCP in that column. 
-		  The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path <.
+		  The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path.
             </postamble>
           </figure>
 
