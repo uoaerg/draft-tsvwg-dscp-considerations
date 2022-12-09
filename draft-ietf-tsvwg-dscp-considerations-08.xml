@@ -1012,7 +1012,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 	The DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
 	observed behaviour described in section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
 The same remarking can also arise in some cases when traffic conditioning is
-provided by DiffServ routers at operator boundaries, or as a result
+provided by DiffServ routers at operator boundaries or as a result
 of misconfiguration.
 	 </t>
     
