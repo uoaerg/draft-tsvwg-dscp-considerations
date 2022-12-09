@@ -630,8 +630,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
       <t>Transmission systems and subnetworks can, and do, utilise the
       DiffServ field in an IP packet to set a QoS-related field or function at
      the lower layer.  A lower layer could also implement a traffic conditioning
-     function that could remark the DSCP used at the IP layer.  In many cases, this
-      use is constrained by designs that
+     function that could remark the DSCP used at the IP layer.  This
+      function is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
       infer mapping to a smaller L2 QoS field, for example, the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
       the 3-bit Traffic Class field of Multi-Protocol Label Switching (MPLS).      
@@ -1012,7 +1012,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 	The DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
 	observed behaviour described in section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
 The same remarking can also arise in some cases when traffic conditioning is
-provided by DiffServ routers at operator boundaries, or as a result
+provided by DiffServ routers at operator boundaries or as a result
 of misconfiguration.
 	 </t>
     
@@ -1409,7 +1409,7 @@ of misconfiguration.
         </t>
   <t>Working Group -08
            <list style="hanging">
-          <t>Update after Shepherd review with additional comments from R. Geib.</t>
+          <t>Update after Shepherd review with additional comments from R. Geib. D. Black and B. Carpenter provided comments on relationship to RFC 2474.</t>
           </list>
         </t>
         </list></t>
