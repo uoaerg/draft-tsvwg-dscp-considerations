@@ -389,9 +389,10 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
       between providers at an exchange point. Furthermore, <xref target="RFC2474"></xref> states
       that remarking must occur when there is a possibility of theft/denial-of-service attack.</t>
 
-      <t>The treatment of packets that are marked with an unknown or an
-unexpected DSCP at DiffServ domain boundaries is a matter of
-administrative policy and outside the scope of <xref target="RFC2474"></xref>.
+	    <t>
+The treatment of packets that are marked with an unknown or an
+unexpected DSCP at DiffServ domain boundaries is determined by the policy
+for a DiffServ domain.
 If packets are received that are marked with an unknown or an
 unexpected DSCP by a DiffServ domain interior node, <xref target="RFC2474"></xref>
 recommends forwarding the packet using a
@@ -406,7 +407,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 </t>
 
       <t>Reports measuring existing deployments have categorised DSCP
-      remarking <xref target="Custura"></xref> <xref target="Barik"></xref>
+      remarking <xref target="Cus17"></xref> <xref target="Bar18"></xref>
       into the following seven observed remarking behaviours:</t>
 
       <t><list style="hanging">
@@ -452,7 +453,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 
         <t>A survey reported that resetting all the bits of the DiffServ field to 0 was seen to be more prevalent
         at the edge of the network, and rather less common in core networks
-        <xref target="Custura"></xref>.</t>
+        <xref target="Cus17"></xref>.</t>
       </section>
 
       <section title="IP Type of Service manipulations">
@@ -467,7 +468,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 
         <t>However, a recent survey reports practices based on ToS semantics have not yet been
         eliminated from the Internet, and need to still be considered when making
-        new DSCP assignments <xref target="Custura"></xref>.</t>
+        new DSCP assignments <xref target="Cus17"></xref>.</t>
 
         <section title="Impact of ToS Precedence Bleaching ">
           <t>ToS Precedence Bleaching (/Bleach-ToS-Precedence/) is a practice
@@ -517,12 +518,12 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 ]]></artwork>
 
             <postamble>As a result of ToS Precedence Bleaching, all the DSCPs in each column are remarked to the smallest DSCP in that column. 
-		  The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path.
+		  The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path <.
             </postamble>
           </figure>
 
 
-<t></t>
+<t>Data on the observed remarking at the time of writing was presented in <<xref target="IETF115-IEPG"></xref>.</t>
 
           <figure>
             <preamble></preamble>
@@ -539,7 +540,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 
             <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. 
 		For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. 
-		  * DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="DSCP4"></xref>.
+		  * DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="Kol10"></xref>.
             </postamble>
           </figure>
 
@@ -856,7 +857,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         standards do not define or recommend any specific mapping between
         each QCI or 5QI and DiffServ (and mobile QCIs are based on several
         criteria service class definitions). The way packets are mapped at the
-        Packet Gateway (P-GW) boundary is determined by operators. However, TS
+        Packet Gateway (P-GW) boundary is determined by network operators. However, TS
         23.107 (version 16.0.0, applies to LTE and below) mandates that
         Differentiated Services, defined by IETF, shall be used to
         interoperate with IP backbone networks.</t>
@@ -997,9 +998,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
             <t hangText="Networks that condition the DSCP:"> A network that implements more than one PHB and enforces 
 	Service Level Agreements (SLAs) with its peers. Operators in this category use conditioning to ensure that
         only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100"></xref>). 
-	Operators need to either map the new DSCP to a corresponding PHB or remark the DSCP to a value 
-		    appropriate for the domain's deployed DiffServ infrastructure.</t>
-		
+	Operators need to classify the received traffic, assign it to a corresponding PHB, and could
+	remark the DSCP to a value that is appropriate for the domain's deployed DiffServ infrastructure.</t>		
             <t hangText="Networks that remark in some other way">, which includes: 
             </t>
                 <t><list style='numbers'>
@@ -1047,8 +1047,8 @@ of misconfiguration.
             <t>The value selected for a new DSCP can impact the ability of an operator to apply
 		    logical functions (e.g., a bitwise mask) to related codepoints when configuring DiffServ.
 		    A suitable value can simplify configurations by
-		    aggregating classification on a range of DSCPs. This can
-		    also increase the comprehensibilty of documenting forwarding differentiaton.</t>
+		    aggregating classification on a range of DSCPs. This classification based on DSCP ranges
+		    can increase the comprehensibilty of documenting forwarding differentiaton.</t>
 	     <t>    
 		    <xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
             proposed DSCP? </t>
@@ -1056,7 +1056,9 @@ of misconfiguration.
             <t> <xref target="lowerlayers"></xref> describes some observed treatments by layers
             below IP. What are the implications of the treatments and mapping described in <xref target="lowerlayers"></xref> on the proposed DSCP? </t>
 		   
-            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB. <xref target="observed-remarking"></xref> describes some observed remarking behaviour, and <xref target="networks"></xref> identifies root causes for why this remarking is observed. 
+            <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB.
+	    <xref target="observed-remarking"></xref> describes some observed remarking behaviour, 
+	    and <xref target="networks"></xref> identifies root causes for why this remarking is observed. 
 		    What is the expected effect of currently-deployed remarking on the service, end-to-end or otherwise?</t>
  
           </list></t>
@@ -1159,7 +1161,7 @@ of misconfiguration.
 
       <!--- last informational individual specs and other references -->
 
-      <reference anchor="DSCP4">
+      <reference anchor="Kol10">
        <front>
         <title> Bogus DSCP value for SSH </title>
           <author initials="A." surname="Kolu"></author>
@@ -1168,17 +1170,7 @@ of misconfiguration.
        <seriesInfo name="online" value="https://lists.freebsd.org/pipermail/freebsd-stable/2010-July/057710.html"/>
       </reference>
 
-      <reference anchor="IETF113DSCP">
-       <front>
-       <title> Considerations for assigning DSCPs</title>
-          <author initials="A." surname="Custura"></author>
-          <author initials="G." surname="Fairhurst"></author>
-          <date year="2022" />
-       </front>
-       <seriesInfo name="IETF 113 Proceedings" value="https://datatracker.ietf.org/meeting/113/materials/slides-113-tsvwg-61-dscp-considerations-07"/>
-      </reference>
-
-      <reference anchor="Custura">
+      <reference anchor="Cus17">
         <front>
           <title>Exploring DSCP modification pathologies in mobile edge
           networks</title>
@@ -1193,7 +1185,7 @@ of misconfiguration.
         <seriesInfo name="TMA" value="" />
       </reference>
 
-      <reference anchor="Barik">
+      <reference anchor="Bar18">
         <front>
           <title>Can WebRTC QoS Work? A DSCP Measurement Study</title>
 
@@ -1321,6 +1313,21 @@ of misconfiguration.
         <seriesInfo name="IEEE" value="802.1D" />
       </reference>
 
+<reference anchor="IETF115-IEPG">
+        <front>
+          <title>Real-world DSCP Traversal Measurements</title>
+
+          <author>
+                <author initials="A." surname="Custura"></author>
+		<organization>University of Aberdeen, UK</organization>
+          </author>
+
+          <date year="2022" />
+        </front>
+
+        <seriesInfo name="MEF" value="23.1" />
+      </reference>
+https://datatracker.ietf.org/meeting/115/materials/slides-115-iepg-sessa-considerations-for-assigning-dscps-01
       <reference anchor="MEF23.1">
         <front>
           <title>MEF Technical Specification MEF 23.1-- Carrier Ethernet Class
