@@ -857,7 +857,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         standards do not define or recommend any specific mapping between
         each QCI or 5QI and DiffServ (and mobile QCIs are based on several
         criteria service class definitions). The way packets are mapped at the
-        Packet Gateway (P-GW) boundary is determined by operators. However, TS
+        Packet Gateway (P-GW) boundary is determined by network operators. However, TS
         23.107 (version 16.0.0, applies to LTE and below) mandates that
         Differentiated Services, defined by IETF, shall be used to
         interoperate with IP backbone networks.</t>
@@ -998,8 +998,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
             <t hangText="Networks that condition the DSCP:"> A network that implements more than one PHB and enforces 
 	Service Level Agreements (SLAs) with its peers. Operators in this category use conditioning to ensure that
         only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100"></xref>). 
-	perators need to classify the received traffic, assigning it to the corresponding PHB, and could
-	remark the DSCP to a value appropriate for the domain's deployed DiffServ infrastructure.</t>		
+	Operators need to classify the received traffic, assign it to a corresponding PHB, and could
+	remark the DSCP to a value that is appropriate for the domain's deployed DiffServ infrastructure.</t>		
             <t hangText="Networks that remark in some other way">, which includes: 
             </t>
                 <t><list style='numbers'>
