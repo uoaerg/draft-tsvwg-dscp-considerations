@@ -248,7 +248,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
             <t hangText="DSCP Pool 2:">A pool of 16 codepoints with a format of
             0bxxxx11, reserved for experimental or local (private) use by
-            network operators (see sections 4.1 and 4.2 of <xref
+            network operators (see Sections 4.1 and 4.2 of <xref
             target="RFC8126"></xref>.</t>
 
             <t hangText="DSCP Pool 3:">A pool of 16 codepoints with a format of 0bxxxx01.
@@ -379,7 +379,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
     <section anchor="observed-remarking" title="Remarking the DSCP">
       <t>It is a feature of the DiffServ architecture that the DiffServ field
-      of packets can be remarked at the Diffserv domain boundaries (see section 2.3.4.2 of
+      of packets can be remarked at the Diffserv domain boundaries (see Section 2.3.4.2 of
       <xref target="RFC2475"></xref>). A DSCP can be remarked at the
       ingress of a domain. This remarking
       can change the DSCP value used on the remainder of an IP path, or the
@@ -473,7 +473,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
         <section title="Impact of ToS Precedence Bleaching ">
           <t>ToS Precedence Bleaching (/Bleach-ToS-Precedence/) is a practice
           that resets the first three bits of the DSCP field to zero (the former
-          ToS Precedence field), leaving the last three bits unchanged (see section
+          ToS Precedence field), leaving the last three bits unchanged (see Section
           4.2.1 of <xref target="RFC2474"></xref>). A DiffServ node can be 
 	  configured in a way that results in this remarking. This remarking 
           can also occur when packets are processed by a router that is not configured 
@@ -616,7 +616,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         <t>	
         If remarking occurs, 
 	packets are forwarded using the PHB specified for the resulting DSCP in that domain. 
-	As an example, remarking traffic AF31, AF32 and AF33 all to a single DSCP AF11 stops 
+	As an example, remarking traffic AF31, AF32 and AF33 all to a single DSCP, e.g. AF11, stops 
         any drop probability differentiation, which may have been expressed 
         by these three DSCPs. If such a remarked packet further traverses 
         other domains, it would receive treatment as specified by the domain's operator 
@@ -732,7 +732,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         the DSCP value of a downstream IP packet (e.g., the Control And Provisioning of Wireless
         Access Points (CAPWAP) protocol, RFC5415, maps an IP packet DiffServ field to the DiffServ field of the outer IP header in a CAPWAP
         tunnel).</t>
-        <t>Some current constraints of WiFi mapping are discussed in section 2
+        <t>Some current constraints of WiFi mapping are discussed in Section 2
         of <xref target="RFC8325"></xref>. A QoS profile can be used to limit
         the maximum DSCP value used for the upstream and downstream
         traffic.</t>
@@ -751,15 +751,15 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 
    <t>There are three Label-Switched Router (LSR) models: the Pipe, the
    Short Pipe and the Uniform Model <xref target="RFC3270"></xref>.  
-   In the Uniform and Pipe model, the egress MPLS router forwards 
-   traffic based on the received MPLS TC. The Uniform model includes 
-   an egress DSCP rewrite. With the Short Pipe model, the 
+   In the Uniform and Pipe models, the egress MPLS router forwards 
+   traffic based on the received MPLS TC. The Uniform Model includes 
+   an egress DSCP rewrite. With the Short Pipe Model, the 
    egress MPLS router forwards traffic based on the DiffServ DSCP 
    as present at the egress router. If the domain supports IP and 
    MPLS QoS differentiation, controlled behaviour requires the DSCP of an (outer) 
    IP header to be assigned or re-written by all domain ingress routers 
-   to conform with the domain internal DiffServ deployment. 
-   Note that the short pipe model is prevalent in MPLS domains.
+   to conform with the domain's internal DiffServ deployment. 
+   Note that the Short Pipe Model is prevalent in MPLS domains.
    </t>
 	      
         <section title="Mapping Specified for MPLS">
@@ -1011,7 +1011,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
        </list></t>
       <t>
 	The DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
-	observed behaviour described in section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
+	observed behaviour described in Section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
 The same remarking can also arise in some cases when traffic conditioning is
 provided by DiffServ routers at operator boundaries or as a result
 of misconfiguration.
@@ -1049,7 +1049,7 @@ of misconfiguration.
 		    logical functions (e.g., a bitwise mask) to related codepoints when configuring DiffServ.
 		    A suitable value can simplify configurations by
 		    aggregating classification on a range of DSCPs. This classification based on DSCP ranges
-		    can increase the comprehensibilty of documenting forwarding differentiaton.</t>
+		    can increase the comprehensibility of documenting forwarding differentiation.</t>
 	     <t>    
 		    <xref target="mpls"></xref> describes examples of treatment aggregation. What are the effects of treatment aggregation on the
             proposed DSCP? </t>
@@ -1066,7 +1066,7 @@ of misconfiguration.
       </section>
     </section>
 
-    <section anchor="Acknowledgments" title="Acknowledgments">
+    <section anchor="Acknowledgements" title="Acknowledgements">
       <t>The authors acknowledge the helpful discussions and analysis by Greg
       White and Thomas Fossati in a draft concerning NQB. Ruediger Geib and
       Brian Carpenter contributed comments, along with other members of the
