@@ -161,7 +161,7 @@
       in many networks. It provides differentiated traffic forwarding based on
       the DiffServ Code Point (DSCP) <xref target="RFC2474"></xref> carried in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header.</t>
 
-      <t>DiffServ associates traffic with a service class <xref target="RFC4594"></xref>, and
+      <t>DiffServ associates traffic with a service class <xref target="RFC4594"></xref> and
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>. Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>.
       Behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
       Treatment differentiation can be
@@ -217,7 +217,7 @@ in this document are to be interpreted as described in BCP 14 <xref
 target="RFC2119"/> <xref target="RFC8174"/> when, and only when, they appear in
 all capitals, as shown here.</t>
 
-      <t>DSCPs are specified in the IANA registry <xref target="DSCP-registry"></xref> where a variety of different formats are described.  
+      <t>DSCPs are specified in the IANA registry <xref target="DSCP-registry"></xref>, where a variety of different formats are described.
 A DSCP can sometimes be referred to by name, such as "CS1", and
         sometimes by a decimal, hex, or binary value. Hex values are represented in text using prefix 0x. Binary values use prefix 0b.
        </t>
@@ -231,7 +231,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         the IPv4 and IPv6 packet headers to carry one of 64 distinct DSCP
         values. Within a given administrative boundary, each DSCP value can be
         mapped to a distinct PHB <xref target="RFC2474"></xref>. When a new PHB
-        is standardized, a recommended DSCP value among those 64 values is
+        is standardised, a recommended DSCP value among those 64 values is
         normally reserved for that PHB, and is assigned by IANA. An operator 
         is not formally required to use the recommended value;
         indeed [RFC2474] states that "the mapping of codepoints to PHBs
@@ -254,13 +254,13 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
             <t hangText="DSCP Pool 3:">A pool of 16 codepoints with a format of 0bxxxx01.
             This was initially available for experimental or local use, but
             was originally specified to be preferentially utilised for
-            standardized assignments if Pool 1 is ever exhausted. 
+            standardised assignments if Pool 1 is ever exhausted.
             <xref
             target="RFC4594"></xref> 
 	    had recommended a local use of DSCP values 0x01, 0x03, 0x05 and 0x07 
 	    (codepoints with the format of 0b000xx1).    
 	    Pool 3
-            codepoints are now utilised for standardized assignments and are
+            codepoints are now utilised for standardised assignments and are
             no longer available for assignment to experimental or local use <xref
             target="RFC8436"></xref>. <xref
             target="RFC8622"></xref> assigned 0x01 from this pool and consequentially
@@ -333,7 +333,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         same forwarding treatment. DSCPs can be mapped to treatment
         aggregates that might result in remarking (e.g., <xref
         target="RFC5160">RFC5160</xref> suggests Meta-QoS-Classes to help
-        enable deployment of standardized end-to-end QoS classes)</t>
+        enable deployment of standardised end-to-end QoS classes)</t>
 
       </section>
 
@@ -602,10 +602,10 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         </t>
 
         <t>
-	Section 3 of <xref target="RFC2474"></xref> recommends: 
-	"Packets received with an unrecognized codepoint SHOULD be forwarded as if 
-	they were marked for the Default behavior, and their codepoints 
-	should not be changed."  Some networks might not follow this recommendation 
+	Section 3 of <xref target="RFC2474"></xref> recommends:
+	"Packets received with an unrecognised codepoint SHOULD be forwarded as if
+	they were marked for the Default behavior, and their codepoints
+	should not be changed."  Some networks might not follow this recommendation
 	and instead remark packets with these codepoints to the default class, CS0 (0x00). 
         This remarking
         is sometimes performed using a Multi-Field (MF) classifier <xref
@@ -707,7 +707,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         to the left and adding three additional zeros to generate a 6-bit DSCP
         value). This derived DSCP value is used for QoS treatment between
         the wireless AP and the nearest classification and marking policy
-        enforcement point (which may be the centralized wireless LAN
+        enforcement point (which may be the centralised wireless LAN
         controller, relatively deep within the network). Alternatively, in the
         case where there is no other classification and marking policy
         enforcement point, then this derived DSCP value will be used on the
