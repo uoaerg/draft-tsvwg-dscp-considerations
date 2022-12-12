@@ -370,7 +370,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         <t> At the time of writing, there is evidence to suggest CS6 is 
 	actively used by network operators for control traffic. A study of 
         traffic at a large Internet Exchange showed around 40% of ICMP traffic 
-	carried this mark <xref target="IETF113DSCP"></xref>. Similarly, another 
+	carried this mark <xref target="IETF113-IEPG"></xref>. Similarly, another 
 	study found many routers remark all traffic except those packets with a DSCP
 	that sets the higher order bits to 0b11 (see Section 4 of this document).</t>
 
@@ -523,7 +523,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
           </figure>
 
 
-<t>Data on the observed remarking at the time of writing was presented in <<xref target="IETF115-IEPG"></xref>.</t>
+<t>Data on the observed remarking at the time of writing was presented in <xref target="IETF113-IEPG"></xref>.</t>
 
           <figure>
             <preamble></preamble>
@@ -749,7 +749,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
    and introduces four DiffServ Treatment Aggregates.  Traffic marked
    with multiple DSCPs can be forwarded in a single MPLS TC.</t>
 
-   There are three Label-Switched Router (LSR) models: the Pipe, the
+   <t>There are three Label-Switched Router (LSR) models: the Pipe, the
    Short Pipe and the Uniform Model <xref target="RFC3270"></xref>.  
    In the Uniform and Pipe model, the egress MPLS router forwards 
    traffic based on the received MPLS TC. The Uniform model includes 
@@ -760,6 +760,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
    IP header to be assigned or re-written by all domain ingress routers 
    to conform with the domain internal DiffServ deployment. 
    Note that the short pipe model is prevalent in MPLS domains.
+   </t>
 	      
         <section title="Mapping Specified for MPLS">
           <t><xref target="RFC3270">RFC3270</xref> defines a flexible solution
@@ -1161,6 +1162,8 @@ of misconfiguration.
 
       <!--- last informational individual specs and other references -->
 
+
+
       <reference anchor="Kol10">
        <front>
         <title> Bogus DSCP value for SSH </title>
@@ -1174,48 +1177,35 @@ of misconfiguration.
         <front>
           <title>Exploring DSCP modification pathologies in mobile edge
           networks</title>
-
           <author initials="A." surname="Custura"></author>
           <author initials="A." surname="Venne"></author>
           <author initials="G." surname="Fairhurst"></author>
-
           <date year="2017" />
         </front>
-
         <seriesInfo name="TMA" value="" />
       </reference>
 
       <reference anchor="Bar18">
         <front>
           <title>Can WebRTC QoS Work? A DSCP Measurement Study</title>
-
           <author initials="R." surname="Barik"></author>
-
           <author initials="M." surname="Welzl"></author>
-
           <author initials="A." surname="Elmokashfi"></author>
-
           <author initials="T." surname="Dreibholz"></author>
-
           <author initials="S." surname="Gjessing"></author>
-
           <date month="September" year="2018" />
         </front>
-
         <seriesInfo name="ITC" value="30" />
       </reference>
 
       <reference anchor="SA-5G">
         <front>
           <title>System Architecture for 5G</title>
-
           <author>
             <organization>3GPP</organization>
           </author>
-
           <date year="2019" />
         </front>
-
         <seriesInfo name="TS" value="23.501" />
       </reference>
 
@@ -1223,14 +1213,11 @@ of misconfiguration.
         <front>
           <title>IR.34 Guidelines for IPX Provider networks (Previously
           Inter-Service Provider IP Backbone Guidelines)</title>
-
           <author>
-            <organization>GSM Association</organization>
+           <organization>GSM Association</organization>
           </author>
-
           <date year="2017" />
         </front>
-
         <seriesInfo name="IR" value="34" />
       </reference>
 
@@ -1240,14 +1227,11 @@ of misconfiguration.
           <title>Quality of Service Mapping and Interconnection Between
           Ethernet, Internet Protocol and Multiprotocol Label Switching
           Networks</title>
-
           <author>
             <organization>ITU-T</organization>
           </author>
-
           <date year="2012" />
         </front>
-
         <seriesInfo name="ITU-T" value="Y.1566" />
       </reference>
 
@@ -1255,14 +1239,11 @@ of misconfiguration.
         <front>
           <title>Wireless LAN Medium Access Control (MAC) and Physical Layer
           (PHY) Specifications</title>
-
           <author>
             <organization>IEEE</organization>
           </author>
-
           <date year="2007" />
         </front>
-
         <seriesInfo name="IEEE" value="802.11" />
       </reference>
 
@@ -1271,14 +1252,11 @@ of misconfiguration.
         <front>
           <title>Wi-Fi QoS Management Specification Version 2.0
           </title>
-
           <author>
             <organization>Wi-Fi Alliance</organization>
           </author>
-
           <date year="2021" />
         </front>
-
         <seriesInfo name="Wi-Fi QoS Management Specification Version" value="2.0" />
       </reference>
 
@@ -1287,11 +1265,9 @@ of misconfiguration.
         <front>
           <title>IEEE Standard for Local and Metropolitan Area Network--
           Bridges and Bridged Networks</title>
-
           <author>
             <organization>IEEE</organization>
           </author>
-
           <date year="2018" />
         </front>
 
@@ -1302,46 +1278,38 @@ of misconfiguration.
         <front>
           <title>IEEE Standard for Local and Metropolitan Area Network-- Media
           Access Control (MAC) Bridges</title>
-
           <author>
             <organization>IEEE</organization>
           </author>
-
           <date year="2004" />
         </front>
-
         <seriesInfo name="IEEE" value="802.1D" />
       </reference>
 
-<reference anchor="IETF115-IEPG">
+      <reference anchor="IETF113-IEPG">
         <front>
           <title>Real-world DSCP Traversal Measurements</title>
-
-          <author>
-                <author initials="A." surname="Custura"></author>
-		<organization>University of Aberdeen, UK</organization>
-          </author>
-
+          <author initials="A." surname="Custura">
+	 <organization>University of Aberdeen, UK</organization>
+         </author>
           <date year="2022" />
         </front>
-
-        <seriesInfo name="MEF" value="23.1" />
+        <seriesInfo name="online" value="https://datatracker.ietf.org/meeting/115/materials/slides-115-iepg-sessa-considerations-for-assigning-dscps-01" />
       </reference>
-https://datatracker.ietf.org/meeting/115/materials/slides-115-iepg-sessa-considerations-for-assigning-dscps-01
+
+
       <reference anchor="MEF23.1">
         <front>
           <title>MEF Technical Specification MEF 23.1-- Carrier Ethernet Class
           of Service ? Phase 2</title>
-
           <author>
             <organization>MEF</organization>
           </author>
-
           <date year="2012" />
         </front>
-
         <seriesInfo name="MEF" value="23.1" />
       </reference>
+
 
       &I-D.learmonth-rfc1226-bis;
     </references>
