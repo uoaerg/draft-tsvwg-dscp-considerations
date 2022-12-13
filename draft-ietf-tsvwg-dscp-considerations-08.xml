@@ -165,7 +165,7 @@
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>. Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>.
       Behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
       Treatment differentiation can be
-      realised using a variety of schedulers and queues, and also by
+      achieved using a variety of schedulers and queues, and also by
 	    algorithms that implement access to the physical media.</t>
 
       <t>Within a DiffServ domain, operators can set service level
@@ -231,7 +231,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         the IPv4 and IPv6 packet headers to carry one of 64 distinct DSCP
         values. Within a given administrative boundary, each DSCP value can be
         mapped to a distinct PHB <xref target="RFC2474"></xref>. When a new PHB
-        is standardised, a recommended DSCP value among those 64 values is
+        is specified, a recommended DSCP value among those 64 values is
         normally reserved for that PHB, and is assigned by IANA. An operator 
         is not formally required to use the recommended value;
         indeed [RFC2474] states that "the mapping of codepoints to PHBs
@@ -239,8 +239,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         usually convenient and avoids confusion.</t>
 
         <t>The DSCP space is divided into three pools for the purpose of
-        assignment and management <xref target="DSCP-registry"></xref>. The
-        pools can be summarised in a table (where 'x' refers to either a
+        assignment and management <xref target="DSCP-registry"></xref>. A
+        summary of the pools is provided in a table (where 'x' refers to either a
         bit position with value '0' or '1').<list style="hanging">
             <t hangText="DSCP Pool 1:">A pool of 32 codepoints with a format
             0bxxxxx0, to be assigned by IANA Standards Action <xref
@@ -253,15 +253,15 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 
             <t hangText="DSCP Pool 3:">A pool of 16 codepoints with a format of 0bxxxx01.
             This was initially available for experimental or local use, but
-            was originally specified to be preferentially utilised for
-            standardised assignments if Pool 1 is ever exhausted.
+            was originally specified to be "preferentially utilized for
+            standards assignments" if Pool 1 is ever exhausted.
             <xref
             target="RFC4594"></xref> 
 	    had recommended a local use of DSCP values 0x01, 0x03, 0x05 and 0x07 
 	    (codepoints with the format of 0b000xx1).    
 	    Pool 3
-            codepoints are now utilised for standardised assignments and are
-            no longer available for assignment to experimental or local use <xref
+            codepoints are now "utilized for standards assignments and are
+            no longer available for assignment to experimental or local use" <xref
             target="RFC8436"></xref>. <xref
             target="RFC8622"></xref> assigned 0x01 from this pool and consequentially
 	     updated <xref
@@ -333,7 +333,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
         same forwarding treatment. DSCPs can be mapped to treatment
         aggregates that might result in remarking (e.g., <xref
         target="RFC5160">RFC5160</xref> suggests Meta-QoS-Classes to help
-        enable deployment of standardised end-to-end QoS classes)</t>
+        enable deployment of standard end-to-end QoS classes)</t>
 
       </section>
 
@@ -406,7 +406,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
    traffic conditioning required by RFC 2475 applies first.
 </t>
 
-      <t>Reports measuring existing deployments have categorised DSCP
+      <t>Reports measuring existing deployments have defines a set of categories for DSCP
       remarking <xref target="Cus17"></xref> <xref target="Bar18"></xref>
       into the following seven observed remarking behaviours:</t>
 
@@ -603,7 +603,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 
         <t>
 	Section 3 of <xref target="RFC2474"></xref> recommends:
-	"Packets received with an unrecognised codepoint SHOULD be forwarded as if
+	"Packets received with an unrecognized codepoint SHOULD be forwarded as if
 	they were marked for the Default behavior, and their codepoints
 	should not be changed."  Some networks might not follow this recommendation
 	and instead remark packets with these codepoints to the default class, CS0 (0x00). 
@@ -707,7 +707,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         to the left and adding three additional zeros to generate a 6-bit DSCP
         value). This derived DSCP value is used for QoS treatment between
         the wireless AP and the nearest classification and marking policy
-        enforcement point (which may be the centralised wireless LAN
+        enforcement point (which may be a central wireless LAN
         controller, relatively deep within the network). Alternatively, in the
         case where there is no other classification and marking policy
         enforcement point, then this derived DSCP value will be used on the
@@ -866,7 +866,15 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         <t>The GSM Association (GSMA) has defined four aggregated classes and
         seven associated PHBs in their guidelines for IPX Provider networks
         <xref target="GSMA-IR-34">GSMA IR.34</xref>. 
-This was previously specified as the Inter-Service Provider IP Backbone Guidelines, and provides a mobile ISP to ISP QoS mapping mechanism, and interconnection with other IP networks in the general Internet. If realised by an IP VPN, the operator is free to apply its DS Domain internal codepoint scheme at outer headers and inner IPX DSCPs may be transported transparently. The guidelines also describe a case where the DSCP marking from a Service Provider cannot be trusted (depending on the agreement between the Service Provider and its IPX Provider), in which situation the IPX Provider can remark the DSCP value to a static default value.
+This was previously specified as the Inter-Service Provider IP Backbone Guidelines, 
+	and provides a mobile ISP to ISP QoS mapping mechanism, and interconnection 
+		with other IP networks in the general Internet. If provided an 
+		IP VPN, the operator is free to apply its DS Domain internal codepoint 
+		scheme at outer headers and inner IPX DSCPs may be transported transparently. 
+		The guidelines also describe a case where the DSCP marking from a Service 
+		Provider cannot be trusted (depending on the agreement between the Service Provider 
+		and its IPX Provider), in which situation the IPX Provider can remark 
+		the DSCP value to a static default value.
         </t>
 
         <t><figure>
@@ -1031,7 +1039,7 @@ of misconfiguration.
             experimental use, without any IETF specification for the DSCP or
             associated PHB.</t>
 
-	    <t>How is the proposed service class characterised: What are the
+	    <t>What are the characteristics of the proposed service classs?: What are the
             characteristics of the traffic to be carried? What are the
             expectations for treatment? </t>
 
@@ -1379,7 +1387,8 @@ of misconfiguration.
            <t>Working Group -07
            <list style="hanging">
           <t>Update Section 4 to clarify both types of paths measured.</t>
-          <t>Revised paragraph 2 in Introduction</t>
+          <t>Revised
+		  paragraph 2 in Introduction</t>
           </list>
         </t>
   <t>Working Group -08
