@@ -148,8 +148,8 @@
 
     <abstract>
       <t>This document discusses considerations for assigning a new
-      recommended DiffServ Code Point (DSCP) for a new standard Per Hop Behaviour (PHB). It considers the common
-      observed remarking behaviours  that the DiffServ field might be subjected to along
+      recommended DiffServ Code Point (DSCP) for a new standard Per Hop Behavior (PHB). It considers the common
+      observed remarking behaviors  that the DiffServ field might be subjected to along
       an Internet path. It also notes some implications of using a specific
       DSCP.</t>
     </abstract>
@@ -163,14 +163,14 @@
 
       <t>DiffServ associates traffic with a service class <xref target="RFC4594"></xref> and
       categorises it into Behavior Aggregates <xref target="RFC4594"></xref>. Configuration guidelines for service classes are provided in <xref target="RFC4594">RFC4594</xref>.
-      Behaviour aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behaviour (PHB). 
+      Behavior aggregates are associated with a DiffServ Code Point (DSCP), which in turn maps to a Per Hop Behavior (PHB). 
       Treatment differentiation can be
       achieved using a variety of schedulers and queues, and also by
 	    algorithms that implement access to the physical media.</t>
 
       <t>Within a DiffServ domain, operators can set service level
    specifications <xref target="RFC3086"></xref>, each of which maps to a particular Per
-   Domain Behaviour (PDB) that is based on one or more PHBs.  The
+   Domain Behavior (PDB) that is based on one or more PHBs.  The
    PDB defines which PHB (or set of PHBs) and hence for a specific
    operator, which DSCP (or set of DSCPs) will be associated with
    specific BAs as the packets pass through a DiffServ domain, and
@@ -195,7 +195,7 @@ Traffic        Class
         </figure></t>
 
       <t>This document discusses considerations for assigning a new DSCP for a standard PHB. It
-      considers some commonly observed DSCP remarking behaviours that might be
+      considers some commonly observed DSCP remarking behaviors that might be
       experienced along an Internet path. It also describes some packet
       forwarding treatments that a packet with a specific DSCP can expect to
       receive when forwarded across a link or subnetwork.</t>
@@ -408,7 +408,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 
       <t>Reports measuring existing deployments have defined a set of categories for DSCP
       remarking <xref target="Cus17"></xref> <xref target="Bar18"></xref>
-      into the following seven observed remarking behaviours:</t>
+      into the following seven observed remarking behaviors:</t>
 
       <t><list style="hanging">
           <t hangText="Bleach:">bleaches all traffic (sets the DSCP to
@@ -438,7 +438,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
         </list></t>
 	    
         <t>NOTE: More than one mechanism could result in the
-        same DSCP remarking (see below). The behaviours were measured on Internet paths between 2017 and 2021.
+        same DSCP remarking (see below). The behaviors were measured on Internet paths between 2017 and 2021.
         The network nodes forming a particular path might or might not have supported DiffServ.
         It is not generally possible for an external observer to
         determine which mechanism results in a specific remarking 
@@ -488,7 +488,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 |0 0 0|x x x|
 +-+-+-+-+-+-+
 ]]></artwork>
-            <postamble>Figure showing the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behaviour, 
+            <postamble>Figure showing the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behavior, 
 		    based on Section 3 of <xref target="RFC1349"></xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
 
@@ -538,7 +538,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 +=================+============+====+======+======+============+====+
 ]]></artwork>
 
-            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviours. 
+            <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviors. 
 		For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core. 
 		  * DSCP 4 has been historically used by the SSH application, following semantics which precede DiffServ<xref target="Kol10"></xref>.
             </postamble>
@@ -550,7 +550,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
           be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that Diffserv domain. 
 	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.
 </t>
-          <t>A variation of this observed remarking behaviour clears the top three bits of a
+          <t>A variation of this observed remarking behavior clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
           CS6 and CS7 DSCPs). As a result, a DSCP value greater than 48
           decimal (0x30) is less likely to be impacted by ToS Precedence
@@ -579,7 +579,7 @@ semantics have not yet been eliminated from deployed networks.</t>
 ]]></artwork>
 
             <postamble>Figure showing ToS Precedence Remarking (/Remark-ToS/)
-            observed behaviour, based on Section 3 of <xref
+            observed behavior, based on Section 3 of <xref
             target="RFC1349"></xref>. The bit positions marked "x" remain unchanged.</postamble>
 
           </figure>
@@ -621,7 +621,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         by these three DSCPs. If such a remarked packet further traverses 
         other domains, it would receive treatment as specified by the domain's operator 
 	corresponding to the remarked codepoint. Bleaching
-        (/Bleach/) is a specific example of this observed remarking behaviour that remarks to CS0
+        (/Bleach/) is a specific example of this observed remarking behavior that remarks to CS0
         (0x00) (see <xref target="Bleaching"></xref>).</t>
 
       </section>
@@ -659,7 +659,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5). However,
         <xref target="IEEE-802-1D"></xref> maps both PCP1 (Background) and
         PCP2 (Spare) to indicate lower priority than PCP0, RFC8622.
-        Therefore, different remarking behaviours are expected depending on the age of
+        Therefore, different remarking behaviors are expected depending on the age of
         deployed devices.</t>
         </section>
 
@@ -699,7 +699,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         remarking. It proposes several recommendations for mapping a DSCP to an IEEE 802.11 UP for
         wired-to-wireless interconnection. The recommendation includes mapping network control traffic CS6 and CS7, as well unassigned DSCPs, to UP 0.</t>
 
-        <t>In the upstream direction (wireless-to-wired interconnections, this mapping can result in a specific DSCP remarking behaviour.
+        <t>In the upstream direction (wireless-to-wired interconnections, this mapping can result in a specific DSCP remarking behavior.
         Some Access Points (APs) currently use a
         default UP-to-DSCP mapping <xref target="RFC8325"></xref>,
         wherein "DSCP values are derived from the layer 2 UP values by
@@ -724,7 +724,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 
 ]]></artwork>
 
-          <postamble>Figure showing the observed remarking behaviour resulting from deriving from UP-to-DSCP mapping in some
+          <postamble>Figure showing the observed remarking behavior resulting from deriving from UP-to-DSCP mapping in some
          802.11 networks.</postamble>
         </figure>
         <t>
@@ -756,7 +756,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
    an egress DSCP rewrite. With the Short Pipe Model, the 
    egress MPLS router forwards traffic based on the DiffServ DSCP 
    as present at the egress router. If the domain supports IP and 
-   MPLS QoS differentiation, controlled behaviour requires the DSCP of an (outer) 
+   MPLS QoS differentiation, controlled behavior requires the DSCP of an (outer) 
    IP header to be assigned or re-written by all domain ingress routers 
    to conform with the domain's internal DiffServ deployment. 
    Note that the Short Pipe Model is prevalent in MPLS domains.
@@ -807,7 +807,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
          limits the number of acceptable external DSCPs (and possibilities for their
          transparent transport or restoration at network boundaries).  In this design,
          packets marked with DSCPs not part of the RFC8100 codepoint scheme are treated
-         as unexpected and will possibly be remarked (a /Remark/ behaviour) or dealt
+         as unexpected and will possibly be remarked (a /Remark/ behavior) or dealt
          with via an additional agreement(s) among the operators of the interconnected
          networks.  RFC8100 can be extended to support up to 32 DSCPs by future
          standards. RFC8100 is operated by at least one Tier 1 backbone provider.  Use
@@ -923,7 +923,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       </section>
 
       <section title="Summary">
-        <t>This section has discussed the various ways in which DSCP remarking behaviours can arise from interactions with lower layers.</t>
+        <t>This section has discussed the various ways in which DSCP remarking behaviors can arise from interactions with lower layers.</t>
 	     <t> A provider service path may consist of sections where multiple and 
    changing layers use their own code points to determine
 		     differentiated forwarding (e.g., IP - MPLS - IP - Ethernet - WiFi).</t>
@@ -976,7 +976,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         aggregated with traffic marked with DSCP 2 (0x02), increasing the
         volume of traffic which receives the treatment associated with DSCP 2.
         New DSCP assignments should consider unexpected
-        consequences arising from this observed remarking behaviour.</t>
+        consequences arising from this observed remarking behavior.</t>
 	 
         <section title="Where the proposed DSCP&amp;0x07=0x01">
           <t>As a consequence of assigning the LE PHB <xref
@@ -995,9 +995,9 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       </section>
 
       <section anchor= "networks" title="Impact on deployed infrastructure">
-        <t>Behaviour of deployed PHBs and conditioning treatments also needs
+        <t>Behavior of deployed PHBs and conditioning treatments also needs
         to be considered when assigning a new DSCP. Network operators have choices
-        when it comes to configuring DiffServ support within their domains, and the observed remarking behaviours 
+        when it comes to configuring DiffServ support within their domains, and the observed remarking behaviors 
 	described in the previous section can result from different configurations 
 	and approaches:</t>
         <t><list style="hanging">
@@ -1019,7 +1019,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
        </list></t>
       <t>
 	The DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
-	observed behaviour described in Section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
+	observed behavior described in Section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
 The same remarking can also arise in some cases when traffic conditioning is
 provided by DiffServ routers at operator boundaries or as a result
 of misconfiguration.
@@ -1066,7 +1066,7 @@ of misconfiguration.
             below IP. What are the implications of the treatments and mapping described in <xref target="lowerlayers"></xref> on the proposed DSCP? </t>
 		   
             <t> DSCPs are assigned to PHBs and can be used to enable nodes along an end-to-end path to classify the packet for a suitable PHB.
-	    <xref target="observed-remarking"></xref> describes some observed remarking behaviour, 
+	    <xref target="observed-remarking"></xref> describes some observed remarking behavior, 
 	    and <xref target="networks"></xref> identifies root causes for why this remarking is observed. 
 		    What is the expected effect of currently-deployed remarking on the service, end-to-end or otherwise?</t>
  
@@ -1378,7 +1378,7 @@ of misconfiguration.
           <t>Ensure it is clear that different remarking processes may result in the same observed remarking.</t>
           <t>Clarify Treatment Aggregates are part of methods such as MPLS (comments from David Black).</t>
           <t>Clarify implications on the rest of the path by remarking in one domain. </t>
-          <t>Include all observed remarking behaviours in Section 6.</t>
+          <t>Include all observed remarking behaviors in Section 6.</t>
           <t>Remove mentions of DSCP 5 being provisionally assigned to NQB.</t>
           <t>Clarify scope of network control traffic in Section 3.2.</t>
           <t>Improve readibility.</t>
