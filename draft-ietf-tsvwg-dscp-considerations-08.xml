@@ -406,7 +406,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
    traffic conditioning required by RFC 2475 applies first.
 </t>
 
-      <t>Reports measuring existing deployments have defines a set of categories for DSCP
+      <t>Reports measuring existing deployments have defined a set of categories for DSCP
       remarking <xref target="Cus17"></xref> <xref target="Bar18"></xref>
       into the following seven observed remarking behaviours:</t>
 
@@ -1039,7 +1039,7 @@ of misconfiguration.
             experimental use, without any IETF specification for the DSCP or
             associated PHB.</t>
 
-	    <t>What are the characteristics of the proposed service classs?: What are the
+	    <t>What are the characteristics of the proposed service class?: What are the
             characteristics of the traffic to be carried? What are the
             expectations for treatment? </t>
 
