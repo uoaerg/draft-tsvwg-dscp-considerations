@@ -52,7 +52,7 @@
 
 <rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-09"
 
-     ipr="trust200902">
+     ipr="trust200902" submissionType="IETF">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN" 
