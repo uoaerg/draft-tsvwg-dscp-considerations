@@ -27,7 +27,7 @@
 <!ENTITY RFC8325 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8325.xml">
 <!ENTITY RFC8436 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8436.xml">
 <!ENTITY RFC8622 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8622.xml">
-<!ENTITY I-D.ietf-tsvwg-nqb SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-ietf-tsvwg-nqb-14.xml">
+<!ENTITY I-D.ietf-tsvwg-nqb SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-ietf-tsvwg-nqb-15.xml">
 <!ENTITY I-D.learmonth-rfc1226-bis SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-learmonth-rfc1226-bis-03.xml">
 ]>
 <?rfc strict="yes" ?>
@@ -550,12 +550,11 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 	  <t>The above figure summaries the current assignments for DSCPs of the form 0b000xxx and whether a DSCP is affected by any known remarking behaviors.  
 	For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core.
 	The Lower-Effort Per-Hop Behavior PHB (LE) uses a DSCP of 4. This value has been historically used by the SSH application, 
-	following semantics that precede DiffServ <xref target="Kol10">.</t>  
+	following semantics that precede DiffServ <xref target="Kol10"></xref>.</t>  
 
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
           be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that Diffserv domain. 
-	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.
-</t>
+	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.</t>
 		  
           <t>A variation of this observed remarking behavior clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
