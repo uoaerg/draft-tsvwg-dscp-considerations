@@ -50,7 +50,7 @@
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
 
-<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-08"
+<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-09"
 
      ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
@@ -133,7 +133,7 @@
       </address>
     </author>
 
-    <date day="11" month="December" year="2022" />
+    <date day="7" month="February" year="2023" />
 
     <area>TSVArea</area>
 
