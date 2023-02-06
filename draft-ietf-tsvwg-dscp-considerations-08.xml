@@ -547,15 +547,16 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 	      
 
           <t></t>
-	  <t>The aobve figure, summaries the current assignments for DSCPs of the form 0b000xxx and whether a DSCP is affected by any known remarking behaviors.  
+	  <t>The above figure summaries the current assignments for DSCPs of the form 0b000xxx and whether a DSCP is affected by any known remarking behaviors.  
 	For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core.
-	  DSCP 4 has been historically used by the SSH application, following semantics, which precede DiffServ<xref target="Kol10">.</t>. 
-		  
+	The Lower-Effort Per-Hop Behavior PHB (LE) uses a DSCP of 4. This value has been historically used by the SSH application, 
+	following semantics that precede DiffServ <xref target="Kol10">.</t>  
 
           <t>If ToS Precedence Bleaching occurs, packets with a DSCP 'x' would
           be remarked to 'x' &amp; 0x07 and then would be forwarded using the PHB specified for the resulting DSCP in that Diffserv domain. 
 	  In subsequent networks it will receive treatment as specified by the domain's operator corresponding to the remarked codepoint.
 </t>
+		  
           <t>A variation of this observed remarking behavior clears the top three bits of a
           DSCP, unless these have values 0b110 or 0b111 (corresponding to the
           CS6 and CS7 DSCPs). As a result, a DSCP value greater than 48
