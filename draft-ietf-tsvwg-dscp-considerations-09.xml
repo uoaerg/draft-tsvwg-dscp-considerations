@@ -704,7 +704,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         can result from such remarking, and recommends a different mapping to perform this
         remarking. It proposes several recommendations for mapping a DSCP to an IEEE 802.11 UP for interconnection between wired and wireless networks. The recommendation in Section 5.1.2 includes mapping network control traffic CS6 and CS7, as well unassigned DSCPs, to UP 0 in the upstream direction (wireless-to-wired). RFC8325 separately proposes mapping CS6 and CS7 traffic to UP 7, in the downstream direction (Section 4.1). </t>
 
-        <t>As noted above, RFC8325 also proposes a mapping based on multiplying by 8 in the upstream direction. This mapping can result in a specific DSCP remarking behavior.
+        <t>As noted above, RFC8325 also proposes a mapping in the upstream direction that remarks the DSCP to the avlue of the UP multiplied by 8. 
+	This mapping can result in a specific DSCP remarking behavior.
         Some Access Points (APs) currently use a
         default UP-to-DSCP mapping <xref target="RFC8325"></xref>,
         wherein "DSCP values are derived from the layer 2 UP values by
