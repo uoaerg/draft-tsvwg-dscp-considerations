@@ -702,9 +702,16 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         <t></t>
         <t><xref target="RFC8325">RFC8325</xref> notes inconsistencies that
         can result from such remarking, and recommends a different mapping to perform this
-        remarking. It proposes several recommendations for mapping a DSCP to an IEEE 802.11 UP for interconnection between wired and wireless networks. The recommendation in Section 5.1.2 includes mapping network control traffic CS6 and CS7, as well unassigned DSCPs, to UP 0 in the upstream direction (wireless-to-wired). RFC8325 separately proposes mapping CS6 and CS7 traffic to UP 7, in the downstream direction (Section 4.1). </t>
-
-        <t>As noted above, RFC8325 also proposes a mapping in the upstream direction that remarks the DSCP to the value of the UP multiplied by 8. 
+        remarking, dependent on the direction in which a packet is forwarded.
+	It provides recommendations for mapping a DSCP to an IEEE 802.11 UP 
+	for interconnection between wired and wireless networks. 
+	The recommendation in Section 5.1.2 includes mapping network control traffic: CS6 and CS7, 
+	as well unassigned DSCPs, to UP 0 when forwarding in the upstream direction (wireless-to-wired). 
+	It also recommends mapping CS6 and CS7 traffic to UP 7, 
+	when forwarding in the downstream direction (Section 4.1). </t>
+	
+        <t>RFC8325 also recommends a mapping in the upstream direction that derives the 
+	DSCP from the value of the UP multiplied by 8. 
 	This mapping can result in a specific DSCP remarking behavior.
         Some Access Points (APs) currently use a
         default UP-to-DSCP mapping <xref target="RFC8325"></xref>,
@@ -908,7 +915,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 
 ]]></artwork>
 
-            <postamble>Figure showing the PHB mapping recommended in the guidelines proposed in <xref
+            <postamble>Figure showing the PHB mapping recommended in the guidelines in <xref
             target="GSMA-IR-34">GSMA IR.34</xref>.</postamble>
           </figure></t>
 
