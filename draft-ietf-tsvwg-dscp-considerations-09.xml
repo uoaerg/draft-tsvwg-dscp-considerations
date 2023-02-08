@@ -440,7 +440,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
         </list></t>
 	    
         <t>NOTE: More than one mechanism could result in the
-        same DSCP remarking (see below). The behaviors were measured on Internet paths between 2017 and 2021.
+        same DSCP remarking (see below). The behaviors were measured on both IPv4 and IPv6 Internet paths between 2017 and 2021.
         The network nodes forming a particular path might or might not have supported DiffServ.
         It is not generally possible for an external observer to
         determine which mechanism results in a specific remarking 
@@ -473,7 +473,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
         new DSCP assignments <xref target="Cus17"></xref>.</t>
 
         <section title="Impact of ToS Precedence Bleaching ">
-          <t>ToS Precedence Bleaching (/Bleach-ToS-Precedence/) is a practice
+          <t>ToS Precedence Bleaching (Bleach-ToS-Precedence, described in <xref target="observed-remarking"></xref>) is a practice
           that resets the first three bits of the DSCP field to zero (the former
           ToS Precedence field), leaving the last three bits unchanged (see Section
           4.2.1 of <xref target="RFC2474"></xref>). A DiffServ node can be 
@@ -490,7 +490,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 |0 0 0|x x x|
 +-+-+-+-+-+-+
 ]]></artwork>
-            <postamble>Figure showing the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) observed remarking behavior, 
+            <postamble>Figure showing the ToS Precedence Bleaching (Bleach-ToS-Precedence) observed remarking behavior, 
 		    based on Section 3 of <xref target="RFC1349"></xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
 
@@ -571,7 +571,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 DSCP field, e.g., by treating the value of the field as a table index
 which is used to select a particular packet handling mechanism which
 has been implemented in that device". This replaced remarking according 
-to ToS precedence (/Remark-ToS/) <xref target="RFC1349"></xref>. These practices based on ToS
+to ToS precedence, Remark-ToS (described in <xref target="observed-remarking"></xref>) <xref target="RFC1349"></xref>. These practices based on ToS
 semantics have not yet been eliminated from deployed networks.</t>
 
           <figure>
@@ -584,7 +584,7 @@ semantics have not yet been eliminated from deployed networks.</t>
 
 ]]></artwork>
 
-            <postamble>Figure showing ToS Precedence Remarking (/Remark-ToS/)
+            <postamble>Figure showing ToS Precedence Remarking (Remark-ToS)
             observed behavior, based on Section 3 of <xref
             target="RFC1349"></xref>. The bit positions marked "x" remain unchanged.</postamble>
 
@@ -604,7 +604,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
       <section anchor="remark" title="Remarking to a Particular DSCP">
 
         <t>A network device might remark the DiffServ field of an IP packet
-        based on a local policy with a specific (set of) DSCPs, /Remark/. 
+        based on a local policy with a specific (set of) DSCPs, Remark (described in <xref target="observed-remarking"></xref>). 
         </t>
 
         <t>
@@ -627,7 +627,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         by these three DSCPs. If such a remarked packet further traverses 
         other domains, it would receive treatment as specified by the domain's operator 
 	corresponding to the remarked codepoint. Bleaching
-        (/Bleach/) is a specific example of this observed remarking behavior that remarks to CS0
+        (Bleach, described in <xref target="observed-remarking"></xref>) is a specific example of this observed remarking behavior that remarks to CS0
         (0x00) (see <xref target="Bleaching"></xref>).</t>
 
       </section>
@@ -701,11 +701,10 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 
         <t></t>
         <t><xref target="RFC8325">RFC8325</xref> notes inconsistencies that
-        can result from such remarking, and recommends how to perform this
-        remarking. It proposes several recommendations for mapping a DSCP to an IEEE 802.11 UP for
-        wired-to-wireless interconnection. The recommendation includes mapping network control traffic CS6 and CS7, as well unassigned DSCPs, to UP 0.</t>
+        can result from such remarking, and recommends a different mapping to perform this
+        remarking. It proposes several recommendations for mapping a DSCP to an IEEE 802.11 UP for interconnection between wired and wireless networks. The recommendation in Section 5.1.2 includes mapping network control traffic CS6 and CS7, as well unassigned DSCPs, to UP 0 in the upstream direction (wireless-to-wired). RFC8325 separately proposes mapping CS6 and CS7 traffic to UP 7, in the downstream direction (Section 4.1). </t>
 
-        <t>In the upstream direction (wireless-to-wired interconnections, this mapping can result in a specific DSCP remarking behavior.
+        <t>As noted above, RFC8325 also proposes a mapping based on multiplying by 8 in the upstream direction. This mapping can result in a specific DSCP remarking behavior.
         Some Access Points (APs) currently use a
         default UP-to-DSCP mapping <xref target="RFC8325"></xref>,
         wherein "DSCP values are derived from the layer 2 UP values by
@@ -718,7 +717,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         case where there is no other classification and marking policy
         enforcement point, then this derived DSCP value will be used on the
         remainder of the Internet path." This can result in
-        remarking /Bleach-low/.</t>
+        the remarking behaviour Bleach-low, described in <xref target="observed-remarking"></xref>.</t>
 
         <figure>
           <preamble></preamble>
@@ -813,13 +812,13 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
          limits the number of acceptable external DSCPs (and possibilities for their
          transparent transport or restoration at network boundaries).  In this design,
          packets marked with DSCPs not part of the RFC8100 codepoint scheme are treated
-         as unexpected and will possibly be remarked (a /Remark/ behavior) or dealt
+         as unexpected and will possibly be remarked (a Remark behavior as described in <xref target="observed-remarking"></xref>) or dealt
          with via an additional agreement(s) among the operators of the interconnected
          networks.  RFC8100 can be extended to support up to 32 DSCPs by future
          standards. RFC8100 is operated by at least one Tier 1 backbone provider.  Use
          of the MPLS Short Pipe Model favours remarking unexpected DSCP values to zero
          in the absence of an additional agreement(s), as explained in <xref
-         target="RFC8100"></xref>. This can result in bleaching (/Bleach/).
+         target="RFC8100"></xref>. This can result in bleaching (Bleach).
          </t>
 
           <figure>
@@ -946,7 +945,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       <section title="Effect of Bleaching and Remarking to a single DSCP">
         <t>Section 4 describes remarking of the DSCP.
 	New DSCP assignments should consider the impact of bleaching
-  	(/Bleach/) or remarking (/Remark/) to a single DSCP, which can limit
+  	(Bleach) or remarking (Remark) to a single DSCP, which can limit
    	the ability to provide the expected treatment end-to-end.  This is
    	particularly important for cases where the codepoint is intended to
   	result in lower than best effort treatment, as was the case when
@@ -956,8 +955,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
   	end-to-end to allow for differentiated treatment by 
    	domains supporting LE. Rewriting the LE DSCP to the default class (CS0)
    	results in an undesired promotion of the priority for LE traffic in such a domain.
-   	Bleaching the lower three bits of the DSCP (/Bleach-low/
-   	and /Bleach-some-low/), as well as remarking to a particular 
+   	Bleaching the lower three bits of the DSCP (Bleach-low	
+   	and Bleach-some-low, described in <xref target="observed-remarking"></xref>), as well as remarking to a particular 
   	 DSCP can result in similar changes of priority relative to traffic that is marked with other DSCPs.
 	 </t>
       </section>
@@ -967,8 +966,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         marking semantics in place of methods based on the former ToS field,
         the current recommendation is that any new assignment where the
         DSCP is greater than 0x07 should consider the semantics
-        associated with the resulting DSCP when ToS Precedence Bleaching (/Bleach-ToS-Precedence/ and /Bleach-some-ToS/)
-	or ToS Precedence Remarking (/Remark-ToS/) is
+        associated with the resulting DSCP when ToS Precedence Bleaching (Bleach-ToS-Precedence and Bleach-some-ToS, described in <xref target="observed-remarking"></xref>)
+	or ToS Precedence Remarking (Remark-ToS, described in <xref target="observed-remarking"></xref>) is
         experienced. For example, it can be desirable to avoid choosing a DSCP
         that could be remarked to LE, <xref target="RFC8622">Lower
         Effort</xref>, which could otherwise potentially result in a priority
@@ -990,7 +989,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
           Pool 3.</t>
 
           <t>When making assignments where the DSCP has a format: 0bxxx001,
-          the case of ToS Precedence Bleaching (/Bleach-ToS-Precedence/) of a
+          the case of ToS Precedence Bleaching (Bleach-ToS-Precedence) of a
           DSCP to a value of 0x01 needs to be considered. ToS Precedence
           Bleaching will result in demoting the traffic to the lower effort
           traffic class. Care should be taken to consider the implications
@@ -1024,8 +1023,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 		</list></t>
        </list></t>
       <t>
-	The DSCP re-marking corresponding to the ToS Precedence Bleaching (/Bleach-ToS-Precedence/) 
-	observed behavior described in Section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
+	The DSCP re-marking corresponding to the ToS Precedence Bleaching (Bleach-ToS-Precedence) 
+	observed behavior described in <xref target="observed-remarking"></xref>) can arise for various reasons, one of which is old equipment which precedes DiffServ.
 The same remarking can also arise in some cases when traffic conditioning is
 provided by DiffServ routers at operator boundaries or as a result
 of misconfiguration.
