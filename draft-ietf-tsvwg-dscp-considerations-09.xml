@@ -333,7 +333,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 	NOTE: <xref target="RFC4594"></xref> specified a now deprecated use of 
 	Class Selector 1 (CS1) as the codepoint for the lower effort
 	service. <xref target="RFC8622"></xref> updated <xref target="RFC4594"></xref> and <xref target="RFC8325"></xref>,
-	and obsoleted <xref target="RFC3662"></xref>, assign the LE DSCP codepoint for the lower effort
+	and obsoleted <xref target="RFC3662"></xref>, assigning the LE DSCP codepoint for the lower effort
 	service.
 	</t>
 	      
@@ -651,7 +651,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
      function that could remark the DSCP used at the IP layer.  This
       function is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
-      infer mapping to a smaller L2 QoS field, for example, the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
+      infer mapping to a smaller L2 QoS field, for example, 
+      the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
       the 3-bit Traffic Class field of Multi-Protocol Label Switching (MPLS).      
       A Treatment Aggregate (TA) <xref target="RFC5127"></xref>
       is an optional intermediary mapping groups of BAs to PHBs.
@@ -670,17 +671,20 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 	<t>
 	The mapping specified in <xref target="IEEE-802-1Q"></xref> revises
         a previous standard <xref target="IEEE-802-1D"></xref>, in an effort
-        to align with DiffServ practice.
-	A PCP0 is used to indicate the default
+        to align with DiffServ practice <xref target="RFC4594"></xref>.
+	The traffic types are specified to
+        match the first three bits of a suitable DSCP 
+	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5).
+	
+	<t>
+	In this mapping, PCP0 is used to indicate the default
         best effort treatment, and PCP1 indicates a background
         traffic class. This aligned with the now deprecated use of 
 	CS1 as the codepoint for the lower effort
 	service, as previously specified in <xref target="RFC4594"></xref>.
 	The remaining PCP values indicate increasing priority.
         Internet control traffic can be marked as CS6, and network control is
-        marked as CS7. The traffic types are specified to
-        match the first three bits of a suitable DSCP 
-	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5).</t>
+        marked as CS7.</t>
 
         <t>
 	Other remarking behaviors have also been implemented in Ethernet equipment. 
@@ -698,7 +702,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         target="IEEE-802-11">802.11 standards</xref> provide MAC functions to
         support QoS in WLANs using Access Classes (AC). The upstream User
         Priority (UP) in the 802.11 header has a 3-bit QoS value. A DSCP can
-	be mapped to the UP.</t>
+	be mapped to the UP.  <xref target="rfc8622"></xref> added 
+	support for LE DSCP, mapping this to AC_BK (Background).</t>
 
 	<t> Most current WiFi implementations <xref target="RFC8325"></xref> use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is an example of equipment still classifying on ToS Precedence 
