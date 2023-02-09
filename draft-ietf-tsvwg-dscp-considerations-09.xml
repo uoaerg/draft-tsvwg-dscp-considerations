@@ -323,7 +323,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           </figure>
 </t>
 	      
-<t> The above table summarises the DSCP abbreviations used in currnetly published RFCs
+<t> The above table summarises the DSCP abbreviations used in currently published RFCs
 			    <xref target="RFC2474"></xref> <xref
                        target="RFC2597"></xref> <xref target="RFC3246"></xref> <xref
                        target="RFC5865"></xref> <xref target="RFC8622"></xref>, as described in the IANA registry <xref
@@ -331,8 +331,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 	      </t>
 	<t>
 	NOTE: <xref target="RFC4594"></xref> specified a now deprecated use of 
-	Class Selector 1 (CS1) as the codepoint for the lower effort
-	service. <xref target="RFC8622"></xref> updated <xref target="RFC4594"></xref> and <xref target="RFC8325"></xref>,
+	Class Selector 1 (CS1) as the codepoint for the Lower Effort
+	PHB. <xref target="RFC8622"></xref> updated <xref target="RFC4594"></xref> and <xref target="RFC8325"></xref>,
 	and obsoleted <xref target="RFC3662"></xref>, assigning the LE DSCP codepoint for the lower effort
 	service.
 	</t>
