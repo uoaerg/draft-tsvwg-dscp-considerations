@@ -333,7 +333,8 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
 	Historical note: <xref target="RFC4594"></xref> specified a now deprecated use of 
 	Class Selector 1 (CS1) as the codepoint for the lower effort
 	service. <xref target="RFC8622"></xref> updated <xref target="RFC4594"></xref> and <xref target="RFC8325"></xref>,
-	and obsoleted <xref target="RFC3662"></xref>, replacing the codepoint with the LE DSCP.
+	and obsoleted <xref target="RFC3662"></xref>, assign the LE DSCP codepoint for the lower effort
+	service.
 	</t>
 	      
         <t>The DiffServ architecture allows forwarding treatments to be
