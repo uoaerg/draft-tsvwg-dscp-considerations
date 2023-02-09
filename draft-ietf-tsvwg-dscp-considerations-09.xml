@@ -329,6 +329,12 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
                        target="RFC5865"></xref> <xref target="RFC8622"></xref>, as described in the IANA registry <xref
                        target="DSCP-registry"></xref>. BE, also known as CS0, describes the default forwarding treatment.
 	      </t>
+	<t>
+	Historical note: <xref target="RFC4594"></xref> specified a now deprecated use of 
+	Class Selector 1 (CS1) as the codepoint for the lower effort
+	service. <xref target="RFC8622"></xref> updated <xref target="RFC4594"></xref> and <xref target="RFC8325"></xref>,
+	and obsoleted <xref target="RFC3662"></xref>, replacing the codepoint with the LE DSCP.
+	</t>
 	      
         <t>The DiffServ architecture allows forwarding treatments to be
         associated with each DSCP, and the RFC series describes some of these
@@ -637,6 +643,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
     </section>
 
     <section anchor="lowerlayers" title="Interpretation of the IP DSCP at Lower Layers">
+    
       <t>Transmission systems and subnetworks can, and do, utilise the
       DiffServ field in an IP packet to set a QoS-related field or function at
      the lower layer.  A lower layer could also implement a traffic conditioning
@@ -650,29 +657,41 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
    </t>
 
      <section title="Mapping Specified for IEEE 802">
-        <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements. </t>
+        <t>The IEEE specifies standards that include mappings for DSCPs to lower layer elements.</t>
 
        <section title="Mapping Specified for IEEE 802.1">
        
-        <t>The mapping specified in <xref target="IEEE-802-1Q"></xref> revises
-        previous standard <xref target="IEEE-802-1D"></xref>, in an effort
+        <t>IEEE 802.1Q specified a 3-bit Priority Code Point (PCP) field including in a
+        tag that allows Ethernet frames to be marked as one of eight priority values <xref
+        target="IEEE-802-1Q"></xref>. Use of this field is described by various
+	documents, including IEEE P802.1p, and IEEE 802.1D. /t>
+
+	<t>
+	The mapping specified in <xref target="IEEE-802-1Q"></xref> revises
+        a previous standard <xref target="IEEE-802-1D"></xref>, in an effort
         to align with DiffServ practice.
-	A 3-bit Priority Code Point (PCP) is specified in the IEEE 802.1Q
-        tag to mark Ethernet frames to one of eight priority values <xref
-        target="IEEE-802-1Q"></xref>. PCP0 indicates the default
+	A PCP0 is used to indicate the default
         best effort treatment, and PCP1 indicates a background
-        traffic class. The remaining PCP values indicate increasing priority.
+        traffic class. This aligned with the now deprecated use of 
+	CS1 as the codepoint for the lower effort
+	service, as previously specified in [RFC4594] [RFC3662].
+	The remaining PCP values indicate increasing priority.
         Internet control traffic can be marked as CS6, and network control is
         marked as CS7. The traffic types are specified to
         match the first three bits of a suitable DSCP 
-	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5). </t>
+	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5).</t>
 
-        <t> Historically, previous standard <xref target="IEEE-802-1D"></xref> used both PCP1 (Background) and
-        PCP2 (Spare) to indicate lower priority than PCP0. Therefore, different remarking behaviors are expected depending on the age of
-        deployed devices.</t>
+        <t>
+	Other remarking behaviors have also been implemented in Ethernet equipment. 
+	Historically, a previous standard <xref target="IEEE-802-1D"></xref> 
+	used both PCP1 (Background) and
+        PCP2 (Spare) to indicate lower priority than PCP0. 
+	Therefore, the remarking behavior can depend on the age of deployed devices.</t>
+	
         </section>
 
        <section title="Mapping Specified for IEEE 802.11">
+       
         <t>Section 6 of <xref target="RFC8325"></xref> provides a
         brief overview of IEEE 802.11 QoS. The IEEE <xref
         target="IEEE-802-11">802.11 standards</xref> provide MAC functions to
