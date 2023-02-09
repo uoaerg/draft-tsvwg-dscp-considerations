@@ -548,7 +548,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 
           <t></t>
 	  <t>The above figure summaries the current assignments for DSCPs of the form 0b000xxx and whether a DSCP is affected by any known remarking behaviors.  
-	For example, ToS Precedence Bleaching of popular DSCPs AF11,21,31,41 would result in traffic being remarked with DSCP 2 in the Internet core.
+	For example, ToS Precedence Bleaching of popular DSCPs AF11, AF21, AF31, AF41 would result in traffic being remarked with DSCP 2 in the Internet core.
 	The Lower-Effort Per-Hop Behavior PHB (LE) uses a DSCP of 4. This value has been historically used by the SSH application, 
 	following semantics that precede DiffServ <xref target="Kol10"></xref>.</t>  
 
@@ -1402,6 +1402,15 @@ of misconfiguration.
           <t>Update after Shepherd review with additional comments from R. Geib. D. Black and B. Carpenter provided comments on relationship to RFC 2474.</t>
           </list>
         </t>
+
+<t>Working Group -09
+           <list style="hanging">
+          <t>Updates to document structure to avoid references in artwork legend.</t>
+          <t>Fix DSCP table indentation</t>
+          <t>Update ref to nqb draft to -15</t>
+          </list>
+        </t>
+
         </list></t>
     </section>
 
