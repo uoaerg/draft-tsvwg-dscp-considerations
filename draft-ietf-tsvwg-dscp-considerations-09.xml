@@ -675,7 +675,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         best effort treatment, and PCP1 indicates a background
         traffic class. This aligned with the now deprecated use of 
 	CS1 as the codepoint for the lower effort
-	service, as previously specified in [RFC4594] [RFC3662].
+	service, as previously specified in <xref target="RFC4594"></xref>.
 	The remaining PCP values indicate increasing priority.
         Internet control traffic can be marked as CS6, and network control is
         marked as CS7. The traffic types are specified to
