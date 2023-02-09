@@ -664,7 +664,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         a previous standard <xref target="IEEE-802-1D"></xref>, in an effort
         to align with DiffServ practice: the traffic types are specified to
         match the first three bits of a suitable DSCP 
-	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5). However,
+	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5).</t>
+	<t>However,
         <xref target="IEEE-802-1D"></xref> maps both PCP1 (Background) and
         PCP2 (Spare) to indicate lower priority than PCP0, RFC8622.
         Therefore, different remarking behaviors are expected depending on the age of
