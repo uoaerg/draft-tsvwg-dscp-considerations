@@ -708,7 +708,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         remarking, dependent on the direction in which a packet is forwarded.
 	It provides recommendations for mapping a DSCP to an IEEE 802.11 UP 
 	for interconnection between wired and wireless networks. 
-	The recommendation in Section 5.1.2 includes mapping network control traffic: CS6 and CS7, 
+	The recommendation in Section 5.1.2 maps network control traffic, CS6 and CS7, 
 	as well unassigned DSCPs, to UP 0 when forwarding in the upstream direction (wireless-to-wired). 
 	It also recommends mapping CS6 and CS7 traffic to UP 7, 
 	when forwarding in the downstream direction (Section 4.1). </t>
