@@ -160,7 +160,7 @@
       <t>The Differentiated Services (DiffServ) architecture has been deployed
       in many networks. It provides differentiated traffic forwarding based on
       the DiffServ Code Point (DSCP) <xref target="RFC2474"></xref> carried in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header.  
-      A common set of DSCPs are defined for both IPv4 and IPv6, and DSCPs apply to both network protocols. 
+      A common set of DSCPs are defined for both IPv4 and IPv6, and both network protocols use a common IANA registry <xref target="DSCP-registry"></xref>. 
       </t>
 
       <t>DiffServ associates traffic with a service class <xref target="RFC4594"></xref> and
