@@ -686,8 +686,8 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 	Other remarking behaviors have also been implemented in Ethernet equipment. 
 	Historically, a previous standard <xref target="IEEE-802-1D"></xref> 
 	used both PCP1 (Background) and
-        PCP2 (Spare) to indicate lower priority than PCP0. 
-	Therefore, the remarking behavior can depend on the age of deployed devices.</t>
+        PCP2 (Spare) to indicate lower priority than PCP0, and
+	some other devices do not assign a lower priority to PCP1.</t>
 	
         </section>
 
