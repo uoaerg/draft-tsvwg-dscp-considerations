@@ -442,7 +442,8 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
         </list></t>
 	    
         <t>NOTE: More than one mechanism could result in the
-        same DSCP remarking (see below). The behaviors were measured on both IPv4 and IPv6 Internet paths between 2017 and 2021.
+        same DSCP remarking (see below). The behaviors were measured on both IPv4 and IPv6 Internet paths between 2017 and 2021. 
+	IPv6 routers were found to perform all the types of remarking described above to a lesser extent than IPv4 ones <xref target="Cus17"></xref>. .
         The network nodes forming a particular path might or might not have supported DiffServ.
         It is not generally possible for an external observer to
         determine which mechanism results in a specific remarking 
@@ -664,8 +665,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         a previous standard <xref target="IEEE-802-1D"></xref>, in an effort
         to align with DiffServ practice: the traffic types are specified to
         match the first three bits of a suitable DSCP 
-	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5).</t>
-	<t>However,
+	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5). However,
         <xref target="IEEE-802-1D"></xref> maps both PCP1 (Background) and
         PCP2 (Spare) to indicate lower priority than PCP0, RFC8622.
         Therefore, different remarking behaviors are expected depending on the age of
