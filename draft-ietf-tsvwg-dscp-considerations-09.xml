@@ -703,7 +703,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         support QoS in WLANs using Access Classes (AC). The upstream User
         Priority (UP) in the 802.11 header has a 3-bit QoS value. A DSCP can
 	be mapped to the UP.  <xref target="rfc8622"></xref> added 
-	support for LE DSCP, mapping this to AC_BK (Background).</t>
+	mapping for the LE DSCP, mapping this to AC_BK (Background).</t>
 
 	<t> Most current WiFi implementations <xref target="RFC8325"></xref> use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is an example of equipment still classifying on ToS Precedence 
