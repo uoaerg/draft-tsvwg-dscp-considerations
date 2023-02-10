@@ -663,7 +663,6 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
      function that could remark the DSCP used at the IP layer.  This
       function is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
-      the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
       infer a mapping to a smaller L2 QoS field, for example, 
         the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
       the 3-bit Traffic Class field of Multi-Protocol Label Switching (MPLS).      
