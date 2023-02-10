@@ -491,8 +491,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
         new DSCP assignments <xref target="Cus17"></xref>.</t>
 
         <section title="Impact of ToS Precedence Bleaching ">
-          <t>ToS Precedence Bleaching (Bleach-ToS-Precedence, 
-	  described in <xref target="observed-remarking"></xref>) is a practice
+          <t>ToS Precedence Bleaching (<xref target="observed-remarking">Bleach-ToS-Precedence</xref>) is a practice
           that resets the first three bits of the DSCP field to zero (the former
           ToS Precedence field), leaving the last three bits unchanged (see Section
           4.2.1 of <xref target="RFC2474"></xref>). A DiffServ node can be 
@@ -509,7 +508,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 |0 0 0|x x x|
 +-+-+-+-+-+-+
 ]]></artwork>
-            <postamble>Figure showing the ToS Precedence Bleaching (Bleach-ToS-Precedence) observed remarking behavior, 
+            <postamble>Figure showing the ToS Precedence Bleaching (<xref target="observed-remarking">Bleach-ToS-Precedence</xref>) observed remarking behavior, 
 		    based on Section 3 of <xref target="RFC1349"></xref>. The bit positions marked "x" are not changed.</postamble>
           </figure>
 
@@ -535,7 +534,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
   | 8/CS1  | 9    | 10/AF11 | 11 | 12/AF12 | 13 | 14/AF13 | 15 |
   +========+======+=========+====+=========+====+=========+====+
   | 0/CS0  | 1/LE | 2       | 3  | 4       | 5  | 6       | 7  |
-  +========+======+=========+=====+========+====+=========+====+
+  +========+======+=========+====+=========+====+=========+====+
 
 ]]></artwork>
 
@@ -558,7 +557,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 |Assigned       |ToS Prec Bl.|EXP/| *    |    |ToS Prec |Exp/|
 |               |of AF11..41 |LU  |      |    |Bl of    |LU  |
 |               |            |    |      |    |AF13..EF |    |
-+========+======+============+====+======+====+=========+====+
++===============+============+====+======+====+=========+====+
 ]]></artwork>
 
             <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviors. 
@@ -763,7 +762,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
         case where there is no other classification and marking policy
         enforcement point, then this derived DSCP value will be used on the
         remainder of the Internet path." This can result in
-        remarking by <xref target="observed-remarking"> Bleach-low </xref>.</t>
+        remarking by <xref target="observed-remarking">Bleach-low</xref>.</t>
 
         <figure>
           <preamble></preamble>
@@ -1003,8 +1002,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
   	end-to-end to allow for differentiated treatment by 
    	domains supporting LE. Rewriting the LE DSCP to the default class (CS0)
    	results in an undesired promotion of the priority for LE traffic in such a domain.
-   	Bleaching the lower three bits of the DSCP (both <xref target="observed-remarking"> Bleach-low </xref>
-   	and <xref target="observed-remarking"> Bleach-some-low </xref>), as well as remarking to a particular 
+   	Bleaching the lower three bits of the DSCP (both <xref target="observed-remarking">Bleach-low</xref>
+   	and <xref target="observed-remarking">Bleach-some-low</xref>), as well as remarking to a particular 
   	 DSCP can result in similar changes of priority relative to traffic that is marked with other DSCPs.
 	 </t>
       </section>
@@ -1014,8 +1013,8 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         marking semantics in place of methods based on the former ToS field,
         the current recommendation is that any new assignment where the
         DSCP is greater than 0x07 should consider the semantics
-        associated with the resulting DSCP when ToS Precedence Bleaching (<xref target="observed-remarking"> Bleach-ToS-Precedence </xref> and <xref target="observed-remarking"> Bleach-some-ToS </xref>)
-	or ToS Precedence Remarking (<xref target="observed-remarking">Remark-ToS</xref>)) is
+        associated with the resulting DSCP when ToS Precedence Bleaching (<xref target="observed-remarking">Bleach-ToS-Precedence</xref> and <xref target="observed-remarking"> Bleach-some-ToS </xref>)
+	or ToS Precedence Remarking (<xref target="observed-remarking">Remark-ToS</xref>) is
         experienced. For example, it can be desirable to avoid choosing a DSCP
         that could be remarked to LE, <xref target="RFC8622">Lower
         Effort</xref>, which could otherwise potentially result in a priority
@@ -1026,7 +1025,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
           Pool 3.</t>
 
           <t>When making assignments where the DSCP has a format: 0bxxx001,
-          the case of <xref target="observed-remarking"> Bleach-ToS-Precedence </xref> of a
+          the case of <xref target="observed-remarking">Bleach-ToS-Precedence</xref> of a
           DSCP to a value of 0x01 needs to be considered. ToS Precedence
           Bleaching will result in demoting the traffic to the lower effort
           traffic class. Care should be taken to consider the implications
@@ -1069,7 +1068,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
 		</list></t>
        </list></t>
       <t>
-	The DSCP re-marking corresponding to the <xref target="observed-remarking"> Bleach-ToS-Precedence </xref>
+	The DSCP re-marking corresponding to the <xref target="observed-remarking">Bleach-ToS-Precedence</xref>
 	observed behavior described in Section 4 can arise for various reasons, one of which is old equipment which precedes DiffServ.
 The same remarking can also arise in some cases when traffic conditioning is
 provided by DiffServ routers at operator boundaries or as a result
