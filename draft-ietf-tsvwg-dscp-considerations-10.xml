@@ -50,7 +50,7 @@
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
 
-<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-09"
+<rfc category="info" docName="draft-ietf-tsvwg-dscp-considerations-10"
 
      ipr="trust200902" submissionType="IETF">
   <!-- category values: std, bcp, info, exp, and historic
@@ -224,7 +224,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
     </section>
 
     <section title="Current usage of DSCPs">
-      <t>This section describes current usage of DSCPs.</t>
+      <t>This section describes the current usage of DSCPs.</t>
 
       <section title="IP-Layer Semantics">
         <t>The DiffServ architecture specifies the use of the DiffServ field in
@@ -321,7 +321,7 @@ A DSCP can sometimes be referred to by name, such as "CS1", and
           </figure>
 </t>
 	      
-<t> The above table summarises the DSCP abbreviations used in currnetly published RFCs
+<t> The above table summarises the DSCP abbreviations used in currently published RFCs
 			    <xref target="RFC2474"></xref> <xref
                        target="RFC2597"></xref> <xref target="RFC3246"></xref> <xref
                        target="RFC5865"></xref> <xref target="RFC8622"></xref>, as described in the IANA registry <xref
@@ -520,7 +520,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 ]]></artwork>
 
             <postamble>As a result of ToS Precedence Bleaching, all the DSCPs in each column are remarked to the smallest DSCP in that column. 
-		  The DSCPs in the bottom row therefore have higher survivability across an end-to-end Internet path.
+		  Therefore, the DSCPs in the bottom row have higher survivability across an end-to-end Internet path.
             </postamble>
           </figure>
 
@@ -541,13 +541,13 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 ]]></artwork>
 
             <postamble>Figure showing 0b000xxx DSCPs, highlighting any current assignments and whether they are affected by any known remarking behaviors. 
-	* DSCP 4 has been historically used by the SSH application <xref target="Kol10">.</xref>.
+	* DSCP 4 has been historically used by the SSH application<xref target="Kol10">.</xref>.
             </postamble>
           </figure>
 	      
 
           <t></t>
-	  <t>The above figure summaries the current assignments for DSCPs of the form 0b000xxx and whether a DSCP is affected by any known remarking behaviors.  
+	  <t>The above figure summarizes the current assignments for DSCPs of the form 0b000xxx and whether a DSCP is affected by any known remarking behaviors.  
 	For example, ToS Precedence Bleaching of popular DSCPs AF11, AF21, AF31, AF41 would result in traffic being remarked with DSCP 2 in the Internet core.
 	The Lower-Effort Per-Hop Behavior PHB (LE) uses a DSCP of 4. This value has been historically used by the SSH application, 
 	following semantics that precede DiffServ <xref target="Kol10"></xref>.</t>  
@@ -640,7 +640,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
      function that could remark the DSCP used at the IP layer.  This
       function is constrained by designs that
       utilise fewer than 6 bits to express the service class, and therefore
-      infer mapping to a smaller L2 QoS field, for example, the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
+      infer a mapping to a smaller L2 QoS field, for example, the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
       the 3-bit Traffic Class field of Multi-Protocol Label Switching (MPLS).      
       A Treatment Aggregate (TA) <xref target="RFC5127"></xref>
       is an optional intermediary mapping groups of BAs to PHBs.
@@ -750,7 +750,7 @@ If such a remarked packet further traverses other Diffserv domains, it would rec
 
    <t>Multi-Protocol Label Switching (MPLS) specified eight MPLS Traffic
    Classes (TCs), which restrict the number of different treatments
-   <xref target="RFC5129"></xref>.  RFC 5127 describes aggregation of 
+   <xref target="RFC5129"></xref>.  RFC 5127 describes the aggregation of 
    DiffServ TCs <xref target="RFC5127"></xref>
    and introduces four DiffServ Treatment Aggregates.  Traffic marked
    with multiple DSCPs can be forwarded in a single MPLS TC.</t>
@@ -1015,7 +1015,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         only traffic that matches a policy is permitted to use a specific DSCP (see <xref target="RFC8100"></xref>). 
 	Operators need to classify the received traffic, assign it to a corresponding PHB, and could
 	remark the DSCP to a value that is appropriate for the domain's deployed DiffServ infrastructure.</t>		
-            <t hangText="Networks that remark in some other way">, which includes: 
+            <t hangText="Networks that remark in some other way, which includes:"> 
             </t>
                 <t><list style='numbers'>
                 <t>Networks containing misconfigured devices that do not comply with the relevant RFCs.</t>
@@ -1410,6 +1410,13 @@ of misconfiguration.
           <t>Update ref to nqb draft to -15</t>
           </list>
         </t>
+<t>Working Group -10
+           <list style="hanging">
+          <t>Document updated after AD review</t>
+          <t>Add clarification on former use of CS1</t>
+          </list>
+        </t>
+
 
         </list></t>
     </section>
