@@ -606,8 +606,7 @@ semantics have not yet been eliminated from deployed networks.</t>
 
 ]]></artwork>
 
-            <postamble>Figure showing ToS Precedence Remarking (<xref target="observed-remarking">Remark-ToS</xref>
-/)
+            <postamble>Figure showing the ToS Precedence Remarking (<xref target="observed-remarking">Remark-ToS</xref>)
             observed behavior, based on Section 3 of <xref
             target="RFC1349"></xref>. The bit positions marked "x" remain unchanged.</postamble>
 
