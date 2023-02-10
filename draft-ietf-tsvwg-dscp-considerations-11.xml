@@ -562,7 +562,7 @@ configured to support DiffServ. (See also <xref target="remark"></xref>).
 +===============+============+====+======+====+=========+====+
 ]]></artwork>
 
-            <postamble>Tavle showing 0b000xxx DSCPs. This highlights any current assignments and whether they are affected by any known remarking behaviors. 
+            <postamble>Table showing 0b000xxx DSCPs. This highlights any current assignments and whether they are affected by any known remarking behaviors. 
 	* DSCP 4 has been historically used by the SSH application<xref target="Kol10">.</xref>.
             </postamble>
           </figure>
