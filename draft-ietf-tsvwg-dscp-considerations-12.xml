@@ -1422,7 +1422,7 @@ of misconfiguration.
            <list style="hanging">
           <t>Clarify meaning of RFC2474 with respect to IP precedence (comments from Ruediger Geib).</t>
           <t>Add note on understanding the process of remarking (comments from Ruediger Geib).</t>
-          <t>Improve readibility.</t>
+          <t>Improve readability.</t>
           </list>
        	</t>
 
