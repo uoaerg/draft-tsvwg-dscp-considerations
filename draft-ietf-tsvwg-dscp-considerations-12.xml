@@ -161,7 +161,7 @@
       <t>The Differentiated Services (DiffServ) architecture has been deployed
       in many networks. It provides differentiated traffic forwarding based on
       the DiffServ Code Point (DSCP) <xref target="RFC2474"></xref> carried 
-      in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header and the Traffic Class field of the IPv6 packet header.
+      in the DiffServ field <xref target="RFC2474"></xref> of the IP packet header.
 A common set of DSCPs are defined for both IPv4 and IPv6, and both network protocols 
 use a common IANA registry <xref target="DSCP-registry"></xref>.</t>
 	  
@@ -377,7 +377,7 @@ all capitals, as shown here.</t>
         "CS7 marked packets SHOULD NOT be sent across peering points" <xref
         target="RFC4594"></xref>.</t>
 
-	<t>RFC2472 recommends PHBs selected by CS6 and
+	<t>RFC2474 recommends PHBs selected by CS6 and
         CS7  "MUST give packets preferential forwarding treatment by comparison to
         the PHB selected by codepoint '000000'"<xref target="RFC2474"></xref>.</t> 
 
@@ -683,7 +683,7 @@ it would receive treatment as specified by each domain's operator corresponding 
 	<t>The mapping specified in <xref target="IEEE-802-1Q"></xref> revises
         a previous standard <xref target="IEEE-802-1D"></xref>, in an effort
         to align with DiffServ practice <xref target="RFC4594"></xref>.
-	The traffic types are specified to
+	In 802.1Q, the traffic types are specified to
         match the first three bits of a suitable DSCP 
 	(e.g., the first three bits of the EF DSCP are mapped to a PCP of 5).</t>
 
@@ -714,7 +714,7 @@ it would receive treatment as specified by each domain's operator corresponding 
 	be mapped to the UP. <xref target="RFC8622"></xref> added 
 	mapping for the LE DSCP, mapping this to AC_BK (Background)</t>
 
-	<t>Most current WiFi implementations <xref target="RFC8325"></xref> use a default mapping that maps the first three
+	<t>Most current WiFi implementations use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is an example of equipment still classifying on ToS Precedence 
 	(which could be seen as a simple method to map IP layer DiffServ to layers offering only 3-bit QoS codepoints). Then, 
         in turn, this is mapped to the four WiFi Multimedia (WMM) Access
@@ -748,7 +748,7 @@ it would receive treatment as specified by each domain's operator corresponding 
 	It also recommends mapping CS6 and CS7 traffic to UP 7, 
 	when forwarding in the downstream direction (Section 4.1).</t>
 
-        <t>RFC8325 also recommends a mapping in the upstream direction that derives the 
+        <t>For other UPs, RFC8325 recommends a mapping in the upstream direction that derives the 
 	DSCP from the value of the UP multiplied by 8. 
 	This mapping can result in a specific DSCP remarking behavior.</t>
         <t>In the upstream direction (wireless-to-wired interconnections, 
