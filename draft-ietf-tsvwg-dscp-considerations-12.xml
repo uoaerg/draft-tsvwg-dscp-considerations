@@ -1139,9 +1139,11 @@ of misconfiguration.
     </section>
 
     <section anchor="IANA" title="IANA Considerations">
-      <t>This memo provides information to assist in considering new
-      assignments to the IANA DSCP registry
-      (https://www.iana.org/assignments/dscp-registry/dscp-registry.xhtml).</t>
+      <t>IANA is requested to append “See [RFC-to-be] for considerations in assigning a new DSCP value.”
+   as a separate paragraph to the Note for the 
+	      Differentiated Services Field Codepoints (DSCP)
+   registries at the top of the registry page at 
+	      https://www.iana.org/assignments/dscp-registry/dscp-registry.xhtml .</t>
 
       <t>This memo includes no request to IANA, or update to the IANA
       procedures.</t>
