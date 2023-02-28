@@ -615,7 +615,7 @@ semantics have not yet been eliminated from deployed networks.</t>
 
           </figure>
 
-          <t>A less common re-marking, ToS Precedence Rem-arking sets the first
+          <t>A less common re-marking, ToS Precedence Re-marking sets the first
           three bits of the DSCP to a non-zero value corresponding to a
           CS PHB. This re-marking occurs when routers are not configured to perform DiffServ re-marking.
           </t>
@@ -998,7 +998,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
       <section title="Effect of Bleaching and Re-marking to a single DSCP">
         <t>Section 4 describes re-marking of the DSCP.
 	New DSCP assignments should consider the impact of bleaching
-  	(<xref target="observed-re-marking">Bleach-DSCP</xref>) or rem-arking (<xref target="observed-re-marking">Re-mark-DSCP</xref>) to a single DSCP, which can limit
+  	(<xref target="observed-re-marking">Bleach-DSCP</xref>) or re-marking (<xref target="observed-re-marking">Re-mark-DSCP</xref>) to a single DSCP, which can limit
    	the ability to provide the expected treatment end-to-end.  This is
    	particularly important for cases where the codepoint is intended to
   	result in lower than best effort treatment, as was the case when
