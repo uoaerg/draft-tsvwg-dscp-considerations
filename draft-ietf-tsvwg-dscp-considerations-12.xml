@@ -385,7 +385,7 @@ all capitals, as shown here.</t>
         <t> At the time of writing, there is evidence to suggest CS6 is 
 	actively used by network operators for control traffic. A study of 
         traffic at a large Internet Exchange showed around 40% of ICMP traffic 
-	carried this mark <xref target="IETF113-IEPG"></xref>. Similarly, another 
+	carried this mark <xref target="IETF115-IEPG"></xref>. Similarly, another 
 	study found many routers re-mark all traffic except those packets with a DSCP
 	that sets the higher order bits to 0b11 (see Section 4 of this document).</t>
 
@@ -547,7 +547,7 @@ configured to support DiffServ. (See also <xref target="re-mark"></xref>).
           </figure>
 
 
-<t>Data on the observed re-marking at the time of writing was presented in <xref target="IETF113-IEPG"></xref>.</t>
+<t>Data on the observed re-marking at the time of writing was presented in <xref target="IETF115-IEPG"></xref>.</t>
 
           <figure>
             <preamble></preamble>
@@ -1354,7 +1354,7 @@ of misconfiguration.
         <seriesInfo name="IEEE" value="802.1D" />
       </reference>
 
-      <reference anchor="IETF113-IEPG">
+      <reference anchor="IETF115-IEPG">
         <front>
           <title>Real-world DSCP Traversal Measurements</title>
           <author initials="A." surname="Custura">
@@ -1484,6 +1484,7 @@ of misconfiguration.
            <list style="hanging">
           <t>Review by Erik Kline</t>
 	  <t>Added recommended change by IANA to cite this document from the registry when it is published.</t>
+	  <t>The latest DSCP contribution to IEPG was at IETF-115.</t>	
           </list>
         </t>
 
