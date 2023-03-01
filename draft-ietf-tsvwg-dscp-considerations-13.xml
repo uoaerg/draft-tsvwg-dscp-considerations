@@ -21,6 +21,7 @@
 <!ENTITY RFC5127 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5127.xml">
 <!ENTITY RFC5129 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5129.xml">
 <!ENTITY RFC5160 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5160.xml">
+<!ENTITY RFC5415 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5415.xml">
 <!ENTITY RFC5865 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5865.xml">
 <!ENTITY RFC8100 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8100.xml">
 <!ENTITY RFC8126 SYSTEM "http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8126.xml">
@@ -786,7 +787,7 @@ it would receive treatment as specified by each domain's operator corresponding 
 	
         <t>An alternative to UP-to-DSCP remapping uses 
         the DSCP value of a downstream IP packet (e.g., the Control And Provisioning of Wireless
-        Access Points (CAPWAP) protocol, RFC5415, maps an IP packet DiffServ field to the 
+        Access Points (CAPWAP) protocol, <xref target="RFC5415">RFC5415</xref>, maps an IP packet DiffServ field to the 
 	DiffServ field of the outer IP header in a CAPWAP
         tunnel).</t>
 	
@@ -1215,6 +1216,8 @@ of misconfiguration.
       &RFC5127;
 
       &RFC5160;
+	    
+      &RFC5415;	
 
       &RFC5865;
 
