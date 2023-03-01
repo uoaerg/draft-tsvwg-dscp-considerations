@@ -717,10 +717,10 @@ it would receive treatment as specified by each domain's operator corresponding 
 	be mapped to the UP. <xref target="RFC8622"></xref> added 
 	mapping for the LE DSCP, mapping this to AC_BK (Background)</t>
 
-	<t>Most current WiFi implementations use a default mapping that maps the first three
+	<t>Most current Wi-Fi implementations use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is an example of equipment still classifying on ToS Precedence 
 	(which could be seen as a simple method to map IP layer DiffServ to layers offering only 3-bit QoS codepoints). Then, 
-        in turn, this is mapped to the four WiFi Multimedia (WMM) Access
+        in turn, this is mapped to the four Wi-Fi Multimedia (WMM) Access
         Categories. The Wi-Fi Alliance has also specified a more flexible mapping 
 	that follows RFC8325 and provides functions at an AP to re-mark packets as 
         well as a QoS Map that maps each DSCP to an AC <xref target="WIFI-ALLIANCE"></xref>.</t>
@@ -790,7 +790,7 @@ it would receive treatment as specified by each domain's operator corresponding 
 	DiffServ field of the outer IP header in a CAPWAP
         tunnel).</t>
 	
-        <t>Some current constraints of WiFi mapping are discussed in Section 2
+        <t>Some current constraints of Wi-Fi mapping are discussed in Section 2
         of <xref target="RFC8325"></xref>. A QoS profile can be used to limit
         the maximum DSCP value used for the upstream and downstream
         traffic.</t>
@@ -984,7 +984,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         <t>This section has discussed the various ways in which DSCP re-marking behaviors can arise from interactions with lower layers.</t>
 	     <t> A provider service path may consist of sections where multiple and 
    changing layers use their own code points to determine
-		     differentiated forwarding (e.g., IP - MPLS - IP - Ethernet - WiFi).</t>
+		     differentiated forwarding (e.g., IP - MPLS - IP - Ethernet - Wi-Fi).</t>
       </section>
     </section>
 
