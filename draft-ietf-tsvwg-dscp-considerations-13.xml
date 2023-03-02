@@ -439,7 +439,7 @@ configured to support DiffServ. (See also <xref target="re-mark"></xref>).
           field), unless the first two bits of the DSCP field are 0b11;</t>
 
           <t hangText="Re-mark-ToS:">set the first three bits of the DSCP field
-          to any value different than 0b000 (replace the 3 bits of the former
+          to any value different from 0b000 (replace the 3 bits of the former
           ToS Precedence field);</t>
 
           <t hangText="Bleach-low:">set the last three bits of the DSCP field
@@ -661,14 +661,14 @@ it would receive treatment as specified by each domain's operator corresponding 
     </section>
 
     <section anchor="lowerlayers" title="Interpretation of the IP DSCP at Lower Layers">
-      <t>Transmission systems and subnetworks can, and do, utilise the
+      <t>Transmission systems and subnetworks can, and do, utilize the
       DiffServ field in an IP packet to set a QoS-related field or function at
      the lower layer.  A lower layer could also implement a traffic conditioning
      function that could re-mark the DSCP used at the IP layer.  This
       function is constrained by designs that
-      utilise fewer than 6 bits to express the service class, and therefore
+      utilize fewer than 6 bits to express the service class, and therefore
       infer a mapping to a smaller L2 QoS field, for example, 
-        the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit WiFi UP field or
+        the 3-bit PCP field in an IEEE Ethernet 802.1Q header, the 3-bit UP field or
       the 3-bit Traffic Class field of Multi-Protocol Label Switching (MPLS).      
       A Treatment Aggregate (TA) <xref target="RFC5127"></xref>
       is an optional intermediary mapping groups of BAs to PHBs.
@@ -718,10 +718,10 @@ it would receive treatment as specified by each domain's operator corresponding 
 	be mapped to the UP. <xref target="RFC8622"></xref> added 
 	mapping for the LE DSCP, mapping this to AC_BK (Background)</t>
 
-	<t>Most current WiFi implementations use a default mapping that maps the first three
+	<t>Most current Wi-Fi implementations use a default mapping that maps the first three
         bits of the DSCP to the 802.11 UP value. This is an example of equipment still classifying on ToS Precedence 
 	(which could be seen as a simple method to map IP layer DiffServ to layers offering only 3-bit QoS codepoints). Then, 
-        in turn, this is mapped to the four WiFi Multimedia (WMM) Access
+        in turn, this is mapped to the four Wi-Fi Multimedia (WMM) Access
         Categories. The Wi-Fi Alliance has also specified a more flexible mapping 
 	that follows RFC8325 and provides functions at an AP to re-mark packets as 
         well as a QoS Map that maps each DSCP to an AC <xref target="WIFI-ALLIANCE"></xref>.</t>
@@ -791,7 +791,7 @@ it would receive treatment as specified by each domain's operator corresponding 
 	DiffServ field of the outer IP header in a CAPWAP
         tunnel).</t>
 	
-        <t>Some current constraints of WiFi mapping are discussed in Section 2
+        <t>Some current constraints of Wi-Fi mapping are discussed in Section 2
         of <xref target="RFC8325"></xref>. A QoS profile can be used to limit
         the maximum DSCP value used for the upstream and downstream
         traffic.</t>
@@ -985,7 +985,7 @@ This was previously specified as the Inter-Service Provider IP Backbone Guidelin
         <t>This section has discussed the various ways in which DSCP re-marking behaviors can arise from interactions with lower layers.</t>
 	     <t> A provider service path may consist of sections where multiple and 
    changing layers use their own code points to determine
-		     differentiated forwarding (e.g., IP - MPLS - IP - Ethernet - WiFi).</t>
+		     differentiated forwarding (e.g., IP - MPLS - IP - Ethernet - Wi-Fi).</t>
       </section>
     </section>
 
@@ -1100,7 +1100,7 @@ of misconfiguration.
             characteristics of the traffic to be carried? What are the
             expectations for treatment? </t>
 
-            <t>Service classes <xref target="RFC4594"></xref> that can utilise existing PHBs should use
+            <t>Service classes <xref target="RFC4594"></xref> that can utilize existing PHBs should use
             assigned DSCPs to mark their traffic: Could the request be met by
             using an existing IETF DSCP?</t>
 		
