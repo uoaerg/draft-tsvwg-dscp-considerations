@@ -135,7 +135,7 @@
       </address>
     </author>
 
-    <date day="28" month="February" year="2023" />
+    <date day="3" month="March" year="2023" />
 
     <area>TSVArea</area>
 
@@ -1153,7 +1153,8 @@ of misconfiguration.
 	https://www.iana.org/assignments/dscp-registry/dscp-registry.xhtml.
         This request is to add the following separate paragraph to the Note 
 	 at the top of the registry page:
-	  “See [RFC-to-be] for considerations when assigning a new codepoint from the DSCP registry.”</t>
+         "See [RFC-to-be] for considerations when assigning a new codepoint from the DSCP registry."
+       </t>
     </section>
 
     <section anchor="Security" title="Security Considerations">
@@ -1494,6 +1495,9 @@ of misconfiguration.
           <t>Review by Erik Kline</t>
 	  <t>Added recommended change by IANA to cite this document from the registry when it is published.</t>
 	  <t>The latest DSCP contribution to IEPG was at IETF-115.</t>	
+	  <t>Consistently use re-mark instead of remark.</t>
+	  <t>Improve artwork abbreviations</t>
+	  <t>Address NiTs from John Scudder</t>
           </list>
         </t>
 
