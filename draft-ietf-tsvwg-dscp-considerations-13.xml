@@ -561,13 +561,13 @@ configured to support DiffServ. (See also <xref target="re-mark"></xref>).
 
             <artwork><![CDATA[
 
-+=======+======+=============+====+======+====+=========+====+
-| 0/CS0 | 1/LE | 2           | 3  | 4    | 5  | 6       | 7  |
-+=======+======+=============+====+======+====+=========+====+
-|Assigned      |Remarked from|EXP/| *    |    |Remarked |EXP/|
-|              |AF11..41     |LU  |      |    |from     |LU  |
-|              |             |    |      |    |AF13..EF |    |
-+==============+=============+====+======+====+=========+====+
++=======+======+=============+====+======+===+=========+====+
+| 0/CS0 | 1/LE | 2           | 3  | 4    | 5 | 6       | 7  |
++=======+======+=============+====+======+===+=========+====+
+|Assigned      |Re-marked    |EXP/| *    |   |Re-marked|EXP/|
+|              |from AF11..41|LU  |      |   |from     |LU  |
+|              |             |    |      |   |AF13..EF |    |
++==============+=============+====+======+===+=========+====+
 ]]></artwork>
 
             <postamble>Table showing 0b000xxx DSCPs. This highlights any current assignments and whether 
