@@ -251,7 +251,7 @@ all capitals, as shown here.</t>
         <t>The DSCP space is divided into three pools for the purpose of
         assignment and management <xref target="DSCP-registry"></xref>. A
         summary of the pools is provided in a table (where 'x' refers to a
-        bit position with value '0' or '1').
+        bit position with value either '0' or '1').
 	<list style="hanging">
             <t hangText="DSCP Pool 1:">A pool of 32 codepoints with a format
             0bxxxxx0, to be assigned by IANA Standards Action <xref
@@ -392,8 +392,9 @@ all capitals, as shown here.</t>
 	actively used by network operators for control traffic. A study of 
         traffic at a large Internet Exchange showed around 40% of ICMP traffic 
 	carried this mark <xref target="IETF115-IEPG"></xref>. Similarly, another 
-	study found many routers re-mark all traffic, except for packets with a DSCP
-	that sets the higher order bits to 0b11 (see Section 4.2.1 of this document).</t>
+	study found many routers re-mark all traffic, except for packets carrying 
+	a DSCP with the format 0b11xxxx (i.e. setting the higher order bits to 0b11,
+	see Section 4.2.1 of this document).</t>
 
       </section>
     </section>
@@ -560,22 +561,13 @@ configured to support DiffServ. (See also <xref target="re-mark"></xref>).
 
             <artwork><![CDATA[
 
-+========+======+============+====+======+====+=========+====+
-| 0/CS0  | 1/LE | 2          | 3  | 4    | 5  | 6       | 7  |
-+========+======+============+====+======+====+=========+====+
-|Assigned       |ToS Prec Bl.|EXP/| *    |    |ToS Prec |EXP/|
-|               |of AF11..41 |LU  |      |    |Bl of    |LU  |
-|               |            |    |      |    |AF13..EF |    |
-+===============+============+====+======+====+=========+====+
-
-
-+========+======+============+====+======+====+=========+====+
-| 0/CS0  | 1/LE | 2          | 3  | 4    | 5  | 6       | 7  |
-+========+======+============+====+======+====+=========+====+
-|Assigned       |Bleaching   |EXP/| *    |    |Bleaching|EXP/|
-|               |of AF11..41 |LU  |      |    |of       |LU  |
-|               |            |    |      |    |AF13..EF |    |
-+===============+============+====+======+====+=========+====+
++=======+======+=============+====+======+====+=========+====+
+| 0/CS0 | 1/LE | 2           | 3  | 4    | 5  | 6       | 7  |
++=======+======+=============+====+======+====+=========+====+
+|Assigned      |Remarked from|EXP/| *    |    |Remarked |EXP/|
+|              |AF11..41     |LU  |      |    |from     |LU  |
+|              |             |    |      |    |AF13..EF |    |
++==============+=============+====+======+====+=========+====+
 ]]></artwork>
 
             <postamble>Table showing 0b000xxx DSCPs. This highlights any current assignments and whether 
@@ -693,7 +685,7 @@ it would receive treatment as specified by each domain's operator corresponding 
 	     
        <section title="Mapping Specified for IEEE 802.1">
    
-        <t>IEEE 802.1Q specified a 3-bit Priority Code Point (PCP) field includes a
+        <t>IEEE 802.1Q specified a 3-bit Priority Code Point (PCP) field, which includes a
         tag that allows Ethernet frames to be marked as one of eight priority values <xref
         target="IEEE-802-1Q"></xref>. Use of this field is described by various
 	documents, including IEEE P802.1p, and IEEE 802.1D.</t>
